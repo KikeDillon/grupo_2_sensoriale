@@ -8,7 +8,7 @@ URL DEL REPOSITORIO: https://github.com/KikeDillon/grupo_2_sensoriale
 
 URL DEL TRELLO: https://trello.com/b/V74uAFt9/sensoriale
 
-URL DEL WIREFRAME: https://trello.com/b/V74uAFt9/sensoriale
+URL DEL WIREFRAME: https://www.figma.com/file/wmAism3ach5OrDPuS4afYB/Sensoriale
 
 Temática del Market Place
 
