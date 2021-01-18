@@ -4,7 +4,7 @@ SENSORIALE PERFUMERÍA
 
 
 
-URL DEL REPOSITORIO:
+URL DEL REPOSITORIO: https://github.com/KikeDillon/grupo_2_sensoriale
 
 URL DEL TRELLO: https://trello.com/b/V74uAFt9/sensoriale
 
