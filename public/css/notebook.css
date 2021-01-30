@@ -1,5 +1,28 @@
 @media (min-width: 769px){
    
+
+    .header-logo{               /*=== contenedor del logo ===*/
+        width: 6%;
+    }
+    .header-search-bar{         /*=== barra de búsqueda ===*/
+        margin-left: 120px;
+        margin-right: 15vw;
+        width:50%;
+    }
+    .header-search-bar a{       /*=== lupa de la barra de búsqueda ===*/
+        width: 7%;
+        padding-left: 10px;
+    }
+    .header-checkout{
+        margin-right: 0px;
+    } 
+    .header-login{
+        margin-left: 20px;
+    }
+    .header-checkout a, .header-login a{         /*=== carrito de compras logo bajado de font-awesome ===*/
+        font-size: 2vw;
+    }
+
    /*=======================================*/
                      /* MAIN */
     /*=======================================*/

@@ -19,7 +19,7 @@
     width: 100%;
     height: 70px;
     position: fixed;
-    background-color: #e7e7de;
+    background-color:  #e7e7de;
 
 }
 .header-top{            /*=== logo, barra de búsqueda. register y login van en el burguer-menu === */
@@ -34,12 +34,12 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #e7e7de;
+    background-color:  #e7e7de;
 }
 .header-logo img{       /*=== img del logo ===*/
     display: flex;
     width: 100%;
-    background-color: #e7e7de;
+    background-color:  #e7e7de;
 
 }
 .header-search-bar{      /*=== barra de búsqueda ===*/
@@ -48,7 +48,7 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #e7e7de;
+    background-color:  #e7e7de;
 }
 .header-search-bar input{   /*=== input de la barra de búsqueda - tipo texto ===*/
     border: none;
@@ -77,9 +77,6 @@
     justify-content: center;
     align-items: center;
 }
-.header-login{              
-    display: none;          /*=== contenedor logo de login ===*/
-}
 .header-checkout a{         /*=== carrito de compras logo bajado de font-awesome ===*/
     display: flex;
     width: 90%;
@@ -87,6 +84,9 @@
     padding-right: 5px;
     color: #00587a;
     font-size: 5vw;
+}
+.header-login{              
+    display: none;          /*=== contenedor logo de login ===*/
 }
 .nav-bar{                   /*=== contenedor para burguer-menu y nav-menu: dependiendo del tamaño de pantalla === */
     display: flex;
@@ -110,7 +110,7 @@
     border-radius: 2px;
 }
 .burguer-menu{              /*=== div que corresponde al despliegue del menu de la hamburguesa === */
-    display: none;
+    display: none; 
 }
 .burger-icon:hover + .burguer-menu{ /*=== al picar sobre la hamburguesa se debe desplegar el menú === */
     display: block;
