@@ -1,5 +1,9 @@
 @media (min-width: 769px){
    
+    
+    /*=======================================*/
+                    /* HEADER */
+    /*=======================================*/
 
     .header-logo{               /*=== contenedor del logo ===*/
         width: 6%;
@@ -13,10 +17,10 @@
         width: 7%;
         padding-left: 10px;
     }
-    .header-checkout{
+    .header-checkout{           /*=== carrito de compras / contenedor ===*/
         margin-right: 0px;
     } 
-    .header-login{
+    .header-login{              /*=== login / contenedor ===*/
         margin-left: 20px;
     }
     .header-checkout a, .header-login a{         /*=== carrito de compras logo bajado de font-awesome ===*/
@@ -27,7 +31,7 @@
                      /* MAIN */
     /*=======================================*/
 
-    .articule{
+    .articule{                          /*=== articulos / 3 por ancho de pantalla ===*/
         width: 32%;
         height: 48%;
     }
