@@ -13,8 +13,12 @@
         margin-right: 15vw;
         width:50%;
     }
+    .header-search-bar input {
+        height: 25px;
+    }
     .header-search-bar a{       /*=== lupa de la barra de búsqueda ===*/
         width: 7%;
+        height: 25px;
         padding-left: 10px;
     }
     .header-checkout{           /*=== carrito de compras / contenedor ===*/
