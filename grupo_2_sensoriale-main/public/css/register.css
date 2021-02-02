@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    background-color: #00587a;
+    margin-bottom: 2vh;
+}
+
+.seccionRegistro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 15vw;
+}
+.formularioDeRegistro {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(228, 228, 228);
+    padding: 20px;
+    padding-right: 25px;
+    text-align: center;
+    margin-left: 26vw;
+    margin-right: 20vw;
+}
