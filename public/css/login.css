@@ -1,0 +1,11 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    background-color: #00587a;
+    margin-bottom: 2vh;
+}
