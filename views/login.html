@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -54,7 +55,24 @@
         <div class="banner">
             <h3>Banner</h3>
         </div>
-        <h4>LOGIN</h4>
+        <h4><form class="formulario"  action="/login" method="POST">
+            <div>
+                <label for="email">Email:</label>
+                <input for="email" name="email" placeholder="Nombre de usuario" required>
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input for="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <div>
+                <input type="submit" value="olvidaste tu contraseña?">
+                <input type="submit" value="registrarse">
+            </div>
+            <div>
+                <input type="submit" value="ingresar">
+            </div>
+        </form>
+    </h4>
     </main>    
     <footer class="main-footer">
         <section class="footer-section"><h4>Footer Izquierda</h4></section>    

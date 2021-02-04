@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/register.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -54,7 +55,38 @@
         <div class="banner">
             <h3>Banner</h3>
         </div>
-        <h4>REGISTER</h4>
+        <h4><section class="seccionRegistro">
+            <form class= "formularioDeRegistro" action="Formulario de registro" action="/" method="POST">
+                <div>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                </div>
+                <div>
+                    <input type="text" name="dni" placeholder="DNI" required>
+                </div>
+                <div>
+                    <select name="sexo" id="sexo">
+                        <option value="sexo">Masculino</option>
+                        <option value="sexo">Femenino</option>
+                    </select>
+                
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>  
+                <div>
+                    <input type="password" name="Contraseña" placeholder="Contraseña" required>
+                </div>
+                <div>
+                    <input type="password" name="Contraseña" placeholder="Confirmar Contraseña" required>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>   
+                </div>
+            </form>
+        </section></h4>
     </main>    
     <footer class="main-footer">
         <section class="footer-section"><h4>Footer Izquierda</h4></section>    
