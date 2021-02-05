@@ -27,3 +27,11 @@ app.get('/login', function(req, res){
 app.get('/checkout', function(req,res){
     res.sendFile (path.resolve(__dirname, './views/checkout.html'));
 });
+
+app.get ('/detail', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/detail.html'));
+});
+
+app.get ('/selection', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/selection.html'));
+});
