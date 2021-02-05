@@ -13,7 +13,7 @@ main{
     display: flex;    
     width: 100%;
     justify-content: center;
-    padding: 10px 10px;
+    padding: 10px 50px;
 }
 .formularioDeRegistro {
     /*margin-top: 5px;
@@ -59,7 +59,6 @@ main{
         padding: 20px;
         text-align: center;
         flex-wrap: wrap;
-        width: 60%;
     }
     .input {
         width: 95%;
