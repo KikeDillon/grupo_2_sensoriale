@@ -53,7 +53,7 @@
         width: 100%;
         justify-content: center;
         padding-right: 5px;
-        color: #00587a;
+        color: #0f3057;
         font-size: 3vw;
     }
     .nav-bar{                   /*=== contenedor de nav-bar  ===*/
@@ -76,14 +76,19 @@
     }
     .nav-menu ul li{            /*=== lista del menú del nav-bar "li"  ===*/
         display: flex;
+        width: 120px;
+        justify-content: center;
+        border-radius: 3px;
     }
     .nav-menu ul li a{          /*=== lista del menú del nav-bar "link a" ===*/
         text-decoration: none;
         font-weight: bolder;
+        padding: 3px 8px;
         color: #e7e7de;
     }
-
-
+    .nav-menu ul li:hover{ 
+        background-color: #0f3057;
+    }
     /*=======================================*/
                      /* MAIN */
     /*=======================================*/

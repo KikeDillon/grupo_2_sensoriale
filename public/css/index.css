@@ -61,7 +61,7 @@
 }
 .header-search-bar a{       /*=== lupa de la barra de búsqueda ===*/
     background-color: white;
-    color: #00587a;
+    color: #0f3057;
     height: 20px;
     width: 10%;
     padding-top: 3px;
@@ -82,7 +82,7 @@
     width: 90%;
     justify-content: center;
     padding-right: 5px;
-    color: #00587a;
+    color: #0f3057;
     font-size: 5vw;
 }
 .header-login{              

@@ -7,65 +7,49 @@
 main{
     display: flex;
     background-color: #00587a;
-    margin-bottom: 2vh;
 }
 
 .seccionRegistro {
+    display: flex;    
     width: 100%;
-    display: flex;
     justify-content: center;
-    text-align: center;
+    background-color: brown;
+    padding: 10px 10px;
 }
 .formularioDeRegistro {
     margin-top: 5px;
     display: flex;
+    flex-direction: column;
     margin-bottom: 5px;
     background-color: rgb(228, 228, 228);
-    border-radius: 2%;
-    padding: 20px;
     text-align: center;
-    flex-wrap: wrap;
-    width: 50%;
-    padding-right: 180px;
+    width: 80%;
+    padding: 10px 0px;
 }
 
-.input{
-    text-align: center;
-    border-radius: 5%;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 361px) {
     .seccionRegistro {
         width: 100%;
         display: flex;
         justify-content: center;
-        text-align: center;
-        padding-left: 20%;
-        padding-right: 20%;
+
     }
     .formularioDeRegistro {
-        margin-top: 5px;
         display: flex;
+        margin-top: 5px;
         margin-bottom: 5px;
         background-color: rgb(228, 228, 228);
-        padding: 20px;
-        text-align: center;
-        flex-wrap: wrap;
         width: 50%;
-        padding-right: 14%;
-        padding-left: 8%;
     }
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
     .seccionRegistro {
         width: 100%;
         display: flex;
         justify-content: center;
         text-align: center;
-        padding-left: 42%;
-        padding-right: 8%;
     }
     .formularioDeRegistro {
         margin-top: 5px;
