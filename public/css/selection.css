@@ -65,7 +65,6 @@
         width: 100%;
         height: 500px;
         flex-wrap: wrap;
-        padding: 5px 0px;
     }
     
     .articles-inputs{        /*=== sección para búsqueda de artículos === */
@@ -73,9 +72,17 @@
         width: 30%;
         background-color: #e7e7de;
         height: 100%;
-        margin: 0px 5px;
-        align-items: center;
+        align-items:flex-start;
         justify-content: center;
+        padding: 15px 0px;
+    }
+    .articles-inputs div{
+        display: flex;
+        width: 90%;
+        background-color: #00587a;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
     }
     
     .articles-section{     /*=== sección para todos los artículos === */
@@ -83,18 +90,41 @@
         flex-wrap: wrap;
         width: 70%;
         height: 100%;
-        background-color: #008891;
-        margin-right: 50px;
+        background-color: #e7e7de;
         justify-content: space-evenly;
-        align-content: center;
+        align-items: center;
     }
     
-    .article{              /*=== hay 6 artículos que reciben esta clase === */
+    .article-a{              /*=== hay 6 artículos que reciben esta clase === */
         display: flex;
         width: 45%;
         height: 30%;
-        background-color: #e7e7de;
+        background-color: #008891;
         justify-content: center;
         align-items: center;
+    }
+    .article-b{
+        display: none;
     }    
+}
+
+@media (min-width: 769px){
+    
+    /*=======================================*/
+                   /* NOTEBOOK */
+    /*=======================================*/
+
+    .article-b{             /*=== hay 3 artículos que reciben esta clase === */
+        display: block;
+    }
+    .article-a, .article-b{ /*=== acomodamos los 9 artículos en pantalla === */
+        display: flex;
+        width: 30%;
+        height: 30%;
+        background-color: #008891;
+        justify-content: center;
+        align-items: center;
+    }
+
+
 }
