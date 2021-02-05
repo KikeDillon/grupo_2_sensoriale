@@ -9,23 +9,40 @@ main{
     background-color: #00587a;
 }
 
-.seccionRegistro {
+.inicioFormulario {
     display: flex;    
     width: 100%;
     justify-content: center;
-    background-color: brown;
     padding: 10px 10px;
 }
 .formularioDeRegistro {
-    margin-top: 5px;
+    /*margin-top: 5px;
     display: flex;
-    flex-direction: column;
     margin-bottom: 5px;
     background-color: rgb(228, 228, 228);
     text-align: center;
-    width: 80%;
-    padding: 10px 0px;
+    padding: 10px 10px;
+    justify-content: center;*/
+    width: 100%;
+    flex-direction: column;
+    margin-top: 5px;
+    max-width: 500px;
+    background-color: rgb(228, 228, 228);
+    padding: 20px;
+    padding-right: 25px;
+    text-align: left;
+    border-radius: 5px;
+    padding-left: 35px;
 }
+.input {
+    margin-bottom: 20px;
+    }
+
+.button {
+    align-self: flex-end;
+    margin-top: 5%;
+}
+
 
 @media (min-width: 361px) {
     .seccionRegistro {
@@ -35,23 +52,6 @@ main{
 
     }
     .formularioDeRegistro {
-        display: flex;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        background-color: rgb(228, 228, 228);
-        width: 50%;
-    }
-}
-
-
-@media (min-width: 769px) {
-    .seccionRegistro {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-    .formularioDeRegistro {
         margin-top: 5px;
         display: flex;
         margin-bottom: 5px;
@@ -59,8 +59,11 @@ main{
         padding: 20px;
         text-align: center;
         flex-wrap: wrap;
-        width: 50%;
-        padding-right: 14%;
-        padding-left: 8%;
+        width: 60%;
+    }
+    .input {
+        width: 95%;
     }
 }
+
+
