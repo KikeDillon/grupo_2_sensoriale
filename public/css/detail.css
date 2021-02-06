@@ -1,0 +1,82 @@
+/*=======================================*/
+                /* MAIN */
+/*=======================================*/
+
+.article-pic-detail{        /*=== contenedor foto y detalle === */
+    display: flex;
+    width: 100%;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.article-pic{
+    display: flex;
+    width: 100%;
+    height: 60%;
+    background-color:  #008891;
+    justify-content: center;
+    align-items: center;    
+}
+.article-detail{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    background-color:  #008891;
+    justify-content: center;
+    align-items: center;    
+}
+.btns-detail{
+    display: flex;
+    width: 100%;
+    height: 250px;
+    background-color: #e7e7de;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.btns-detail div{
+    display: flex;
+    width: 80%;
+    height: 20%;
+    background-color: #008891;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 361px){
+    
+    /*=======================================*/
+                    /* TABLET */
+    /*=======================================*/
+
+    .pic-det-btn{
+        display: flex;
+        width: 70%;
+        height: 100%;
+    }
+    .article-pic-detail{        /*=== contenedor foto y detalle === */
+        width: 50%;
+        height: 100%;
+        background-color: #e7e7de;
+    }
+    .article-pic{
+        height: 55%;
+    }
+    .article-detail{
+        display: flex;
+        height: 35%;
+    }
+    .btns-detail{
+        width: 50%;
+        height: 100%;
+    }
+    .btns-detail div{
+        display: flex;
+        width: 80%;
+        height: 20%;
+        background-color: #008891;
+        justify-content: center;
+        align-items: space-around;
+    }
+}    
