@@ -44,7 +44,7 @@
     align-items: center;
 }
 
-@media (min-width: 361px){
+@media (min-width: 515px){
     
     /*=======================================*/
                     /* TABLET */
@@ -52,7 +52,6 @@
 
     .pic-det-btn{
         display: flex;
-        width: 70%;
         height: 100%;
     }
     .article-pic-detail{        /*=== contenedor foto y detalle === */
@@ -62,10 +61,12 @@
     }
     .article-pic{
         height: 55%;
+        width: 90%;
     }
     .article-detail{
         display: flex;
         height: 35%;
+        width: 90%;
     }
     .btns-detail{
         width: 50%;

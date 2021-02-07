@@ -69,8 +69,11 @@ main{
   }
 
   .button {
+    background-color: rgb(228, 228, 228) ;
+    border: none;
     align-self: flex-end;
     margin-top: 5%;
+    font-family: 'Comfortaa', cursive;
 }
   
   /* Content Desktop */
