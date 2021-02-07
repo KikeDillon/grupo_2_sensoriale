@@ -44,6 +44,7 @@ a{
     padding: 20px;
     }
 }
+
 @media (min-width: 768px){
     .formulario{
         margin-left: 45%; 
