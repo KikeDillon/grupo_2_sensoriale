@@ -17,12 +17,13 @@ main{
 }
 .formularioDeRegistro {
     /*margin-top: 5px;
-    display: flex;
+    
     margin-bottom: 5px;
     background-color: rgb(228, 228, 228);
     text-align: center;
     padding: 10px 10px;
     justify-content: center;*/
+    display: flex;
     width: 100%;
     flex-direction: column;
     margin-top: 5px;
@@ -53,16 +54,14 @@ main{
     }
     .formularioDeRegistro {
         margin-top: 5px;
-        display: flex;
         margin-bottom: 5px;
-        background-color: rgb(228, 228, 228);
         padding: 20px;
         text-align: center;
         flex-wrap: wrap;
     }
-    .input {
+    /*.input {
         width: 95%;
-    }
+    }*/
 }
 
 
