@@ -86,23 +86,4 @@ main{
     .content form label {
       width: 100%;
     }
-
-@media (min-width: 769px) {
-    .seccionRegistro {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-    }
-    .formularioDeRegistro {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 20px;
-        text-align: center;
-        flex-wrap: wrap;
-    }
-    /*.input {
-        width: 95%;
-    }*/
-}
   }

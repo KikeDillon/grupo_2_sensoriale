@@ -16,6 +16,10 @@ app.get('/', function(req, res){
     res.sendFile (path.resolve(__dirname, './views/index.html'));
 });
 
+app.get('/', function(req, res){
+    res.sendFile (path.resolve(__dirname, './views/maridaje.html'));
+});
+
 app.get('/register', function(req, res){
     res.sendFile (path.resolve(__dirname, './views/register.html'));
 });

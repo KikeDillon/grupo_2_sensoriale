@@ -40,19 +40,18 @@ main{
     align-items: center;
   }
   
-  .content form label input {
+  .input {
     flex: 1 0 auto;
     border: none;
     outline: none;
-    padding: 1rem;
+    padding: 0.5rem;
     color: #000;
     border-radius: 2rem;
   }
   
-  .content form label input::placeholder {
+  .input::placeholder {
     opacity: 1;
     color: #000;
-    font-weight: bold;
     text-transform: uppercase;
     text-align: center;
   }
@@ -73,19 +72,3 @@ a{
     font-family: 'Comfortaa', cursive;
     }
 
-@media (min-width: 361px){
-    .formulario{
-        justify-self: center;
-    }
-    .formularioLogin{
-    margin-top: 5px;    
-    margin-bottom: 5px;
-    padding: 20px;
-    }
-}
-
-@media (min-width: 768px){
-    .formulario{
-        margin-left: 45%; 
-    }
-}
