@@ -35,3 +35,11 @@ app.get ('/detail', function (req,res){
 app.get ('/selection', function (req,res){
     res.sendFile (path.resolve(__dirname, './views/selection.html'));
 });
+
+app.get ('/payment', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/payment.html'));
+});
+
+app.get ('/shipping', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/shipping.html'));
+});
