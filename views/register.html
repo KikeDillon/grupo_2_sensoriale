@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/tablet.css">
-    <link rel="stylesheet" href="../css/notebook.css">
+
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/register.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
@@ -22,7 +22,7 @@
                 <a href="#"><i class="fas fa-search"></i></a>
             </div>
             <div class="header-checkout">
-                <a href="/checkout"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
             </div>
             <div class="header-login">
                 <a href="/login"><i class="fas fa-sign-in-alt"></i></a>
@@ -32,20 +32,20 @@
             <div class="burger-icon"><i class="fa fa-bars burger"></i></div>
             <div class="burguer-menu">
                 <ul>
-                    <li><a href="/selection">Mujeres</a></li>
-                    <li><a href="/selection">Hombres</a></li>
-                    <li><a href="/selection">Unisex</a></li>
-                    <li><a href="/selection">Outlet</a></li>
+                    <li><a href="#">Mujeres</a></li>
+                    <li><a href="#">Hombres</a></li>
+                    <li><a href="#">Unisex</a></li>
+                    <li><a href="#">Outlet</a></li>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Registrarse</a></li>
                 </ul>
             </div>
             <div class="nav-menu">
                 <ul>
-                    <li><a href="/selection">Mujeres</a></li>
-                    <li><a href="/selection">Hombres</a></li>
-                    <li><a href="/selection">Unisex</a></li>
-                    <li><a href="/selection">Outlet</a></li>
+                    <li><a href="#">Mujeres</a></li>
+                    <li><a href="#">Hombres</a></li>
+                    <li><a href="#">Unisex</a></li>
+                    <li><a href="#">Outlet</a></li>
                 </ul>
             </div>
         </nav>
@@ -55,34 +55,24 @@
         <div class="banner">
             <h3>Banner</h3>
         </div>
-        <section class="seccionRegistro">
-            <form class="inicioFormulario" action="Formulario de registro" action="/" method="POST">
-                <div class= "formularioDeRegistro">
-                <div class="input">
+        <section class="content">
+            <form  action="Formulario de registro" action="/" method="POST">
+                <label for="nombre">
                     <input type="text" name="nombre" placeholder="Nombre" required>
-                </div>
-                <div class="input">
+                </label>
+                <label for="apellido">
                     <input type="text" name="apellido" placeholder="Apellido" required>
-                </div>
-                <div class="input">
-                    <input type="text" name="dni" placeholder="DNI" required>
-                </div>
-                <div class="input">
-                    <select name="sexo" id="sexo">
-                        <option value="sexo">Masculino</option>
-                        <option value="sexo">Femenino</option>
-                    </select>
+                </label>
+                <label for="dni">
+                    <input type="text" name="DNI" placeholder="DNI" required>
+                </label>
+                <label for="contraseña">
+                    <input type="text" name="Contraseña" placeholder="Contraseña" required>
+                </label>
+                <label for="nombre">
+                    <input type="contraseña" name="Contraseña" placeholder="Confirmar Contraseña" required>
+                </label>  
                 
-                </div>
-                <div class="input">
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>  
-                <div class="input">
-                    <input type="password" name="Contraseña" placeholder="Contraseña" required>
-                </div>
-                <div class="input">
-                    <input type="password" name="Contraseña" placeholder="Confirmar Contraseña" required>
-                </div>
                 <div class="button">
                     <button type="submit">Enviar</button>   
                 </div>
