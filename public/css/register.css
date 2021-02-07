@@ -44,8 +44,12 @@ main{
     margin-top: 5%;
 }
 
+<<<<<<< HEAD
 
 @media (min-width: 361px) {
+=======
+@media (min-width: 769px) {
+>>>>>>> bdd0482befcde1889e288a1c61f8b517f97791bc
     .seccionRegistro {
         width: 100%;
         display: flex;

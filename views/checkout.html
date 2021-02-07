@@ -6,19 +6,64 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
 </head>
 <body class="body">
     <header class="main-header">
         <div class="header-top">
-            <h3>Header-Top</h3>
+            <div class="header-logo">
+                <a href="/"><img src="../images/header-logo-celu.png" alt="Logo Sensoriale"></a>
+            </div>
+            <div class="header-search-bar">
+                <input type="text" name="header-search-bar" placeholder="  Buscar...">
+                <a href="#"><i class="fas fa-search"></i></a>
+            </div>
+            <div class="header-checkout">
+                <a href="/checkout"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="header-login">
+                <a href="/login"><i class="fas fa-sign-in-alt"></i></a>
+            </div>
         </div>
         <nav class="nav-bar">
-            <h3>Nav-Bar</h3>
+            <div class="burger-icon"><i class="fa fa-bars burger"></i></div>
+            <div class="burguer-menu">
+                <ul>
+                    <li><a href="/selection">Mujeres</a></li>
+                    <li><a href="/selection">Hombres</a></li>
+                    <li><a href="/selection">Unisex</a></li>
+                    <li><a href="/selection">Outlet</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Registrarse</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="/selection">Mujeres</a></li>
+                    <li><a href="/selection">Hombres</a></li>
+                    <li><a href="/selection">Unisex</a></li>
+                    <li><a href="/selection">Outlet</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main class="main">
-        <h4>CHECKOUT</h4>
+        <div class="main-header-space"></div>
+        <section class="articles-checkout">
+            <section class="checkout-bar"><h4>Títulos de Listado</h4></section>
+            <section class="art-list-ck">
+                <article class="article-ck"><h4>Artículo 1 / detalle en columnas</h4></article>
+                <article class="article-ck"><h4>Artículo 2 / detalle en columnas</h4></article>
+                <article class="article-ck"><h4>Artículo 3 / detalle en columnas</h4></article>
+            </section>
+            <section class="btns-ck">
+                <h4>Botones de compra <a href="/payment">PAGAR</a></h4>
+            </section>
+        </section>
+
     </main>    
     <footer class="main-footer">
         <section class="footer-section"><h4>Footer Izquierda</h4></section>    

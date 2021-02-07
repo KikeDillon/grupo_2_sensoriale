@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/selection.css">
+    <link rel="stylesheet" href="../css/detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -18,7 +19,7 @@
                 <a href="/"><img src="../images/header-logo-celu.png" alt="Logo Sensoriale"></a>
             </div>
             <div class="header-search-bar">
-                <input type="text" name="header-search-bar" placeholder="Buscar...">
+                <input type="text" name="header-search-bar" placeholder="  Buscar...">
                 <a href="#"><i class="fas fa-search"></i></a>
             </div>
             <div class="header-checkout">
@@ -55,39 +56,24 @@
         <div class="banner">
             <h3>Banner</h3>
         </div>
-        <section class="seccionRegistro">
-            <form class="inicioFormulario" action="Formulario de registro" action="/" method="POST">
-                <div class= "formularioDeRegistro">
-                <div class="input">
-                    <input type="text" name="nombre" placeholder="Nombre" required>
+        <section class="articles-selection">
+            <section class="articles-inputs">
+                <div>
+                    <h3>inputs de búsqueda de art.</h3>
                 </div>
-                <div class="input">
-                    <input type="text" name="apellido" placeholder="Apellido" required>
-                </div>
-                <div class="input">
-                    <input type="text" name="dni" placeholder="DNI" required>
-                </div>
-                <div class="input">
-                    <select name="sexo" id="sexo">
-                        <option value="sexo">Masculino</option>
-                        <option value="sexo">Femenino</option>
-                    </select>
-                
-                </div>
-                <div class="input">
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>  
-                <div class="input">
-                    <input type="password" name="Contraseña" placeholder="Contraseña" required>
-                </div>
-                <div class="input">
-                    <input type="password" name="Contraseña" placeholder="Confirmar Contraseña" required>
-                </div>
-                <div class="button">
-                    <button type="submit">Enviar</button>   
-                </div>
-            </div>
-            </form>
+            </section>
+            <section class="pic-det-btn">
+                <section class="article-pic-detail">
+                    <article class="article-pic"><h4>Foto procucto</h4></article>
+                    <article class="article-detail"><h4>Detalle producto</h4></article>
+                </section>
+                <section class="btns-detail">
+                    <div class="btn-1"><h4>btn-1</h4></div>
+                    <div class="btn-2"><h4>btn-2</h4></div>
+                    <div class="btn-3"><h4>btn-3</h4></div>
+                    <div class="btn-4"><h4>Agregar al Carrito</h4></div>
+                </section>
+            </section>
         </section>
     </main>    
     <footer class="main-footer">

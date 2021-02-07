@@ -1,0 +1,122 @@
+.main-payment{              /*=== main del pago, 100% ancho, 600px de altura === */
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    height: 600px;
+    background-color:#0f3057;
+    justify-content: center;
+    align-items: center;
+}
+.main-payment .tc-data {    /*=== contenedor de datos de tarjeta de crédito === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+}
+.main-payment .tc-data .data-payment{   /*=== título informando que es el pagó de tarjeta === */
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;    
+}
+
+.main-payment .tc-data ul{                 /*=== botones para completar datos de tarjeta === */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    justify-content: space-evenly;
+}
+.main-payment .tc-data ul li{               /*=== lista de botones === */
+    display: flex;
+    width: 100%;
+    height: 20%;
+    background-color: #e7e7de;
+    justify-content: center;
+    align-items: center;
+}
+.main-payment .btn-total-cancel{            /*=== contenedor de botones total y cancelar === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+.main-payment .btn-total-cancel .btn-total, .btn-cancel{    /*=== detalles de los botones total y cancelar === */
+    display: flex;
+    width: 80%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7e7de;
+}
+.main-payment .btn-payment{             /*=== contenedor del botón para confirmar pago === */
+    display: flex;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+}
+.main-payment .btn-payment .btn-pay{    /*=== detalle de botón Pagar === */
+    display: flex;
+    width: 80%;
+    height: 90%;
+    background-color: #e7e7de;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 361px){
+    
+    /*=======================================*/
+                    /* TABLET */
+    /*=======================================*/
+
+    .main-payment .tc-data {    /*=== contenedor de datos de tarjeta de crédito === */
+        width: 50%;
+        height: 100%;
+    }
+    .main-payment .tc-data ul{                 /*=== botones para completar datos de tarjeta === */
+
+        width: 80%;
+        height: 80%;
+
+    }
+    .main-payment .tc-data ul li{               /*=== lista de botones === */
+        width: 100%;
+        height: 20%;
+
+    }
+
+
+    .main-payment .btn-total-cancel{            /*=== contenedor de botones total y cancelar === */
+
+        width: 25%;
+        height: 90%;
+        align-items: center;
+
+    }
+    .main-payment .btn-total-cancel .space-total-cancel{       /*=== aporto un espacio para llevar los 2 botones hacia el fondo === */ 
+        width: 100%;
+        height: 60%;
+    }   
+
+    .main-payment .btn-total-cancel .btn-total, .btn-cancel{    /*=== detalles de los botones total y cancelar === */
+        width: 80%;
+        height: 10%;
+
+    }
+    .main-payment .btn-payment{             /*=== contenedor del botón para confirmar pago === */
+        width: 25%;
+        height: 84%;
+        align-items: flex-end;
+    }
+    .main-payment .btn-payment .btn-pay{    /*=== detalle de botón Pagar === */
+        width: 80%;
+        height: 10%;
+    }
+
+}

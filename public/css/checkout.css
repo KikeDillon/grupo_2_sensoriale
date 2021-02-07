@@ -1,0 +1,78 @@
+.articles-checkout{         /*=== main del carrito, 100% ancho, 400px de altura === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 400px;
+}
+.checkout-bar{              /*=== no se muestra la barra de títulos en celulares === */
+    display: none;
+}
+.art-list-ck{               /*=== contenedor de lista de artículos === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 75%;
+    background-color:  #00587a;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.article-ck{                /*=== artículos dentro del listado === */
+    display: flex;
+    width: 90%;
+    height: 30%;
+    background-color: #e7e7de;
+    justify-content: center;
+    align-items: center;
+}
+.btns-ck{                   /*=== botones sobre totales y link de realización del pago === */
+    display: flex;
+    width: 100%;
+    height: 25%;
+    background-color:#008891;
+    justify-content: center;
+    align-items: center;
+}
+.btns-ck h4 a{              /*=== link a la página de pago === */
+    text-decoration: none;
+}
+
+@media (min-width: 361px){
+    
+    /*=======================================*/
+                    /* TABLET */
+    /*=======================================*/
+
+    .articles-checkout{
+        height: 700px;
+    }
+    .checkout-bar{
+        display: block;
+        display: flex;
+        width: 100%;
+        height: 10%;
+        background-color: #e7e7de;
+        justify-content: center;
+        align-items: center;
+    }
+    .art-list-ck{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 80%;
+        background-color:  #00587a;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .article-ck{
+        display: flex;
+        width: 90%;
+        height: 30%;
+        background-color: #e7e7de;
+        justify-content: center;
+        align-items: center;
+    }
+    .btns-ck{
+        height: 10%;
+    }
+
+}    

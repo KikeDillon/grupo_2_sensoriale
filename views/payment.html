@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/payment.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -18,7 +18,7 @@
                 <a href="/"><img src="../images/header-logo-celu.png" alt="Logo Sensoriale"></a>
             </div>
             <div class="header-search-bar">
-                <input type="text" name="header-search-bar" placeholder="Buscar...">
+                <input type="text" name="header-search-bar" placeholder="  Buscar...">
                 <a href="#"><i class="fas fa-search"></i></a>
             </div>
             <div class="header-checkout">
@@ -52,42 +52,24 @@
     </header>
     <main class="main">
         <div class="main-header-space"></div>
-        <div class="banner">
-            <h3>Banner</h3>
-        </div>
-        <section class="seccionRegistro">
-            <form class="inicioFormulario" action="Formulario de registro" action="/" method="POST">
-                <div class= "formularioDeRegistro">
-                <div class="input">
-                    <input type="text" name="nombre" placeholder="Nombre" required>
-                </div>
-                <div class="input">
-                    <input type="text" name="apellido" placeholder="Apellido" required>
-                </div>
-                <div class="input">
-                    <input type="text" name="dni" placeholder="DNI" required>
-                </div>
-                <div class="input">
-                    <select name="sexo" id="sexo">
-                        <option value="sexo">Masculino</option>
-                        <option value="sexo">Femenino</option>
-                    </select>
-                
-                </div>
-                <div class="input">
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>  
-                <div class="input">
-                    <input type="password" name="Contraseña" placeholder="Contraseña" required>
-                </div>
-                <div class="input">
-                    <input type="password" name="Contraseña" placeholder="Confirmar Contraseña" required>
-                </div>
-                <div class="button">
-                    <button type="submit">Enviar</button>   
-                </div>
-            </div>
-            </form>
+        <section class="main-payment">
+            <section class="tc-data">
+                    <div class="data-payment"><h4>Datos para el pago</h4></div>
+                    <ul>
+                        <li>Input N° Tarjeta</li>
+                        <li>Input Nombre Titular</li>
+                        <li>Input Fecha Vencimiento</li>
+                        <li>Input Código Seguridad</li>
+                    </ul>
+            </section>
+            <section class="btn-total-cancel">
+                <div class="space-total-cancel"></div>
+                <div class="btn-total"><h4>botón total</h4></div>
+                <div class="btn-cancel"><h4>botón cancelar</h4></div>
+            </section>
+            <section class="btn-payment">
+                    <div class="btn-pay"><h4>Pagar</h4></div>
+            </section>
         </section>
     </main>    
     <footer class="main-footer">
