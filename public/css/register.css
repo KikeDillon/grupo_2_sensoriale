@@ -46,7 +46,6 @@ main{
     border: none;
     outline: none;
     padding: 1rem;
-    background-color: ;
     color: #000;
     border-radius: 2rem;
   }
@@ -103,5 +102,4 @@ main{
         width: 95%;
     }*/
 }
-
-
+  }
