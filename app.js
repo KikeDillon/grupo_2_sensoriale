@@ -51,3 +51,7 @@ app.get ('/maridaje', function (req,res){
 app.get ('/packaging', function (req,res){
     res.sendFile (path.resolve(__dirname, './views/packaging.html'));
 });
+
+app.get ('/tarjeta-personalizada', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/tarjeta-personalizada.html'));
+});
