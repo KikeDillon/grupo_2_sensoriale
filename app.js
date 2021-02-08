@@ -13,10 +13,6 @@ app.listen (app.get ('puerto'), function(){
 });
 
 app.get('/', function(req, res){
-    res.sendFile (path.resolve(__dirname, './views/index.html'));
-});
-
-app.get('/', function(req, res){
     res.sendFile (path.resolve(__dirname, './views/maridaje.html'));
 });
 
@@ -46,4 +42,8 @@ app.get ('/payment', function (req,res){
 
 app.get ('/shipping', function (req,res){
     res.sendFile (path.resolve(__dirname, './views/shipping.html'));
+});
+
+app.get ('/maridaje', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/maridaje.html'));
 });
