@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    font-family: 'Comfortaa', cursive;
+}
+
+main{
+    background-color: #00587a;
+}
+
+h3{
+    color: rgb(228, 228, 228);
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
+    font-size: 30px;
+}
+
+.content form {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  }
+
+  .content form label {
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content form label input {
+    flex: 1 0 auto;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    color: #000;
+    border-radius: 1rem;
+  } 
+
+
+  .img-producto{
+    background-color: rgb(228, 228, 228);
+    height: 30vh;
+    border-radius: 1rem;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .ingresar{
+      text-decoration: none;
+      color: rgb(228, 228, 228);
+        border: none;
+        align-self: flex-end;
+        margin-top: 5%;
+        margin-right: 5vw;
+        font-size: 1rem;
+        padding-bottom: 5%;
+        font-family: 'Comfortaa', cursive;
+  }
+
+  @media (min-width: 515px){
+    .content{
+    margin-top: 3vh;
+    margin-bottom: 0.1vh;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    }
+    
+    .content form{
+    padding: 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: left;
+    width: 50%;
+    margin-right: 10vw;
+    }
+    .img-producto {
+        background-color: rgb(228, 228, 228);
+        height: 35vh;
+        width: 35vw;
+        border-radius: 1rem;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }

@@ -55,3 +55,7 @@ app.get ('/packaging', function (req,res){
 app.get ('/tarjeta-personalizada', function (req,res){
     res.sendFile (path.resolve(__dirname, './views/tarjeta-personalizada.html'));
 });
+
+app.get ('/envio', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/envio.html'));
+});

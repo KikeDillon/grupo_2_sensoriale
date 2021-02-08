@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/packaging.css">
+    <link rel="stylesheet" href="../css/envio.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -17,7 +18,7 @@
                 <a href="/"><img src="../images/header-logo-celu.png" alt="Logo Sensoriale"></a>
             </div>
             <div class="header-search-bar">
-                <input type="text" name="header-search-bar" placeholder="  Buscar...">
+                <input type="text" name="header-search-bar" placeholder="Buscar...">
                 <a href="#"><i class="fas fa-search"></i></a>
             </div>
             <div class="header-checkout">
@@ -49,22 +50,45 @@
             </div>
         </nav>
     </header>
-    <main>
-        <section class="articulo">
-            <article class="producto">articulo</article>
-        </section>
-        <h3>Opciones de opciones-packaging</h3>
-        <section class="opciones-packaging">
-            <article class="packaging">opcion packaging 1</article>
-            <article class="packaging">opcion packaging 2</article>
-            <article class="packaging">opcion packaging 3</article>
-            <article class="packaging">opcion packaging 4</article>
-        </section>
-        <div class="a">
-            <a class="agregar" href="/checkout">Vincular con otras compras</a>
-            <a class="agregar" href="/tarjeta-personalizada">Omitir</a>
-            <a class="agregar" href="/tarjeta-personalizada">Agregar</a>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <h3>Completa tus datos</h3>
+        <section class="content">
+            <form  action="Formulario de envio" action="/" method="POST">
+                <label for="direccion">
+                    <input type="text" name="direccion" placeholder="Direccion" required>
+                </label>
+                <label for="piso">
+                    <input type="text" name="piso" placeholder="Piso/Departamento" required>
+                </label>
+                <label for="provincia">
+                    <input type="text" name="provincia" placeholder="Provincia" required>
+                </label>
+                <label for="Codigo postal">
+                    <input type="text" name="codigo postal" placeholder="Codigo postal" required>
+                </label>
+                <label for="nombre">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </label>
+                <label for="apellido">
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                </label>
+                <label for="dni">
+                    <input type="text" name="DNI" placeholder="DNI" required>
+                </label>
+                <label for="Nro de telefono">
+                    <input type="text" name="Nro de telefono" placeholder="Nro de telefono" required>
+                </label> 
+            </div>
+            </form>
+            <div class="producto">
+            <article class="img-producto">imagen del producto</article>
         </div>
+        </section>
+        <section class="button">
+        <a class="ingresar" href="/tarjeta-personalizada">Atras</a>
+        <a class="ingresar" href="/payment">Pagar</a>
+        </section>
     </main>    
     <footer class="main-footer">
         <section class="footer-section"><h4>Footer Izquierda</h4></section>    
