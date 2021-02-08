@@ -47,3 +47,7 @@ app.get ('/shipping', function (req,res){
 app.get ('/maridaje', function (req,res){
     res.sendFile (path.resolve(__dirname, './views/maridaje.html'));
 });
+
+app.get ('/packaging', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/packaging.html'));
+});
