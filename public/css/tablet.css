@@ -2,7 +2,7 @@
         /* NAVEGACIÓN EN TABLETS */
 /*=======================================*/
 
-@media (min-width: 361px){
+@media (min-width: 430px){
     
     /*=======================================*/
                     /* HEADER */
@@ -12,8 +12,7 @@
     
 
     .main-header{               /*=== contenedor del header ===*/
-        display: flex;
-        flex-direction: column;
+    height: 12vh;
     }
     .burger-icon{ 
         display: none;
@@ -22,11 +21,19 @@
         width: 10%;
         padding: 5px;
     }
+
+    .header-top {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+    }
     .header-logo img{           /*=== img del logo ===*/
         height: 80%;
         padding: 5px 0px;
         margin: auto;
     }
+
     .header-search-bar{         /*=== barra de búsqueda ===*/
         margin-left: 30px;
         margin-right: 7vw;
@@ -34,6 +41,7 @@
     }
     .header-search-bar a{       /*=== lupa de la barra de búsqueda ===*/
         width: 7%;
+        padding-top: 1.5vh;
     }
     .header-checkout{           /*=== contenedor de carrito de compras ===*/
         width: 5%;
@@ -100,6 +108,7 @@
     .banner {
         display: block;
         width: 100%;
+        margin-top: 3.5vh;
     }
 
 

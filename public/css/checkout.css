@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    margin-top: 6vh;
     height: 400px;
 }
 .checkout-bar{              /*=== no se muestra la barra de títulos en celulares === */
@@ -36,7 +37,7 @@
     text-decoration: none;
 }
 
-@media (min-width: 361px){
+@media (min-width: 450px){
     
     /*=======================================*/
                     /* TABLET */

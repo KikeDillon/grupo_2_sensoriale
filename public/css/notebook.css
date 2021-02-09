@@ -5,21 +5,26 @@
                     /* HEADER */
     /*=======================================*/
 
-    .header-logo{               /*=== contenedor del logo ===*/
-        width: 6%;
+    /*.header-logo{               /*=== contenedor del logo ===*/
+        /*width: 6%;
+    }*/
+
+    .header-logo img {
+        height: 80%;
+        padding: 5px 0px;
+        margin: auto;
+        width: 10vw;
     }
+
     .header-search-bar{         /*=== barra de búsqueda ===*/
-        margin-left: 120px;
-        margin-right: 15vw;
-        width:50%;
+        margin-left: 90px;
+        margin-right: 10vw;
+        width: 50%;
     }
-    .header-search-bar input {
-        height: 25px;
-    }
+    /*.header-search-bar input {
+    }*/
     .header-search-bar a{       /*=== lupa de la barra de búsqueda ===*/
         width: 7%;
-        height: 25px;
-        padding-left: 10px;
     }
     .header-checkout{           /*=== carrito de compras / contenedor ===*/
         margin-right: 0px;

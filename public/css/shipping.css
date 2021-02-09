@@ -9,7 +9,9 @@
 }
 
 main{
+  margin-top: 8vh;
   width: 100%;
+  background-color: white;
 }
 .main-header-space{     /*=== espacio generado porque el header es fixed === */
   width: 100%;

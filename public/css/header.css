@@ -6,7 +6,6 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 70px;
     position: fixed;
     background-color:  #e7e7de;
 
@@ -15,7 +14,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 60%; 
+    height: 15vh; 
 }
 .header-logo{           /*=== contenedor del logo ===*/
     display: flex;
@@ -143,13 +142,14 @@
 
     .main-header{               /*=== contenedor del header ===*/
         display: flex;
+        height: 10vh;
         flex-direction: column;
     }
     .burger-icon{ 
         display: none;
     }
     .header-logo{               /*=== contenedor del logo ===*/
-        width: 10%;
+       /* width: 10%;*/
         padding: 5px;
     }
     .header-logo img{           /*=== img del logo ===*/
