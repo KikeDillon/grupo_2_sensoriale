@@ -13,7 +13,7 @@ app.listen (app.get ('puerto'), function(){
 });
 
 app.get('/', function(req, res){
-    res.sendFile (path.resolve(__dirname, './views/maridaje.html'));
+    res.sendFile (path.resolve(__dirname, './views/index.html'));
 });
 
 app.get('/register', function(req, res){
