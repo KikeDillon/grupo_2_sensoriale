@@ -32,6 +32,7 @@
     .header-login{              /*=== login / contenedor ===*/
         margin-left: 20px;
     }
+
     .header-checkout a, .header-login a{         /*=== carrito de compras logo bajado de font-awesome ===*/
         font-size: 2vw;
     }
