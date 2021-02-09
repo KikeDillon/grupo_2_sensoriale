@@ -9,9 +9,13 @@
 }
 
 main{
-        background-color: #00587a;
+    width: 100%;
+    background-color: #00587a;
 }
-
+.main-header-space{     /*=== espacio generado porque el header es fixed === */
+    width: 100%;
+    height: 70px;
+}
 .articulo{
     flex-direction: column;
     flex-wrap: wrap;
