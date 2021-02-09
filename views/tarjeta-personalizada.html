@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/tarjeta-personalizada.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -17,7 +17,7 @@
                 <a href="/"><img src="../images/header-logo-celu.png" alt="Logo Sensoriale"></a>
             </div>
             <div class="header-search-bar">
-                <input type="text" name="header-search-bar" placeholder="Buscar...">
+                <input type="text" name="header-search-bar" placeholder="  Buscar...">
                 <a href="#"><i class="fas fa-search"></i></a>
             </div>
             <div class="header-checkout">
@@ -49,26 +49,41 @@
             </div>
         </nav>
     </header>
-    <main class="main">
-        <div class="main-header-space"></div>
-        <div class="banner">
-            <h3>Banner</h3>
-        <section class="content">
-        <form action="/login" method="POST">
-                <label for="email">Email:</label>
-                <br>
-                <input class="input" for="email" name="email" placeholder="Nombre de usuario" required>
-            <br>
-                <label for="password">Contraseña:</label>
-                <br>
-                <input class="input" for="password" name="password" placeholder="Contraseña" required>
-            <br>
-            <div class="a">
-                <a href="#">Olvidaste tu contraseña?</a>
-                <a href="/register">Registrarse</a>
+    <main>
+        <section class="articulo">
+            <article class="producto">articulo</article>
+        </section>
+        <h3>Personalizá tu tarjeta</h3>
+        <h3 class="letra">Letra:</h3>
+        <section>
+            <label class="tipografia" for="Tipografia">
+                <input class="input" type="text" name="Tipografia" placeholder="Tipografia" required>
+            </label>
+            <div class="letra1">
+            <label class="negrita" for="Tipografia">
+                <input type="checkbox" name="Tipografia" placeholder="" required>
+                <span>Negrita</span>
+            </label>
+            <label class="" for="Tipografia">
+                <input type="checkbox" name="Tipografia" placeholder="" required>
+                <span>Italica</span>
+            </label>
             </div>
-                <input class="ingresar" type="submit" value="Ingresar">
-        </form>
+            <label class="para" for="email">Para:</label>
+            <label class="tipografia" for="Tipografia">
+                <input class="input" for="text" name="para" placeholder="Nombre y apellido" required>
+            </label>    
+            <label class="mensaje" for="email">Mensaje:</label>
+            <input class="texto" for="text" name="para" placeholder="" required>
+            <label class="para" for="email">Firma de:</label>
+            <label class="tipografia" for="Tipografia">
+                <input class="input" for="text" name="para" placeholder="Nombre y apellido" required>
+            </label> 
+            <div class="a">
+                <a class="agregar" href="/checkout">Vincular con otras compras</a>
+                <a class="agregar" href="/envio">Omitir</a>
+                <a class="agregar" href="/envio">Agregar</a>
+            </div> 
         </section>
     </main>    
     <footer class="main-footer">

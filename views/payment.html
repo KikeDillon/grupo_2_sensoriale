@@ -55,12 +55,23 @@
         <section class="main-payment">
             <section class="tc-data">
                     <div class="data-payment"><h4>Datos para el pago</h4></div>
-                    <ul>
-                        <li>Input N° Tarjeta</li>
-                        <li>Input Nombre Titular</li>
-                        <li>Input Fecha Vencimiento</li>
-                        <li>Input Código Seguridad</li>
-                    </ul>
+                    <section class="content">
+                    <form  action="Formulario de envio" action="/" method="POST">
+                        <label for="Nro de la tarjeta">
+                            <input type="text" name="Nro de la tarjeta" placeholder="Nro de la tarjeta" required>
+                        </label>
+                        <label for="Nombre del titular">
+                            <input type="text" name="Nombre del titular" placeholder="Nombre del titular" required>
+                        </label>
+                        <label for="Fecha vencimiento">
+                            <input type="text" name="Fecha vencimiento" placeholder="Fecha vencimiento" required>
+                        </label>
+                        <label for="Codigo de seguridad">
+                            <input type="text" name="Codigo de seguridad" placeholder="Codigo de seguridad" required>
+                        </label>
+                    </form>
+                </section>
+            </div>
             </section>
             <section class="btn-total-cancel">
                 <div class="space-total-cancel"></div>

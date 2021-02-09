@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/envio.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -51,24 +52,42 @@
     </header>
     <main class="main">
         <div class="main-header-space"></div>
-        <div class="banner">
-            <h3>Banner</h3>
+        <h3>Completa tus datos</h3>
         <section class="content">
-        <form action="/login" method="POST">
-                <label for="email">Email:</label>
-                <br>
-                <input class="input" for="email" name="email" placeholder="Nombre de usuario" required>
-            <br>
-                <label for="password">Contraseña:</label>
-                <br>
-                <input class="input" for="password" name="password" placeholder="Contraseña" required>
-            <br>
-            <div class="a">
-                <a href="#">Olvidaste tu contraseña?</a>
-                <a href="/register">Registrarse</a>
+            <form  action="Formulario de envio" action="/" method="POST">
+                <label for="direccion">
+                    <input type="text" name="direccion" placeholder="Direccion" required>
+                </label>
+                <label for="piso">
+                    <input type="text" name="piso" placeholder="Piso/Departamento" required>
+                </label>
+                <label for="provincia">
+                    <input type="text" name="provincia" placeholder="Provincia" required>
+                </label>
+                <label for="Codigo postal">
+                    <input type="text" name="codigo postal" placeholder="Codigo postal" required>
+                </label>
+                <label for="nombre">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </label>
+                <label for="apellido">
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                </label>
+                <label for="dni">
+                    <input type="text" name="DNI" placeholder="DNI" required>
+                </label>
+                <label for="Nro de telefono">
+                    <input type="text" name="Nro de telefono" placeholder="Nro de telefono" required>
+                </label> 
             </div>
-                <input class="ingresar" type="submit" value="Ingresar">
-        </form>
+            </form>
+            <div class="producto">
+            <article class="img-producto">imagen del producto</article>
+        </div>
+        </section>
+        <section class="button">
+        <a class="ingresar" href="/tarjeta-personalizada">Atras</a>
+        <a class="ingresar" href="/payment">Pagar</a>
         </section>
     </main>    
     <footer class="main-footer">

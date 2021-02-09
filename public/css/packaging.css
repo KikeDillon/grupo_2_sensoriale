@@ -39,7 +39,7 @@ h3{
     justify-content: center;
 }
 
-.opciones-maridaje{     
+.opciones-packaging{     
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -47,7 +47,7 @@ h3{
     padding: 5px 10px;
 }
 
-.maridaje{
+.packaging{
     width: 100%;
     height: 120px;
     background-color: rgb(228, 228, 228);
@@ -86,7 +86,7 @@ h3{
        margin-right: 25%;
    }
 
-   .descripcion-maridaje{
+   .descripcion-packaging{
     background-color: rgb(228, 228, 228);
     display: flex;
     justify-content: center;
@@ -101,14 +101,14 @@ h3{
        display: flex;
    }
 
-   .opciones-maridaje{
+   .opciones-packaging{
     height: 70vh;
     background-color: revert;
     justify-content: space-between;
     align-items: center;
    }
 
-   .maridaje{
+   .packaging{
     width: 45%;
     height: 30vh;
     flex-wrap: wrap;

@@ -27,11 +27,7 @@ main{
     align-items: center;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-}
-
-.descripcion-maridaje{
-    display: none;
-}
+}   
 
 h3{
     color: rgb(228, 228, 228);
@@ -39,24 +35,63 @@ h3{
     justify-content: center;
 }
 
-.opciones-maridaje{     
+.letra{
+    margin-top: 3vh;
+    color: rgb(228, 228, 228);
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 5px 10px;
+    justify-content: center;
 }
 
-.maridaje{
+.tipografia{
+    margin-top: 1rem;
     width: 100%;
-    height: 120px;
-    background-color: rgb(228, 228, 228);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-} 
+}
+
+.input{
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    color: #000;
+    border-radius: 1rem;
+}
+
+.letra1{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.negrita{
+    margin-right: 2vw ;
+}
+
+.para{
+    margin-top: 3vh;
+    color: rgb(228, 228, 228);
+    display: flex;
+    justify-content: center;
+}
+
+.mensaje{
+    margin-top: 3vh;
+    color: rgb(228, 228, 228);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+.texto{
+    display: flex;
+    width: 90vw;
+    margin-left: 5vw;
+    height: 20vh;
+    border-radius: 1rem;
+    border: none;
+}
+
 .a{
     margin-top: 5%;
     display: flex;
@@ -84,40 +119,6 @@ h3{
    .producto{
        height: 100%;
        margin-right: 25%;
-   }
-
-   .descripcion-maridaje{
-    background-color: rgb(228, 228, 228);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;  
-    width: 40%;
-    height: 25vh;
-    flex-wrap: wrap;
-   }
-   h3{
-       display: flex;
-   }
-
-   .opciones-maridaje{
-    height: 70vh;
-    background-color: revert;
-    justify-content: space-between;
-    align-items: center;
-   }
-
-   .maridaje{
-    width: 45%;
-    height: 30vh;
-    flex-wrap: wrap;
-    background-color: rgb(228, 228, 228);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
    }
 }
 

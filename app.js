@@ -47,3 +47,15 @@ app.get ('/shipping', function (req,res){
 app.get ('/maridaje', function (req,res){
     res.sendFile (path.resolve(__dirname, './views/maridaje.html'));
 });
+
+app.get ('/packaging', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/packaging.html'));
+});
+
+app.get ('/tarjeta-personalizada', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/tarjeta-personalizada.html'));
+});
+
+app.get ('/envio', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/envio.html'));
+});
