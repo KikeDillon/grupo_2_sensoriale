@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
@@ -68,8 +70,26 @@
     </main>    
     <footer class="main-footer">
         <section class="footer-section"><h4>Footer Izquierda</h4></section>    
-        <section class="footer-section"><h4>Footer Centro</h4></section>    
-        <section class="footer-section"><h4>Footer Derecha</h4></section>    
+        <section class="footer-section">
+            <div class="footer-newsletter">
+             <h2>@ newsletter</h2>
+             <h4>Suscribite y recibí novedades y promociones</h4>
+                <form class="form-newsletter" action="/email-newsleter" method="POST">
+                    <input class ="input-newsletter" type="email" name="email" placeholder="ingresá tu email" required>
+                    <button class="btn-send" type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>    
+        <section class="footer-section">
+            <div class="footer-redes">
+                <h2>Nuestras Redes Sociales</h2><br>
+                <a href="/"><i class="fab fa-facebook-square"></i></a>
+                <a href="/"><i class="fab fa-instagram"></i></a>
+                <a href="/"><i class="fab fa-twitter"></i></a>
+                <a href="/"><i class="fab fa-pinterest"></i></a>
+                <a href="/"><i class="fab fa-youtube"></i></a>
+            </div>
+        </section>    
     </footer>
 </body>
 </html>
