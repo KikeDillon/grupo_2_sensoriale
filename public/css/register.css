@@ -8,7 +8,9 @@
 }
 
 main{
-    background-color: #00587a;
+  margin-top: 8vh;
+  width: 100%;
+  background-color: #00587a;
 }
 
 .content {
