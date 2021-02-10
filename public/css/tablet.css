@@ -50,7 +50,7 @@
         margin-right: 10px;
    }
     .header-checkout a{         /*=== carrito de compras logo bajado de font-awesome ===*/
-        font-size: 3vw;
+        font-size: 2vw;
     }
     .header-login{              /*=== login contenedor  ===*/
         display: block;
@@ -66,7 +66,7 @@
         justify-content: center;
         padding-right: 5px;
         color: #0f3057;
-        font-size: 3vw; 
+        font-size: 2vw; 
         text-decoration: none;
     }
     .nav-bar{                   /*=== contenedor de nav-bar  ===*/
