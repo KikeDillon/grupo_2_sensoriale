@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
 }
 .body{
     display: flex;
     flex-wrap: wrap;
-    font-family: 'Comfortaa', cursive;
+
 }
 
 /*=======================================*/
