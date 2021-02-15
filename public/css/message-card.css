@@ -153,10 +153,11 @@
     color: #e7e7de;
     font-weight: bolder;
     padding: 5px;
+    cursor: pointer;
 }
 #btn-enter{
     background-color: #008891;
-    color: #e7e7de;    
+    color: #e7e7de;  
 }
 .to-payment{
     display: flex;
@@ -172,6 +173,7 @@
 .to-payment a:hover{
     color: #00587a;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 @media (min-width: 515px){

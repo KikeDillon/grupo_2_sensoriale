@@ -110,11 +110,13 @@ main{
     background-color: #0f3057;
     font-weight: bolder;
     color: #e7e7de;
+    cursor: pointer;
 }
 #btn-payment-cancel:hover{
     background-color: tomato;
     font-weight: bolder;
     color: #e7e7de;
+    cursor: pointer;
 }
 
 @media (min-width: 515px){
