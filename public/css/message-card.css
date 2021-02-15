@@ -11,51 +11,128 @@
 
 .main{
     width: 100%;
-    height: 570px;
+    height: 800px;
 }
 .main-header-space{     /*=== espacio generado porque el header es fixed === */
     width: 100%;
     height: 100px;
 }
-.main-register{
+.main-message-card{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 300px;
+    height: 610px;
 }
-.main-register p{
+.main-message-card p{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
-    height: 80px;
-    font-size: 8vw;
+    height: 90px;
+    font-size: 7vw;
     font-weight: bolder;
     color: #00587a;
 }
-.main-register .section-register{
+.section-message-card{
+    display: flex;
+    width: 100%;
+    height: 550px;
+
+}
+.section-message-card form{
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
-.main-register .section-register form{
+.section-message-card form div{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
-
-}
-.main-register .section-register form div{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 35px;
     margin: 7px 0px;
     margin-top: 3px;
-
+    justify-content: center;
 }
-.main-register .section-register form div input{
+.font-type h4{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 10px;
+    color: #008891;
+}
+.font-type div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+}
+#font{
+    border: solid 1px #008891;
+    border-radius: 0.5rem;
+    color: #00587a;
+    height: 40px;
+    width: 70%;
+    max-width: 500px;
+}
+.letter-style{
+    max-width: 500px;
+}
+.letter-style .black{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.letter-style .italic{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+#italic, #black{
+    display: flex;
+    width: 20%;
+}
+.letter-style div label{
+    display: flex;
+    width: 50%;
+}
+.for-name label, .from-name label{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #008891;
+}
+#name, #fname{
+    display: flex;
+    width: 70%;
+    margin: 5px;
+    height: 35px;
+}
+.textarea label{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #008891;
+}
+#textarea{
+    display: flex;
+    width: 70%;
+    max-width: 500px;
+    margin: 5px;
+    width: 70%;
+    height: 100px;
+    border-radius: 0.5rem;
+    border: solid 1px #008891;
+    padding: 10px;
+}
+
+.main-message-card .section-message-card form div input{
     width: 70%;
     max-width: 500px;
     border: solid 1px #008891;
@@ -64,6 +141,7 @@
 }
 #btn-enter, #btn-erase{
     width: 70%;
+    height: 35px;
     max-width: 500px;
     border: solid 1px #008891;
     border-radius: 0.5rem;
@@ -80,18 +158,18 @@
     background-color: #008891;
     color: #e7e7de;    
 }
-.to-login{
+.to-payment{
     display: flex;
     width: 100%;
     justify-content: center;
     padding: 0px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
-.to-login a{
+.to-payment a{
     text-decoration: none;
     color: #008891;
 }
-.to-login a:hover{
+.to-payment a:hover{
     color: #00587a;
     font-weight: bolder;
 }
@@ -102,7 +180,7 @@
                     /* TABLET */
     /*=======================================*/
 
-    .main-register p{
+    .main-message-card p{
         font-size: 4vw;
     }
    
@@ -114,7 +192,7 @@
                    /* NOTEBOOK */
     /*=======================================*/
 
-    .main-register p{
+    .main-message-card p{
         font-size: 2vw;
     }
 

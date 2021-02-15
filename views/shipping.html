@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/shipping.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
     <title>Sensoriale</title>
@@ -19,7 +19,7 @@
                 <a href="/"><img src="../images/header-logo-celu.png" alt="Logo Sensoriale"></a>
             </div>
             <div class="header-search-bar">
-                <input type="text" name="header-search-bar" placeholder="  Buscar...">
+                <input type="text" name="header-search-bar" placeholder="Buscar...">
                 <a href="#"><i class="fas fa-search"></i></a>
             </div>
             <div class="header-checkout">
@@ -53,24 +53,43 @@
     </header>
     <main class="main">
         <div class="main-header-space"></div>
-        <section class="main-login">
-        <p>ingresá a tu cuenta</p>
-        <section class="section-login">
-            <form action="/get-in" method="POST" class="form-login">
-                <div class="user-name">
-                    <input class="input" type="email" placeholder="correo electrónico">
-                </div>
-                <div class="password">
-                    <input class="input" type="password" placeholder="contraseña">
-                </div>
-                <div class="btn-get-in">
-                    <button id="btn-enter" type="submit"> ingresar </button>
-                </div>
+        <h3>completá tus datos</h3>
+        <section class="content">
+            <form  action="Formulario de envio" action="/" method="POST">
+                <label for="direccion">
+                    <input type="text" name="direccion" placeholder="Direccion" required>
+                </label>
+                <label for="piso">
+                    <input type="text" name="piso" placeholder="Piso/Departamento" required>
+                </label>
+                <label for="provincia">
+                    <input type="text" name="provincia" placeholder="Provincia" required>
+                </label>
+                <label for="Codigo postal">
+                    <input type="text" name="codigo postal" placeholder="Codigo postal" required>
+                </label>
+                <label for="nombre">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </label>
+                <label for="apellido">
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                </label>
+                <label for="dni">
+                    <input type="text" name="DNI" placeholder="DNI" required>
+                </label>
+                <label for="Nro de telefono">
+                    <input type="text" name="Nro de telefono" placeholder="Nro de telefono" required>
+                </label> 
+            </div>
             </form>
-            <div class="create-acount"><a href="/register">creá tu cuenta</a></div>
-            <div class="create-acount" id="forgot-password"><a href="/forgot-password">¿olvidaste tu contraseña?</a></div>
+            <div class="producto">
+            <article class="img-producto">imagen del producto</article>
+        </div>
         </section>
-    </section>
+        <section class="button">
+        <a class="ingresar" href="/message-card">atrás</a>
+        <a class="ingresar" href="/payment">pagar</a>
+        </section>
     </main>    
     <footer class="main-footer">
         <section class="footer-section">

@@ -1,0 +1,302 @@
+/*=======================================*/
+               /* FOOTER */
+/*=======================================*/
+
+.main-footer{           /*=== sección footer === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #e7e7de;
+    justify-content: space-between;
+}
+
+.footer-section{        /*=== hay 3 secciones footer que reciben esta clase === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    border-top: solid 1px #00587a;
+}
+
+    /*=======================================*/
+        /* FOOTER REDES (ABAJO y (derecha))  */
+    /*=======================================*/
+
+.footer-redes h2{                     /*=== título "nuestras redes sociales" === */
+    font-size: 5vw;
+    color: #008891;
+    width: 100%;
+    text-align: center;
+    padding: 2vw;
+}
+.footer-redes{                  /*=== div para el footer de redes sociales === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+.footer-redes a{                /*=== "a" div para el footer de redes sociales === */
+    margin: 2vw 3vw;
+    color: #00587a;
+}
+.footer-redes a i{              /*=== "i" "a" div para el footer de redes sociales === */
+    font-size: 6vw;
+}
+.footer-redes a i:hover{        /*=== hover al "i" "a" div para el footer de redes sociales === */
+    font-size: 6.5vw;
+    color: #0f3057;
+}
+
+    /*=======================================*/
+    /*      FOOTER SUSCRIBIRSE (CENTRO)      */
+    /*=======================================*/
+
+    .footer-newsletter{                  /*=== div para el footer de newsletter === */
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .footer-newsletter h2{                     /*=== título "@ newsletter" === */
+        font-size: 5vw;
+        color: #008891;
+        width: 100%;
+        text-align: center;
+        padding: 2vw;
+    }
+    .footer-newsletter h4{
+        font-size: 70%;
+        padding: 5px;
+        text-align: center;
+        color: #0f3057;
+    }
+    .footer-newsletter form{
+        width: 100%;
+        text-align: center;
+    }
+    .footer-newsletter form input{
+        width: 60%;
+        border: solid 1px #00587a;
+        border-radius: 5px;
+        height: 60%;
+        margin: 10px 0px;
+        padding: 5px;
+    }
+    .footer-newsletter form button{
+        width: 20%;
+        border: solid 1px #00587a;
+        border-radius: 5px;
+        height: 60%;
+        padding: 5px;
+        margin: 10px 0px;
+        background-color: #e7e7de;
+        color: #00587a;
+    }
+
+    .footer-newsletter form button:hover{
+        background-color: #00587a;
+        color: #e7e7de;
+        font-weight: bolder;
+        padding: 5px;
+    }
+
+    /*===============================================*/
+    /* FOOTER SOBRE SENSORIALE (ABAJO y (izquierda)) */
+    /*===============================================*/
+
+    .footer-about{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 90%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-about h2{
+        font-size: 5vw;
+        color: #008891;
+        width: 100%;
+        text-align: center;
+        padding: 2vw;
+    }
+    .footer-about p{
+        display: flex;
+        width: 80%;
+    }
+    .footer-data{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        font-size: 3vw;
+        justify-content: center;
+        color: #00587a;
+
+    }
+    .footer-data p{
+        justify-content: center;
+    }
+    .privacy-terms{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        font-size: 3vw;
+        justify-content: space-evenly;
+        color: #008891;
+
+    }
+    .privacy-terms a{
+        text-decoration: none;
+    }
+    .privacy-terms p{
+        width: 3%;
+        justify-content: center;
+    }
+    #policy, #terms{
+        width: 40%;
+    }
+    #policy:hover, #terms:hover{
+        color: #00587a;
+        font-weight: bolder;
+    }
+
+
+/*=======================================*/
+               /* MEDIA 361 */
+/*=======================================*/
+
+@media (min-width: 361px){
+    .main-footer{
+        height: 180px;
+    }
+    .footer-section{             /*=== hay 3 secciones footer que reciben esta clase === */
+        width: 33%;
+        border-top: solid 1px #e7e7de;
+    }
+
+    /*=======================================*/
+        /* FOOTER REDES (DERECHA y (abajo))  */
+    /*=======================================*/
+
+    .footer-redes h2{                          /*=== título "nuestras redes sociales" === */
+        font-size: 2vw;
+        padding-top: 0px;
+    }
+    .footer-redes{              /*=== div para el footer de redes sociales === */
+        border-top: none;
+    }
+    .footer-redes a{            /*=== "a" div para el footer de redes sociales === */
+        margin: 0vw 1vw;
+        color: #00587a;
+    }
+    .footer-redes a i{          /*=== "i" "a" div para el footer de redes sociales === */
+        font-size: 2vw;
+        padding: 0.5vw;
+
+    }
+    .footer-redes a i:hover{    /*=== hover "i" "a" div para el footer de redes sociales === */
+        font-size: 2vw;
+        padding: 0.5vw;
+        color: #0f3057;
+        background-color: #e7e7de;
+        border-radius: 10px;
+    }
+
+    /*=======================================*/
+    /*      FOOTER SUSCRIBIRSE (CENTRO)      */
+    /*=======================================*/
+
+    .footer-newsletter{
+        margin: 10px 0px;
+        height: 100%;
+    }
+    .footer-newsletter h4{
+        font-size: 1.5vw;
+    }
+    .footer-newsletter h2{                     /*=== título "@ newsletter" === */
+        font-size: 2.2vw;
+        padding: 1vw;
+    }
+    .footer-newsletter form input{
+        width: 80%;
+    }
+    .footer-newsletter form button{
+        width: 40%;
+        height: 50%;
+        margin: 5px 0px;
+    }
+
+    /*===============================================*/
+    /* FOOTER SOBRE SENSORIALE (ABAJO y (izquierda)) */
+    /*===============================================*/
+
+    .footer-about h2{
+        font-size: 2.2vw;
+        padding-top: 1vw;
+        padding-bottom: 0vw;
+    }
+    .footer-data{
+        font-size: 1.5vw;
+    }
+    .footer-data{
+        padding: 0.2vw;
+    }
+    .privacy-terms{
+        padding-top: 0.3vw;
+        font-size: 1vw;
+    }
+}
+
+@media (min-width: 769px){
+
+
+    /*=======================================*/
+    /*      FOOTER SUSCRIBIRSE (CENTRO)      */
+    /*=======================================*/
+
+    .footer-newsletter{
+        margin: 0px;
+    }
+    .footer-newsletter form{
+        width: 100%;
+        text-align: center;
+    }
+    .footer-newsletter form input{
+        width: 60%;
+        border: solid 1px #00587a;
+        border-radius: 5px;
+        height: 60%;
+        margin: 10px 0px;
+        padding: 5px;
+    }
+    .footer-newsletter form button{
+        width: 20%;
+        border: solid 1px #00587a;
+        border-radius: 5px;
+        height: 60%;
+        padding: 5px;
+        margin: 10px 0px;
+        background-color: #e7e7de;
+        color: #00587a;
+    }
+
+    .footer-newsletter form button:hover{
+        background-color: #00587a;
+        color: #e7e7de;
+        font-weight: bolder;
+        padding: 5px;
+    }
+
+    /*===============================================*/
+    /* FOOTER SOBRE SENSORIALE (ABAJO y (izquierda)) */
+    /*===============================================*/
+
+    .footer-data{
+        font-size: 1vw;
+    }
+}

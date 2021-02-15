@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/tablet.css">
     <link rel="stylesheet" href="../css/notebook.css">
     <link rel="stylesheet" href="../css/selection.css">
@@ -52,14 +53,42 @@
     </header>
     <main class="main">
         <div class="main-header-space"></div>
-        <div class="banner">
-            <h3>Banner</h3>
-        </div>
         <section class="articles-selection">
             <section class="articles-inputs">
-                <div>
-                    <h3>inputs de búsqueda de art.</h3>
-                </div>
+                <h4>filtrá tu búsqueda</h4>
+                <form action="/get-in" method="POST" class="form-inputs">
+                    <div class="form-select-gender">
+                        <select name="gender" id="gender">
+                            <option value="mujeres" id="mujeres">mujeres</option>
+                            <option value="hombres" id="hombres">hombres</option>
+                            <option value="unisex" id="unisex">unisex</option>
+                            <option value="outlet" id="outlet">outlet</option>
+                        </select>
+                    </div>
+                    <div class="form-select-marca">
+                        <select name="marca" id="marca">
+                            <option value="ch" id="ch">carolina herrera</option>
+                            <option value="dior" id="dior">dior</option>
+                            <option value="kenzo" id="kenzo">kenzo</option>
+                        </select>
+                    </div>
+                    <div class="form-select-modelo">
+                        <select name="modelo" id="modelo">
+                            <option value="opcion1" id="opcion1">opcion1</option>
+                            <option value="opcion2" id="opcion2">opcion2</option>
+                            <option value="opcion3" id="opcion3">opcion3</option>
+                        </select>
+                    </div>
+                    <div class="min-price">
+                        <input class="input" type="number" placeholder="$ precio mínimo" required pattern="[0-9]">
+                    </div>                
+                    <div class="max-price">
+                        <input class="input" type="number" placeholder="$ precio máximo" required pattern="[0-9]">
+                    </div>
+                    <div class="btn-erase">
+                        <button id="btn-erase" type="reset"> borrar datos </button>
+                    </div>                
+                </form>
             </section>
             <section class="articles-section">
                 <article class="article-a"><a href="/detail"><h4>Artículo 1</h4></a></article>
@@ -75,9 +104,42 @@
         </section>
     </main>    
     <footer class="main-footer">
-        <section class="footer-section"><h4>Footer Izquierda</h4></section>    
-        <section class="footer-section"><h4>Footer Centro</h4></section>    
-        <section class="footer-section"><h4>Footer Derecha</h4></section>    
+        <section class="footer-section">
+            <div class="footer-about">
+                <h2>sobre sensoriale</h2>
+                <div class="footer-data">                   
+                    <p>teléfono    (011)5555-5555</p>
+                    <p>@email      info@sensoriale.net</p>
+                    <p>local comercial</p>
+                    <p>av. digital 5555 caba</p>                
+                </div>
+                <div class="privacy-terms">
+                    <a href="#" id="policy">políticas de privacidad</a>
+                    <p>-</p>
+                    <a href="#" id="terms">términos y condiciones</a>
+                </div>
+            </div>
+        </section>    
+        <section class="footer-section">
+            <div class="footer-newsletter">
+             <h2>@ newsletter</h2>
+             <h4>Suscribite y recibí novedades y promociones</h4>
+                <form class="form-newsletter" action="/email-newsleter" method="POST">
+                    <input class ="input-newsletter" type="email" name="email" placeholder="ingresá tu email" required>
+                    <button class="btn-send" type="submit">enviar</button>
+                </form>
+            </div>
+        </section>    
+        <section class="footer-section">
+            <div class="footer-redes">
+                <h2>nuestras redes sociales</h2><br>
+                <a href="/"><i class="fab fa-facebook-square"></i></a>
+                <a href="/"><i class="fab fa-instagram"></i></a>
+                <a href="/"><i class="fab fa-twitter"></i></a>
+                <a href="/"><i class="fab fa-pinterest"></i></a>
+                <a href="/"><i class="fab fa-youtube"></i></a>
+            </div>
+        </section>    
     </footer>
 </body>
 </html>

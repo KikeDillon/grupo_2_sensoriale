@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
 }
 
 /*=======================================*/
@@ -15,10 +16,7 @@
 }
 .main-header-space{     /*=== espacio generado porque el header es fixed === */
     width: 100%;
-    height: 70px;
-}
-.banner{                /*=== banner no se ve para celulares === */
-    display: none;
+    height: 100px;
 }
 
 .articles-selection{     /*=== main sin header fijo y banner === */
@@ -27,21 +25,68 @@
     width: 100%;
 }
 
+/*=======================================*/
+                /* INPUTS */
+/*=======================================*/
+
+
 .articles-inputs{        /*=== sección para búsqueda de artículos === */
     display:flex;
+    flex-wrap: wrap;
     width: 100%;
-    background-color: #e7e7de;
-    height: 150px;
+    height: 400px;
+}
+.articles-inputs h4{
+    display: flex;
+    color: #008891;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    margin-top: 10px;
+}
+.articles-inputs form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
     align-items: center;
     justify-content: center;
 }
+.articles-inputs form div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+.articles-inputs form div select, .articles-inputs form div input, .articles-inputs form div button{
+    width: 80%;
+    max-width: 300px;
+    height: 35px;
+    border: solid 1px #008891;
+    border-radius: 0.5rem;
+    padding-left: 10px;
+}
+#btn-erase{
+    background-color: #008891;
+    color: #e7e7de;
+}
+#btn-erase:hover{
+    background-color: #00587a;
+    color: #e7e7de;
+    font-weight: bolder;
+}
 
+/*=======================================*/
+              /* ARTÍCULOS */
+/*=======================================*/
 .articles-section{     /*=== sección para todos los artículos === */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-    background-color: #008891;
     padding: 5px 10px;
 }
 
@@ -62,7 +107,7 @@
     text-decoration: none;
 } 
 
-@media (min-width: 361px){
+@media (min-width: 515px){
     
     /*=======================================*/
                     /* TABLET */
@@ -74,18 +119,16 @@
         height: 500px;
         flex-wrap: wrap;
         justify-content: center;
-        background-color: #e7e7de;
 
     }
     .articles-inputs{        /*=== contenedor sección para búsqueda de artículos === */
         display:flex;
         width: 30%;
-        height: 95%;
+        height: 80%;
     }
     .articles-inputs div{   /*=== contenido de inputs  === */
         display: flex;
         width: 90%;
-        background-color: #00587a;
         height: 100%;
         justify-content: center;
         align-items: center;
@@ -96,7 +139,6 @@
         flex-wrap: wrap;
         width: 70%;
         height: 100%;
-        background-color: #e7e7de;
         justify-content: space-evenly;
         align-items: center;
     }

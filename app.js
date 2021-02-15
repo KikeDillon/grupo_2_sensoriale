@@ -43,3 +43,19 @@ app.get ('/payment', function (req,res){
 app.get ('/shipping', function (req,res){
     res.sendFile (path.resolve(__dirname, './views/shipping.html'));
 });
+
+app.get ('/maridaje', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/maridaje.html'));
+});
+
+app.get ('/packaging', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/packaging.html'));
+});
+
+app.get ('/forgot-password', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/forgot-password.html'));
+});
+
+app.get ('/message-card', function (req,res){
+    res.sendFile (path.resolve(__dirname, './views/message-card.html'));
+});
