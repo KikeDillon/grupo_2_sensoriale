@@ -103,15 +103,14 @@
     }
 
     .articules-section{         /*=== sección para los artículos ===*/
-        height: 500px;
         padding: 0px 0px;
     }
     .articule{                  /*=== artícos dentro de la sección ===*/
         width: 48%;
-        height: 30%;
+        /*height: 30%;*/
         justify-content: center;
         align-items: center;
-        margin: 0px 0px;
+       /* margin: 0px 0px;*/
     }
 
 /*=======================================*/

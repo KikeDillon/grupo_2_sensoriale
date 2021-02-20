@@ -50,7 +50,7 @@ figure{
 }
 
 img{
-    width: 20vw;
+    width: 100px;
 }
 
 .articles-checkout-2{
@@ -63,7 +63,7 @@ img{
 
 
 .button-a{
-    border-radius: 3px;
+    border-radius: 0.5rem;
     width: 0vw;
     justify-content: center;
     display: flex;
@@ -75,7 +75,7 @@ img{
 }
 
 .button-b{
-    border-radius: 3px;
+    border-radius: 0.5rem;
     width: 0vw;
     justify-content: center;
     display: flex;
@@ -119,9 +119,28 @@ img{
 .eliminar{
     border: none;
     padding: 4px;
-    border-radius: 3px;
+    border-radius: 0.5rem;
 }
 
+
+.subtotal-precio{
+    width: 80%;
+    text-align: end;
+    margin: auto;
+    margin-bottom: 2vh;
+}
+
+.subtotal {
+    color: #008891;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.precio {
+    font-weight: 700;
+    color: black;
+    font-size: 24px;
+}
 
 @media (min-width: 361px){
     
@@ -171,7 +190,7 @@ img{
     }
     
     .button-a {
-        border-radius: 3px;
+        border-radius: 0.5rem;
         width: 0vw;
         justify-content: center;
         display: flex;
@@ -183,7 +202,7 @@ img{
     }
 
     .button-b {
-        border-radius: 3px;
+        border-radius: 0.5rem;
         width: 0vw;
         justify-content: center;
         display: flex;
@@ -244,7 +263,7 @@ img{
     }
 
     .button-a {
-        border-radius: 3px;
+        border-radius: 0.5rem;
         width: 0vw;
         justify-content: center;
         display: flex;
@@ -256,7 +275,7 @@ img{
     }
 
     .button-b {
-        border-radius: 3px;
+        border-radius: 0.5rem;
         width: 0vw;
         justify-content: center;
         display: flex;

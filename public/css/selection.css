@@ -78,6 +78,7 @@
     color: #e7e7de;
     font-weight: bolder;
     cursor: pointer;
+
 }
 
 /*=======================================*/
@@ -85,18 +86,46 @@
 /*=======================================*/
 .articles-section{     /*=== sección para todos los artículos === */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     flex-wrap: wrap;
-    width: 100%;
-    padding: 5px 10px;
-}
+    /* width: 100%; */
+    /* padding: 3px 0px;*/
+    }
 
 .article-a, .article-b{              /*=== hay 6 artículos que reciben esta clase === */
     display: flex;
     width: 100%;
-    height: 120px;
-    background-color: #e7e7de;
-    margin: 5px 0px;
+    justify-content: space-between;
+    padding-right: 10px;
+    border-bottom: solid 1px #e7e7de;
+}
+
+
+.img {
+    height: 10vh;
+}
+
+p{
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    padding: 5px;    
+}
+
+.precios-descripcion{
+    width: 100%;
+}
+
+.precios{
+    display: flex;
+    align-items: flex-end;
+    color: #00587a;
+}
+
+.descripcion{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -108,7 +137,7 @@
     text-decoration: none;
 } 
 
-@media (min-width: 515px){
+@media (min-width: 361px){
     
     /*=======================================*/
                     /* TABLET */
@@ -116,16 +145,24 @@
 
     .articles-selection{     /*=== contenedor main sin header fijo y banner === */
         display: flex;
+        flex-direction: column;
         width: 100%;
-        height: 500px;
-        flex-wrap: wrap;
-        justify-content: center;
-
     }
+    .articules-section{     /*=== sección para todos los artículos === */
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: white;
+        justify-content: space-evenly;
+        align-content: space-evenly;
+        margin-bottom: 20px;
+    }
+
     .articles-inputs{        /*=== contenedor sección para búsqueda de artículos === */
-        display:flex;
-        width: 30%;
-        height: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 350px;
     }
     .articles-inputs div{   /*=== contenido de inputs  === */
         display: flex;
@@ -135,30 +172,56 @@
         align-items: center;
     }
     
-    .articles-section{     /*=== sección para todos los artículos === */
-        display: flex;
-        flex-wrap: wrap;
-        width: 70%;
-        height: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+
     
     .article-a{              /*=== hay 6 artículos que reciben esta clase === */
         display: flex;
-        width: 45%;
-        height: 30%;
-        background-color: #008891;
+        flex-wrap: wrap;
+        width: 45vw;
         justify-content: center;
-        align-items: center;
+        margin: 0.5vh 0;
+        border: solid 2px #008891;
+        border-radius: 0.5rem;
     }
     .article-b{             /*=== hay 3 artículos que no se muestran en tablet === */
         display: none;
     }
+
+    .precios {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 2vh;
+    }
+    
+    .descripcion {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2vh; 
+    }    
    
+    .image{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    }
+
+    p{
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .img{
+        height: 190px;
+        width: 150px;
+    }
 }
 
-@media (min-width: 769px){
+@media (min-width: 768px){
     
     /*=======================================*/
                    /* NOTEBOOK */
@@ -167,14 +230,24 @@
     .article-b{             /*=== hay 3 artículos que reciben esta clase === */
         display: block;
     }
-    .article-a, .article-b{ /*=== acomodamos los 9 artículos en pantalla === */
+    .article-a{ /*=== acomodamos los 9 artículos en pantalla === */
         display: flex;
         width: 30%;
-        height: 30%;
-        background-color: #008891;
+        /* height: 30%; */
+        /* background-color: #008891; */
         justify-content: center;
         align-items: center;
     }
 
+    .article-b{              /*=== hay 6 artículos que reciben esta clase === */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 30%; 
+        justify-content: center;
+        margin: 0.5vh 0;
+        border: solid 2px #008891;
+        border-radius: 0.5rem;
+    }    
 
 }
