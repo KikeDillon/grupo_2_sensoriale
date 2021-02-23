@@ -2,7 +2,7 @@
 
 SENSORIALE PERFUMERÍA
 
-
+URL HEROKU: https://grupo2-sensoriale.herokuapp.com/
 
 URL DEL REPOSITORIO: https://github.com/KikeDillon/grupo_2_sensoriale
 
