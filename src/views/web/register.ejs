@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
+    <title>Sensoriale</title>
+</head>
+<body class="body">
+    <%- include ('../partials/header') %>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class="main-register">
+        <p>crear cuenta</p>
+        <section class="section-register">
+            <form action="/get-in" method="POST" class="form-register">
+                <div class="name">
+                    <input class="input" type="text" placeholder="nombre" required pattern="[a-zA-Z]+">
+                </div>                
+                <div class="last-name">
+                    <input class="input" type="text" placeholder="apellido" required pattern="[a-zA-Z]+">
+                </div>
+                <div class="user-name">
+                    <input class="input" type="email" placeholder="correo electrónico" required>
+                </div>
+                <div class="password">
+                    <input minlength="6" class="input" type="password" placeholder="contraseña" required>
+                </div>
+                <div class="repeat-password">
+                    <input minlength="6" class="input" type="password" placeholder="repetir contraseña" required>
+                </div>
+                <div class="btn-erase">
+                    <button id="btn-erase" type="reset"> borrar datos </button>
+                </div>                
+                <div class="btn-get-in">
+                    <button id="btn-enter" type="submit"> ingresar </button>
+                </div>
+            </form>
+            <div class="to-login"><a href="/login">¿tenés cuenta? iniciá sesión</a></div>
+        </section>
+    </section>
+    </main>    
+    <%- include ('../partials/footer') %>
+</body>
+</html>

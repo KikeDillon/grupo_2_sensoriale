@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
+    <title>Sensoriale</title>
+</head>
+<body class="body">
+    <%- include ('../partials/header') %>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class="selected-article">
+            <section class="article-pic-detail">
+                <article class="article-pic">
+                    <div class="container-img">
+                        <figure><img src="/images/CH-2.jpg" alt=""></figure>
+                    </div>
+                </article>
+            </section>
+            <section class="btns-detail">
+                <div class="form-select-ml">
+                    <label for="ml">medida</label>
+                    <select name="ml" id="ml">
+                        <option value="ml1" id="ml1">30 ml</option>
+                        <option value="ml2" id="ml2">50 ml</option>
+                        <option value="ml3" id="ml3">100 ml</option>
+                    </select>
+                </div>
+                <div class="price">
+                    <h4>precio</h4>                    
+                    <div id="btn-price">
+                        <h4>$$$</h4>
+                    </div>
+                </div>    
+                <div class="quantity">
+                    <label for="qtt">cantidad</label>
+                    <select name="quantity" id="qtt">
+                        <option value="qtt1" id="qtt1">1 (uno)</option>
+                        <option value="qtt2" id="qtt2">2 (dos)</option>
+                        <option value="qtt3" id="qtt3">3 (tres)</option>
+                    </select>
+                </div>   
+                <div class="price">
+                    <h4>precio total</h4>                    
+                    <div id="btn-totalprice">
+                        <h4>$$$</h4>
+                    </div>
+                </div>                   
+                <div class="btn-checkout">
+                    <a href="/"><button id="btn-checkout" type="submit">agregar al carrito</button></a>
+                </div>
+                <div class="btn-payment">
+                    <a href="/checkout"><button id="btn-payment" type="submit">comprar</button></a>
+                </div>   
+            </section>
+        </section>
+    </main>    
+    <%- include ('../partials/footer') %>
+</body>
+</html>

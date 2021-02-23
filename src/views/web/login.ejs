@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
+    <title>Sensoriale</title>
+</head>
+<body class="body">
+    <%- include ('../partials/header') %>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class="main-login">
+        <p>ingresá a tu cuenta</p>
+        <section class="section-login">
+            <form action="/get-in" method="POST" class="form-login">
+                <div class="user-name">
+                    <input class="input" type="email" placeholder="correo electrónico">
+                </div>
+                <div class="password">
+                    <input class="input" type="password" placeholder="contraseña">
+                </div>
+                <div class="btn-get-in">
+                    <button id="btn-enter" type="submit"> ingresar </button>
+                </div>
+            </form>
+            <div class="create-acount"><a href="/register">creá tu cuenta</a></div>
+            <div class="create-acount" id="forgot-password"><a href="/forgot-password">¿olvidaste tu contraseña?</a></div>
+        </section>
+    </section>
+    </main>    
+    <%- include ('../partials/footer') %></body>
+</html>

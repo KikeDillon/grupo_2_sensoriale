@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
+    <title>Sensoriale</title>
+</head>
+<body class="body">
+    <%- include ('../partials/header') %>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class="articles-checkout">
+            <section class="checkout-bar"><h4>Tu Carrito</h4></section>
+            <article class="art-list-ck">
+                <section class="article-ck">                
+                    <figure><img src="/images/hugo boss-1.jpg" alt=""></figure>
+                </section>
+            <section class="articles-checkout-2">
+                <section class="descripcion">
+                    <h3>Perfume HUGO BOSS</h3>
+                </section>
+                <section class="cantidad">
+                    <button class="button-a">
+                        <i id="fas" class="fas fa-plus"></i>
+                    </button>
+                        <p>1</p>
+                    <button class="button-b">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </section>
+                <div class="button-eliminar">
+                    <button class="eliminar" type="reset">Eliminar</button>
+                </div>
+            </section>
+            </article>
+            <article class="art-list-ck">
+                <section class="article-ck">                
+                    <figure><img src="/images/hugo-boss-2.jpg" alt=""></figure>
+                </section>
+            <section class="articles-checkout-2">
+                <section class="descripcion">
+                    <h3>Perfume HUGO BOSS</h3>
+                </section>
+                <section class="cantidad">
+                    <button class="button-a">
+                        <i id="fas" class="fas fa-plus"></i>
+                    </button>
+                        <p>1</p>
+                    <button class="button-b">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </section>
+                <div class="button-eliminar">
+                    <button class="eliminar" type="reset">Eliminar</button>
+                </div>
+            </section>
+            </article>
+            <section class="subtotal-precio">
+            <h2 class="subtotal">SUBTOTAL</h2>
+            <p class="precio">$15.550</p>
+            </section>
+            <section class="btns-ck">
+                <h4>botones de compra <a href="/maridaje">siguiente</a></h4>
+            </section>
+        </section>
+
+    </main>    
+    <%- include ('../partials/footer') %>
+</body>
+</html>

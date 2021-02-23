@@ -42,7 +42,7 @@
 .header-search-bar input{   /*=== input de la barra de búsqueda - tipo texto ===*/
     border: none;
     height: 20px;
-    padding-left: 2px;
+    padding-left: 15px;
     width: 90%;
     margin-left: 3px;
     border-top-left-radius: 3px;

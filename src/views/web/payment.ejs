@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/tablet.css">
+    <link rel="stylesheet" href="../css/notebook.css">
+    <link rel="stylesheet" href="../css/payment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d48642b65b.js" crossorigin="anonymous"></script>
+    <title>Sensoriale</title>
+</head>
+<body class="body">
+    <%- include ('../partials/header') %>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class="main-payment">
+            <h3>datos para el pago</h3>
+            <form  action="payment-ok" action="/" method="POST">
+                <input type="number" maxlength="16" name="cc-number" placeholder="nro. de la tarjeta" pattern="[0-9]" required>
+                <input type="text" name="owner-name" placeholder="nombre del titular" pattern="[a-zA-Z]+" required>
+                <input type="date" name="due-date" placeholder="fecha de vencimiento" required>
+                <input type="number" minlength="3" maxlength="3" name="security-code" placeholder="código de seguridad" required>
+                <section class="btn-price-payment">
+                    <div class="price">
+                        <h4>precio</h4>                    
+                        <div id="btn-price">
+                            <h4>$$$</h4>
+                        </div>
+                    </div>
+                    <div class="btn-checkout">
+                        <a href="/payment-ok"><button id="btn-payment-ok" type="submit">confirmar compra</button></a>
+                    </div>
+                    <div class="btn-payment-cancel">
+                        <a href="/checkout"><button id="btn-payment-cancel" type="button">cancelar</button></a>
+                    </div>
+                </section>   
+            </form>
+        </section>
+    </main>    
+    <%- include ('../partials/footer') %>
+</body>
+</html>

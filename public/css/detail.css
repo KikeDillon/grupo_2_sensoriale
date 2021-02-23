@@ -55,6 +55,7 @@
     height: 50%;
     align-items: center;
     justify-content: center;
+    margin-bottom: 15vh;
 }
 .btns-detail div{
     display: flex;
