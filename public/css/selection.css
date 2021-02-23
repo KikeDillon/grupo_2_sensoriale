@@ -86,10 +86,7 @@
 /*=======================================*/
 .articles-section{     /*=== sección para todos los artículos === */
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
-    /* width: 100%; */
-    /* padding: 3px 0px;*/
     }
 
 .article-a, .article-b{              /*=== hay 6 artículos que reciben esta clase === */
@@ -148,6 +145,7 @@ p{
         flex-direction: column;
         width: 100%;
     }
+
     .articules-section{     /*=== sección para todos los artículos === */
         display: flex;
         flex-wrap: wrap;
@@ -238,7 +236,9 @@ p{
         align-content: space-evenly;
         margin-bottom: 20px;
     }
-
+    .articles-inputs h4{
+        margin-top: 40px;
+    }
     .articles-selection {
         display: flex;
         flex-wrap: wrap;
