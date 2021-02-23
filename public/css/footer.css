@@ -15,7 +15,6 @@
     flex-wrap: wrap;
     width: 100%;
     height: 150px;
-    background-color: white;
     border-top: solid 1px #00587a;
 }
 
@@ -204,8 +203,8 @@
         font-size: 2vw;
         padding: 0.5vw;
         color: #0f3057;
-        background-color: #e7e7de;
         border-radius: 10px;
+        border: solid 1px #0f3057;
     }
 
     /*=======================================*/
@@ -274,6 +273,7 @@
         height: 60%;
         margin: 10px 0px;
         padding: 5px;
+        padding-left: 10px;
     }
     .footer-newsletter form button{
         width: 20%;
