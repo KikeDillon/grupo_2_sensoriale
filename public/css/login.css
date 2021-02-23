@@ -134,14 +134,14 @@
     /*=======================================*/
 
     .main{
-        height: 500px;
+        height: 430px;
     }
     .main-login p{
         font-size: 4vw;
-        margin-top: 40px;
+        margin-top: 10px;
     }
     .section-login{
-        margin-top: 20px;
+        margin-top: 15px;
     }
 }
 
