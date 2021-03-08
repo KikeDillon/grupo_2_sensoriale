@@ -1,0 +1,63 @@
+<%- include ('../../partials/head') %>
+<body class="body">
+    <%- include ('../../partials/header') %>
+
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class = "main-section">
+            <form action="/administrar/crear" method="POST" enctype="multipart/form-data">
+                <div class="mark">
+                    <select name="mark" id="marca">
+                        <option value="#" disabled selected>marca</option>
+                        <% perfumeM.forEach(i => { %>
+                            <option value="<%= i.mark %>" required><%= i.mark %></option>
+                        <% }) %>
+                    </select>
+                </div>            
+         <!--       <div>
+                    <select name="model" id="model">
+                       <option value="#" disabled selected>modelo</option>
+                    </select>   
+                </div> -->
+                </div>                
+                <div class="price">
+                    <input name="price" class="input" type="number" placeholder="precio" required>
+                </div>
+                <div class="gender">
+                    <select name="gender" id="gender">
+                        <option value="#" disabled selected>género</option>
+                        <option value="hombre">hombre</option>
+                        <option value="mujer">mujer</option>
+                        <option value="unisex">unisex</option>
+                    </select>
+                </div>
+                <div class="size">
+                    <select name="size" id="size">
+                        <option value="#" disabled selected>tamaño</option>
+                        <option value=30>30 ml</option>
+                        <option value=50>50 ml</option>
+                        <option value=100>100 ml</option>
+                    </select>
+                </div>
+                <div class="outlet">
+                    <label for="outlet">outlet</label>
+                    <input type="checkbox" name="outlet" value=1>
+                </div>
+                <div class="custom-file">
+                    <input type="file" name="image" >
+                 </div>
+                <div class="btn-erase">
+                    <button id="btn-erase" type="reset"> borrar datos </button>
+                </div>                
+                <div class="btn-get-in">
+                    <button id="btn-enter" type="submit"> guardar </button>
+                </div>
+            </form>
+        </section>
+        <section class="btns-ck">
+            <h4>botón de volver <a href="/administrar">volver</a></h4>
+        </section>
+    </main>    
+    <%- include ('../../partials/footer') %>
+</body>
+</html>

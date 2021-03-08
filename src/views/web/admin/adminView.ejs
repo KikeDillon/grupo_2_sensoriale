@@ -1,0 +1,44 @@
+<%- include ('../../partials/head') %>
+<body class="body">
+    <%- include ('../../partials/header') %>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class = "detail-product">
+            <div>
+                <%= unProducto.id %>
+            </div>
+            <div>
+                <%= unProducto.mark %>
+            </div>
+            <div>
+                <%= unProducto.model %>
+            </div>
+            <div>
+                <%= unProducto.gender %>
+            </div>
+            <div>
+                <%= unProducto.size %>
+            </div>
+            <div>
+                <%= unProducto.price %>
+            </div>
+            <div class="outlet">
+                <% if (unProducto.outlet == 1){ %>
+                    <p> outlet sí</p>
+                <% }; %>
+                <% if (unProducto.outlet == 0){ %>
+                    <p> outlet no</p>
+                <% }; %>
+            </div>
+            <div>
+                <img src="/images/imgPerfume/<%= unProducto.image %>" alt="imagen perfume">
+            </div>
+        </section>
+        <section class="btns-ck">
+            <h4>botón de volver <a href="/administrar">volver</a></h4>
+            <h4>botón de editar <a href="/administrar/editar/<%= unProducto.id %>">editar</a></h4>
+        </section>
+    </main>    
+    <%- include ('../../partials/footer') %>
+</body>
+</html>
