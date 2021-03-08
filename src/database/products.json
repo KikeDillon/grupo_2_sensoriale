@@ -1,0 +1,35 @@
+[
+    {
+      "nombre": "HUGO BOSS BOTTLED EDT",
+      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "precio": "$7.600",
+      "descuento": "30",
+      "oldImagen": "hugo boss-1.jpg",
+      "id": "1",
+      "images": "hugo boss-1.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "HUGO BOSS THE SCENT EDT",
+      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "precio": "$7.950",
+      "descuento": "30",
+      "images": "hugo-boss-2.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "HUGO BOSS THE SCENT FOR HER EDP",
+      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "precio": "$8.450",
+      "descuento": "15",
+      "images": "hugo-boss-3.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "CAROLINA HERRERA 212 VIP MEN EDT",
+      "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "precio": "$7.780",
+      "descuento": "15",
+      "images": "CH-1.jpg"
+    }
+  ]

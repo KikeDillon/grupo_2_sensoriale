@@ -1,0 +1,69 @@
+/*=======================================*/
+              /* HEADER */
+/*=======================================*/
+
+.main-header{           /*=== contenedor del header ===*/
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    background-color:  #e7e7de;
+
+}
+.header-top{            /*=== logo, barra de búsqueda. register y login van en el burguer-menu === */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%; 
+}
+.header-logo{           /*=== contenedor del logo ===*/
+    display: flex;
+    width: 12%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color:  #e7e7de;
+}
+.header-logo img{       /*=== img del logo ===*/
+    display: flex;
+    width: 100%;
+    background-color:  #e7e7de;
+
+}
+
+
+
+@media (min-width: 361px){
+    
+    /*=======================================*/
+                    /* HEADER */
+    /*=======================================*/
+
+    .main-header{               /*=== contenedor del header ===*/
+        display: flex;
+        flex-direction: column;
+    }
+   .header-logo{               /*=== contenedor del logo ===*/
+        width: 10%;
+        padding: 5px;
+    }
+    .header-logo img{           /*=== img del logo ===*/
+        height: 80%;
+        padding: 5px 0px;
+        margin: auto;
+    }
+}
+
+    @media (min-width: 769px){
+   
+    
+        /*=======================================*/
+                        /* HEADER */
+        /*=======================================*/
+    
+        .header-logo{               /*=== contenedor del logo ===*/
+            width: 6%;
+        }
+
+    }

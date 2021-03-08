@@ -2,8 +2,8 @@ const express = require ('express');
 const userController = require ('../controllers/userController');
 const router = express.Router();
 
-router.get ('/forgot-password', userController.forgotpassword);
-router.get ('/login', userController.login);
-router.get ('/register', userController.register);
+router.get ('/recuperarcontrasena', userController.forgotpassword);
+router.get ('/ingresar', userController.login);
+router.get ('/registrarse', userController.register);
 
 module.exports = router;

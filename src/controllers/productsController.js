@@ -1,15 +1,15 @@
 const path = require('path');
 
-const detailcss = ['footer', 'header', 'tablet', 'notebook', 'checkout'];
-const selectioncss = ['footer', 'header', 'tablet', 'notebook', 'checkout'];
+const cssdetail = ['footer', 'header', 'tablet', 'notebook', 'detail'];
+const cssselection = ['footer', 'header', 'tablet', 'notebook', 'selection'];
 
 
 const productsController = {
     detail: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/detail.ejs'), {styles: detailcss });
+        return res.render (path.resolve(__dirname, '../views/products/detail.ejs'), {styles: cssdetail });
     },    
     selection: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/selection.ejs')), {styles: css });
+        return res.render (path.resolve(__dirname, '../views/products/selection.ejs'), {styles: cssselection });
     }
 }
 
