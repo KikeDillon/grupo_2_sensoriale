@@ -2,10 +2,10 @@ const path = require('path');
 
 const csscheckout = ['footer', 'headersale', 'checkout'];
 const cssmaridaje = ['footer', 'headersale', 'maridaje'];
-const cssmessagecard = ['footer', 'headersale', 'tablet', 'notebook', 'message-card'];
+const cssmessagecard = ['footer', 'headersale', 'tablet', 'message-card'];
 const csspackaging = ['footer', 'headersale', 'packaging'];
-const csspayment = ['footer', 'headersale', 'tablet', 'notebook', 'payment'];
-const cssshipping = ['footer', 'headersale', 'tablet', 'notebook', 'shipping'];
+const csspayment = ['footer', 'headersale', 'tablet', 'payment'];
+const cssshipping = ['footer', 'headersale', 'tablet', 'shipping'];
 
 const saleController = {
     checkout: function (req,res){

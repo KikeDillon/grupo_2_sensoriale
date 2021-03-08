@@ -1,15 +1,7 @@
 const express = require ('express');
 const app = express ();
 const path = require ('path');
-
-app.set ('view engine', 'ejs');
-
-//LEVANTO EL SERVIDOR
-app.set ('puerto', process.env.PORT || 3000);
-
-app.listen (app.get ('puerto'), function(){
-    console.log ("LEVANTÓ EL SERVIDOR EN EL PUERTO 3000");
-});
+const methodOverride = require('method-override');
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 //app.use(express.static(path.resolve(__dirname, '..', 'public')));
@@ -22,6 +14,11 @@ app.use(express.urlencoded({ extended: false }));
 const publicpath = path.resolve (__dirname, '../public');
 app.use (express.static(publicpath));
 
+app.set ('view engine', 'ejs'); //EJS necesario
+app.use(express.urlencoded({ extended: false })); //MULTER necesario
+app.use(methodOverride('_method')); //METODO GET y POST en HTML necesario
+
+
 //RUTAS
 const webRouter = require ('./routers/webRouter');
 const userRouter = require ('./routers/userRouter');
@@ -33,3 +30,10 @@ app.use (productsRouter);
 app.use (userRouter);
 app.use (saleRouter);
 app.use (adminRouter);
+
+//LEVANTO EL SERVIDOR
+app.set ('puerto', process.env.PORT || 3000);
+
+app.listen (app.get ('puerto'), function(){
+    console.log ("LEVANTÓ EL SERVIDOR EN EL PUERTO 3000");
+});

@@ -1,7 +1,7 @@
 const path = require('path');
 
-const cssdetail = ['footer', 'header', 'tablet', 'notebook', 'detail'];
-const cssselection = ['footer', 'header', 'tablet', 'notebook', 'selection'];
+const cssdetail = ['footer', 'header', 'tablet', 'detail'];
+const cssselection = ['footer', 'header', 'tablet', 'selection'];
 
 
 const productsController = {

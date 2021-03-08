@@ -177,6 +177,7 @@
     .footer-section{             /*=== hay 3 secciones footer que reciben esta clase === */
         width: 33%;
         border-top: solid 1px #e7e7de;
+        height: 100%;
     }
 
     /*=======================================*/
