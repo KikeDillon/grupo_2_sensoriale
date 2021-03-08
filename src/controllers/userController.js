@@ -1,8 +1,8 @@
 const path = require('path');
 
-const csslogin = ['footer', 'header', 'tablet', 'notebook', 'login'];
-const cssforgotpassword = ['footer', 'header', 'tablet', 'notebook', 'forgot-password'];
-const cssregister = ['footer', 'header', 'tablet', 'notebook', 'register'];
+const csslogin = ['footer', 'header', 'tablet', 'login'];
+const cssforgotpassword = ['footer', 'header', 'tablet', 'forgot-password'];
+const cssregister = ['footer', 'header', 'tablet', 'register'];
 
 const userController = {
     login: function (req,res){

@@ -4,94 +4,7 @@
 
 @media (min-width: 361px){
     
-    /*=======================================*/
-                    /* HEADER */
-    /*=======================================*/
 
-
-    
-
-    .main-header{               /*=== contenedor del header ===*/
-        display: flex;
-        flex-direction: column;
-    }
-    .burger-icon{ 
-        display: none;
-    }
-    .header-logo{               /*=== contenedor del logo ===*/
-        width: 10%;
-        padding: 5px;
-    }
-    .header-logo img{           /*=== img del logo ===*/
-        height: 80%;
-        padding: 5px 0px;
-        margin: auto;
-    }
-    .header-search-bar{         /*=== barra de búsqueda ===*/
-        margin-left: 30px;
-        margin-right: 7vw;
-        width:60%;
-    }
-    .header-search-bar a{       /*=== lupa de la barra de búsqueda ===*/
-        width: 7%;
-    }
-    .header-checkout{           /*=== contenedor de carrito de compras ===*/
-        width: 5%;
-        margin-left: 5px;
-        margin-right: 10px;
-   }
-    .header-checkout a{         /*=== carrito de compras logo bajado de font-awesome ===*/
-        font-size: 3vw;
-    }
-    .header-login{              /*=== login contenedor  ===*/
-        display: block;
-        width: 5%;
-        display: flex;
-        height: 100%;    
-        justify-content: center;
-        align-items: center;
-    }
-    .header-login a{            /*=== login link "a"  ===*/
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        padding-right: 5px;
-        color: #0f3057;
-        font-size: 3vw;
-    }
-    .nav-bar{                   /*=== contenedor de nav-bar  ===*/
-        height: 40%;
-    }
-    .nav-menu{                  /*=== dentro del nav-bar, contenedor para el menú  ===*/
-        display: block;
-        background-color: thistle;
-        height: 100%;
-        width: 100%;
-    }
-    .nav-menu ul{               /*=== lista del menú del nav-bar  ===*/
-        display: flex;
-        flex-direction: row;
-        height: 100%;
-        width: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: #008891;
-    }
-    .nav-menu ul li{            /*=== lista del menú del nav-bar "li"  ===*/
-        display: flex;
-        width: 120px;
-        justify-content: center;
-        border-radius: 3px;
-    }
-    .nav-menu ul li a{          /*=== lista del menú del nav-bar "link a" ===*/
-        text-decoration: none;
-        font-weight: bolder;
-        padding: 3px 8px;
-        color: #e7e7de;
-    }
-    .nav-menu ul li:hover{ 
-        background-color: #0f3057;
-    }
     /*=======================================*/
                      /* MAIN */
     /*=======================================*/
@@ -107,18 +20,8 @@
     }
     .articule{                  /*=== artícos dentro de la sección ===*/
         width: 48%;
-        /*height: 30%;*/
         justify-content: center;
         align-items: center;
-       /* margin: 0px 0px;*/
     }
 
-/*=======================================*/
-               /* FOOTER */
-/*=======================================*/
-
-    .footer-section{             /*=== footer contenedor ===*/
-        width: 33%;
-        height: 100%;
-    }
 }

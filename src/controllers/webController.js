@@ -1,6 +1,6 @@
 const path = require('path');
 
-const cssindex = ['footer', 'header', 'tablet', 'notebook', 'index'];
+const cssindex = ['footer', 'header', 'tablet', 'index'];
 
 const webController = {
     index: function (req,res){
