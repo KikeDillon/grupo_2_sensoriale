@@ -1,7 +1,6 @@
 <%- include ('../../partials/head') %>
 <body class="body">
     <%- include ('../../partials/header') %>
-
     <main class="main">
         <div class="main-header-space"></div>
         <section class = "main-section">
@@ -49,7 +48,7 @@
                     <% }; %>
                 </div>
                 <div class="custom-file">
-                    <img src="/images/imgPerfume/<%= unProducto.image %>"  name = "oldImage" alt="imagen perfume">
+                    <img src="/images/imgPerfume/<%= unProducto.image %>"  alt="imagen perfume">
                     <input type="file" name="newImage" placeholder="imagen perfume" value="<%= unProducto.image %>">
                  </div>
                 <div class="btn-get-in">
