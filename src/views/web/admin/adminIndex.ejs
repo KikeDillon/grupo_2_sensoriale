@@ -3,6 +3,10 @@
     <%- include ('../../partials/header') %>
     <main class="main">
         <div class="main-header-space"></div>
+        <div class="h4">
+            <h4>Productos</h4>
+        </div>
+        <section class="articles-selection">
         <table class = "table">
             <thead>
                 <tr>
@@ -29,8 +33,9 @@
                 <% }); %> 
             </tbody>
         </table>
+        </section>
         <section class="btns-ck">
-            <h4>botón de crear <a href="/administrar/crear">crear</a></h4>
+            <h4>botón de crear <a class="a" href="/administrar/crear">crear</a></h4>
         </section>
     </main>    
     <%- include ('../../partials/footer') %>

@@ -1,24 +1,120 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Comfortaa', cursive;
 }
-
-/*=======================================*/
-                /* MAIN */
-/*=======================================*/
 
 .main{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
+    height: 100%;
 }
 .main-header-space{     /*=== espacio generado porque el header es fixed === */
     width: 100%;
     height: 100px;
 }
-.table{
-    height: 100%;
+
+.h2{
+    color: #0f3057;
+    text-align: center;
     width: 100%;
+    margin-top: 5vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    flex-direction: column;
+}
+
+
+.form{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    margin: 7px 0px;
+    margin-top: 3px;
+}
+
+.form-in, select{
+    width: 70%;
+    max-width: 500px;
+    border: solid 1px #008891;
+    border-radius: 0.5rem;
+    padding-left: 10px;
+}
+
+.outlet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    margin: 7px;
+    margin-left: 4vw;
+    width: 70%;
+    border: solid 1px #008891;
+    border-radius: 0.5rem;
+}
+
+.form-out{
+    border-radius: 0.5rem;
+    padding-left: 10px;
+}
+
+.file-imagen{
+    display: flex;
+    justify-content: center;
+}
+
+.file-img{
+    width: 70%;
+    max-width: 500px;
+    border: solid 1px #008891;
+}
+
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.btn-erase, .btn-get-in{
+    width: 20vw;
+    height: 30px;
+    margin: 7px;
+    border: solid 1px #008891;
+    border-radius: 0.5rem;
+    background-color: #008891;
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    width: 70%;
+    max-width: 500px;
+    border: solid 1px #008891;
+    border-radius: 0.5rem;
+    background-color: #008891;
+    color: #e7e7de;
+}
+
+.btn-volver{
+    text-decoration: none;
+    margin-bottom: 3vh;
+    color: #00587a;
+    margin-right: 3vw;
+    font-size: large;
+}
+
+.btn-back{
+    margin-top: 5%;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;    
 }
