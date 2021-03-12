@@ -3,6 +3,13 @@ const app = express ();
 const path = require ('path');
 const methodOverride = require('method-override');
 
+//Para indicarle express la carpeta donde se encuentran los archivos estáticos
+//app.use(express.static(path.resolve(__dirname, '..', 'public')));
+//Debemos indicar cual es el motor de plantillas que estamos usando EJS
+//app.set('view engine','ejs');
+//URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+app.use(express.urlencoded({ extended: false }));
+
 //ELEMENTOS ESTÁTICOS
 const publicpath = path.resolve (__dirname, '../public');
 app.use (express.static(publicpath));
@@ -18,7 +25,6 @@ const userRouter = require ('./routers/userRouter');
 const productsRouter = require ('./routers/productsRouter');
 const saleRouter = require ('./routers/saleRouter');
 const adminRouter = require ('./routers/adminRouter');
-
 app.use (webRouter);
 app.use (productsRouter);
 app.use (userRouter);
@@ -35,6 +41,6 @@ app.listen (app.get ('puerto'), function(){
 });
 
 app.use (function(req, res, next){
-    res.status(404).render(path.resolve(__dirname, './views/web/404-page.ejs'));
+    res.status(404).render(path.resolve(__dirname, './views/middlewares/404-page.ejs'));
     next();
 });

@@ -6,13 +6,13 @@ const cssregister = ['footer', 'header', 'tablet', 'register'];
 
 const userController = {
     login: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/login.ejs'), {styles: csslogin});
+        return res.render (path.resolve(__dirname, '../views/user/login.ejs'), {styles: csslogin});
     },    
     forgotpassword: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/forgot-password.ejs'), {styles: cssforgotpassword});
+        return res.render (path.resolve(__dirname, '../views/user/forgot-password.ejs'), {styles: cssforgotpassword});
     },    
     register: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/register.ejs'), {styles: cssregister});
+        return res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister});
     }
 }
 

@@ -3,44 +3,51 @@
     <%- include ('../../partials/header') %>
     <main class="main">
         <div class="main-header-space"></div>
-        <section class = "detail-product">
-            <div>
-                <%= unProducto.id %>
-            </div>
-            <div>
-                <%= unProducto.mark %>
-            </div>
-            <div>
-                <%= unProducto.model %>
-            </div>
-            <div>
-                <%= unProducto.gender %>
-            </div>
-            <div>
-                <%= unProducto.size %>
-            </div>
-            <div>
-                <%= unProducto.price %>
-            </div>
-            <div class="outlet">
-                <% if (unProducto.outlet == 1){ %>
-                    <p> outlet sí</p>
-                <% }; %>
-                <% if (unProducto.outlet == 0){ %>
-                    <p> outlet no</p>
-                <% }; %>
-            </div>
+        <section class = "container">
+            <section class="detail-img">
             <div>
                 <img src="/images/imgPerfume/<%= unProducto.image %>" alt="imagen perfume">
             </div>
+            </section>
+            <section class="product">
+            <div class="detail-product">
+                <p>id: <%= unProducto.id %></p>
+            </div>
+            <div class="detail-product">
+                <p>mark: <%= unProducto.mark %></p>
+            </div>
+            <div class="detail-product">
+                <p>model: <%= unProducto.model %></p>
+            </div>
+            <div class="detail-product">
+                <p>gender: <%= unProducto.gender %></p>
+            </div>
+            <div class="detail-product">
+                <p>size: <%= unProducto.size %></p>
+            </div>
+            <div class="detail-product">
+                <p>price: <%= unProducto.price %></p>
+            </div>
+            <div class="outlet">
+                <% if (unProducto.outlet == 1){ %>
+                    <p> outlet: sí</p>
+                <% }; %>
+                <% if (unProducto.outlet == 0){ %>
+                    <p> outlet: no</p>
+                <% }; %>
+            </div>
+        </section>
         </section>
         <form action="/administrar/eliminado/<%= unProducto.id %> " method="GET" enctype="multipart/form-data">
+            <section class="btns">
             <div class="btn-destroy">
                 <button id="btn-destroy" type="submit"> confirmar </button>
-            </div>          
-        </form>
-        <a href="/administrar"><button>volver</button></a>
-
+            </div>       
+            <div class="a">   
+            <a  href="/administrar"><button>volver</button></a>
+            </div>
+        </section>
+    </form>
     </main>    
     <%- include ('../../partials/footer') %>
 </body>

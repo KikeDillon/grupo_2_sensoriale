@@ -9,22 +9,22 @@ const cssshipping = ['footer', 'headersale', 'tablet', 'shipping'];
 
 const saleController = {
     checkout: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/checkout.ejs'), {styles: csscheckout});
+        return res.render (path.resolve(__dirname, '../views/sale/checkout.ejs'), {styles: csscheckout});
     },    
     maridaje: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/maridaje.ejs'), {styles: cssmaridaje});
+        return res.render (path.resolve(__dirname, '../views/sale/maridaje.ejs'), {styles: cssmaridaje});
     },    
     messagecard: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/message-card.ejs'), {styles: cssmessagecard});
+        return res.render (path.resolve(__dirname, '../views/sale/message-card.ejs'), {styles: cssmessagecard});
     },
     packaging: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/packaging.ejs'), {styles: csspackaging});
+        return res.render (path.resolve(__dirname, '../views/sale/packaging.ejs'), {styles: csspackaging});
     },    
     payment: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/payment.ejs'), {styles: csspayment});
+        return res.render (path.resolve(__dirname, '../views/sale/payment.ejs'), {styles: csspayment});
     },    
     shipping: function (req,res){
-        return res.render (path.resolve(__dirname, '../views/web/shipping.ejs'), {styles: cssshipping});
+        return res.render (path.resolve(__dirname, '../views/sale/shipping.ejs'), {styles: cssshipping});
     }
 }
 

@@ -1,0 +1,38 @@
+<%- include ('../partials/head') %>
+<body class="body">
+    <%- include ('../partials/header') %>
+    <main class="main">
+      <div class="main-header-space"></div>
+        <div class="h4">
+          <h4>Productos</h4>
+        </div>
+        <div class="a" >
+          <a class="agregar" href="/create"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
+        </div>
+            <section class="articles-selection"></section>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Ver</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Borrar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <% products.forEach(products => { %>
+                      <tr>
+                          <td><%= products.id%> </td>
+                          <td><%= products.nombre%> </td>
+                          <td><a href="#"><ion-icon name="eye-outline"><i class="fas fa-eye"></i></ion-icon></a></td>
+                          <td><a href="#"><ion-icon name="pencil-outline"><i class="fas fa-edit"></i></ion-icon></a></td>
+                          <td><a href="#"><ion-icon name="trash-outline"><i class="fas fa-trash"></i></ion-icon></a></td>
+                      </tr>
+                    <% }); %>
+                  </tbody>
+        </section> 
+    </main>    
+     <!--<%- include ('../partials/footer') %> -->
+</body>
+</html>
