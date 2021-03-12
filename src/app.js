@@ -25,9 +25,16 @@ app.use (userRouter);
 app.use (saleRouter);
 app.use (adminRouter);
 
+
+
 //LEVANTO EL SERVIDOR
 app.set ('puerto', process.env.PORT || 3000);
 
 app.listen (app.get ('puerto'), function(){
     console.log ("LEVANTÓ EL SERVIDOR EN EL PUERTO 3000");
+});
+
+app.use (function(req, res, next){
+    res.status(404).render(path.resolve(__dirname, './views/web/404-page.ejs'));
+    next();
 });

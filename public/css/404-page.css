@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+    background-color: #e7e7de;
+}
+.main-header-space{
+    height: 150px;
+}
+.image{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+    font-size: 3vw;
+    color: #00587a;
+}
+.space{
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+a{
+    text-decoration: none;
+    color: #00587a;
+}
