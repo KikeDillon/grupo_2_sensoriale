@@ -10,8 +10,6 @@
 /*=======================================*/
 
 .main{
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
 }
 .main-header-space{     /*=== espacio generado porque el header es fixed === */
@@ -21,4 +19,39 @@
 .table{
     height: 100%;
     width: 100%;
+}
+
+.product{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.detail-product, .outlet{
+    color: #008891;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.btns{
+    display: flex;
+    flex-wrap: wrap;
+    /* align-self: flex-end; */
+    justify-content: flex-end;
+}
+
+.a{
+    width: 20vw;
+    height: 30px;
+    margin: 7px;
+    border: solid 1px #008891;
+    border-radius: 0.5rem;
+    background-color: #008891;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
