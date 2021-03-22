@@ -8,14 +8,13 @@ const methodOverride = require('method-override');
 //Debemos indicar cual es el motor de plantillas que estamos usando EJS
 //app.set('view engine','ejs');
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
-app.use(express.urlencoded({ extended: false }));
 
 //ELEMENTOS ESTÁTICOS
 const publicpath = path.resolve (__dirname, '../public');
 app.use (express.static(publicpath));
 
 app.set ('view engine', 'ejs'); //EJS necesario
-app.use(express.urlencoded({ extended: false })); //MULTER necesario
+app.use(express.urlencoded({ extended: false })); //MULTER necesario . Para capturar la info req.body que viaja en un formulario
 app.use(methodOverride('_method')); //METODO GET y POST en HTML necesario
 
 
@@ -30,8 +29,6 @@ app.use (productsRouter);
 app.use (userRouter);
 app.use (saleRouter);
 app.use (adminRouter);
-
-
 
 //LEVANTO EL SERVIDOR
 app.set ('puerto', process.env.PORT || 3000);

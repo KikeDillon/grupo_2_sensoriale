@@ -6,28 +6,54 @@
         <section class="main-register">
         <p>crear cuenta</p>
         <section class="section-register">
-            <form action="/get-in" method="POST" class="form-register">
+            <form action="/registrarse" method="POST" class="form-register">
                 <div class="name">
-                    <input class="input" type="text" placeholder="nombre" required pattern="[a-zA-Z]+">
+                    <input name="firstname" class="form-control is-invalid" type="text" placeholder="nombre" value="<%= locals.olduser && olduser.firstname ? olduser.firstname : ''%>">
+                </div>
+                <div class="text-alert">
+                    <% if (locals.errors && errors.firstname) { %> 
+                      <p> <%= errors.firstname.msg %> </p> 
+                    <% } %>   
                 </div>                
-                <div class="last-name">
-                    <input class="input" type="text" placeholder="apellido" required pattern="[a-zA-Z]+">
+                <div class="lastname">
+                    <input name="lastname" class="input" type="text" placeholder="apellido" value="<%= locals.olduser && olduser.lastname ? olduser.lastname : ''%>">
                 </div>
-                <div class="user-name">
-                    <input class="input" type="email" placeholder="correo electrónico" required>
+                <div class="text-alert">
+                    <% if (locals.errors && errors.lastname) { %>
+                        <p> <%= errors.lastname.msg %> </p> 
+                    <% } %>   
+                </div>                
+                <div class="username">
+                    <input name="username" class="input" type="text" placeholder="correo electrónico" value="<%= locals.olduser && olduser.username ? olduser.username : '' %>">
                 </div>
+                <div class="text-alert">
+                    <% if (locals.errors && errors.username) { %>
+                        <p> <%= errors.username.msg %> </p> 
+                    <% } %>   
+                </div>   
+                </div>                                
                 <div class="password">
-                    <input minlength="6" class="input" type="password" placeholder="contraseña" required>
+                    <input name="password" class="input" type="password" placeholder="contraseña">
                 </div>
-                <div class="repeat-password">
-                    <input minlength="6" class="input" type="password" placeholder="repetir contraseña" required>
+                <div class="text-alert">
+                    <% if (locals.errors && errors.password) { %>
+                        <p> <%= errors.password.msg %> </p> 
+                    <% } %>   
+                </div>                                
+                <div class="confirmpassword">
+                    <input name="confirmpassword" class="input" type="password" placeholder="repetir contraseña">
                 </div>
+                <div class="text-alert">
+                    <% if (locals.errors && errors.confirmpassword) { %>
+                        <p> <%= errors.confirmpassword.msg %> </p> 
+                    <% } %>   
+                </div>                
                 <div class="btn-erase">
                     <button id="btn-erase" type="reset"> borrar datos </button>
-                </div>                
+                </div>                              
                 <div class="btn-get-in">
-                    <button id="btn-enter" type="submit"> ingresar </button>
-                </div>
+                    <button id="btn-enter" type="submit"> crear </button>
+                </div>            
             </form>
             <div class="to-login"><a href="/ingresar">¿tenés cuenta? iniciá sesión</a></div>
         </section>

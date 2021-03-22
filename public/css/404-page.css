@@ -22,12 +22,19 @@ h1{
     color: #00587a;
 }
 .space{
+    display: flex;
+    justify-content: center;
     height: 200px;
     width: 100%;
     text-align: center;
     padding-top: 50px;
 }
+p{
+    color: #00587a;
+}
 a{
     text-decoration: none;
     color: #00587a;
+    font-weight: bolder;
+    margin-left: 10px;
 }
