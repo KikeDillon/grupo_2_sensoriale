@@ -4,61 +4,60 @@
     <main class="main">
         <div class="main-header-space"></div>
         <section class = "main-section">
-            <form action="/administrar/actualizar/<%= unProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <section class = "container">
+            <form class="form" action="/administrar/actualizar/<%= unProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="mark">
-                    <select name="mark" id="marca">
+                    <select name="mark" id="marca"  class="input">
                         <option value="<%= unProducto.mark %>" selected> <%= unProducto.mark %> </option>
                         <% perfumeM.forEach(i => { %>
                             <option value="<%= i.mark %>" required><%= i.mark %></option>
                         <% }) %>
                     </select>
-                </div>            
-         <!--       <div>
-                    <select name="model" id="model">
-                       <option value="#" disabled selected>modelo</option>
-                    </select>   
-                </div> -->
-                </div>                
-                <div class="price">
-                    <input name="price" class="input" type="number" value ="<%= unProducto.price %>" required>
+                </div>               
+                <div class="mark">
+                    <input  name="price" class="input" type="number" value ="<%= unProducto.price %>" required>
                 </div>
-                <div class="gender">
-                    <select name="gender" id="gender">
+                <div class="mark">
+                    <select name="gender" id="gender"  class="input">
                         <option value="<%= unProducto.gender %>" selected><%= unProducto.gender %></option>
                         <option value="hombre">hombre</option>
                         <option value="mujer">mujer</option>
                         <option value="unisex">unisex</option>
                     </select>
                 </div>
-                <div class="size">
-                    <select name="size" id="size">
+                <div class="mark">
+                    <select name="size" id="size"  class="input">
                         <option value="<%= unProducto.size %>" selected><%= unProducto.size %> ml</option>
                         <option value=30>30 ml</option>
                         <option value=50>50 ml</option>
                         <option value=100>100 ml</option>
                     </select>
                 </div>
-                <div class="outlet">
+                <div class="mark">
                     <label for="outlet">outlet</label>
                     <% if (unProducto.outlet == 1){ %>
-                        <input type="checkbox" name="outlet" value=1 checked>
+                        <input style=margin:5px type="checkbox" name="outlet" value=1 checked>
                     <% }; %>
                     <% if (unProducto.outlet == 0){ %>
-                        <input type="checkbox" name="outlet" value=1>
+                        <input style=margin:5px type="checkbox" name="outlet" value=1>
                     <% }; %>
                 </div>
-                <div class="custom-file">
+            </section>             
+                <div class="imginput">
                     <img src="/images/imgPerfume/<%= unProducto.image %>"  alt="imagen perfume">
-                    <input type="file" name="newImage" placeholder="imagen perfume" value="<%= unProducto.image %>">
+                    <input  type="file" name="newImage" placeholder="imagen perfume" value="<%= unProducto.image %>">
                  </div>
-                <div class="btn-get-in">
-                    <button id="btn-enter" type="submit"> guardar </button>
-                </div>
-            </form>
-            <div class="btn-erase">
-                <a href="/administrar"><button id="btn-back"> omitir </button></a>
-            </div>
+                </form>  
+                    
         </section>
+            <section class="btns">
+                <div class="a-btn">
+                    <a href="/administrar"><div id="btn-enter" type="submit"> guardar </div></a>
+                </div>
+                <div class="a-btn">
+                    <a href="/administrar"><div id="btn-back"> omitir </div></a>
+                </div>    
+            </section>
     </main>    
     <%- include ('../../partials/footer') %>
 </body>

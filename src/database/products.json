@@ -10,36 +10,6 @@
     "image": "perfume-1615090540902.jpg"
   },
   {
-    "id": "4",
-    "mark": "Polo",
-    "model": "pendiente",
-    "price": "123244",
-    "outlet": 0,
-    "size": "100",
-    "gender": "unisex",
-    "image": "perfume-1615090653172.jpg"
-  },
-  {
-    "id": "5",
-    "mark": "CH",
-    "model": "pendiente",
-    "price": "1232",
-    "outlet": 0,
-    "size": "50",
-    "gender": "mujer",
-    "image": "perfume-1615158763634.jpg"
-  },
-  {
-    "id": "6",
-    "mark": "CH",
-    "model": "pendiente",
-    "price": "1232",
-    "outlet": 1,
-    "size": "50",
-    "gender": "hombre",
-    "image": "perfume-1615158786930.jpg"
-  },
-  {
     "id": "7",
     "mark": "CH",
     "model": "pendiente",
