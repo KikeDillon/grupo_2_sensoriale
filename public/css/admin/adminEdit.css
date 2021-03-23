@@ -22,20 +22,39 @@
 }
 .main-section{
     display: flex;
+    flex-direction: column;
     width: 100%;
+    height: 600px;
 }
-
+.container{
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 70%;
+    max-width: 330px;
+}
+.imginput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+.imginput img{
+    display: flex;
+    height: 80%;
+}
+.imginput input{
+    display: flex;
+    width: 80%;
+}
 .table{
     height: 100%;
     width: 100%;
-}
-
-.container{
-    display: flex;
-    width: 50%;
-    justify-content: center;
-    margin-top: 5vh;
-    align-items: center;
 }
 
 .mark{
@@ -51,6 +70,7 @@
     padding-left: 10px;
 
 }
+
 .input{
     display: flex;
     flex-wrap: wrap;
@@ -69,11 +89,12 @@
     flex-wrap: wrap;
     /* align-self: flex-end; */
     justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
-.a{
-    width: 20vw;
-    height: 30px;
+.a-btn{
+    width: 30vw;
+    height: 35px;
     margin: 7px;
     border: solid 1px #008891;
     border-radius: 0.5rem;
@@ -81,4 +102,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 330px;
+}
+.a-btn a{
+    text-decoration: none;
+    color: white;
+    font-size: bolder;
+}
+
+.a-btn:hover{
+    cursor: pointer;
+    background-color: #00587a;
+}
+
+@media (min-width: 361px){
+    .imginput input{
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px){
+    .main-section{
+        flex-direction: row;
+        height: 400px;
+        align-items: center;
+    }
+    .container{
+        width: 50%;
+        height: 100%;
+    }
+    .imginput{
+        width: 50%;
+        height: 100%;
+    }
 }

@@ -5,7 +5,7 @@
         <div class="main-header-space"></div>
         <section class = "main-section">
             <section class = "container">
-            <form action="/administrar/actualizar/<%= unProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="form" action="/administrar/actualizar/<%= unProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="mark">
                     <select name="mark" id="marca"  class="input">
                         <option value="<%= unProducto.mark %>" selected> <%= unProducto.mark %> </option>
@@ -43,21 +43,20 @@
                     <% }; %>
                 </div>
             </section>             
-                <div>
+                <div class="imginput">
                     <img src="/images/imgPerfume/<%= unProducto.image %>"  alt="imagen perfume">
                     <input  type="file" name="newImage" placeholder="imagen perfume" value="<%= unProducto.image %>">
                  </div>
                 </form>  
                     
         </section>
-                 <section class="btns">
-                <div class="a">
+            <section class="btns">
+                <div class="a-btn">
                     <a href="/administrar"><div id="btn-enter" type="submit"> guardar </div></a>
-
                 </div>
-            <div class="a">
-                <a href="/administrar"><div id="btn-back"> omitir </div></a>
-            </div>    
+                <div class="a-btn">
+                    <a href="/administrar"><div id="btn-back"> omitir </div></a>
+                </div>    
             </section>
     </main>    
     <%- include ('../../partials/footer') %>
