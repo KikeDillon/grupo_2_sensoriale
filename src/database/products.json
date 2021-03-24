@@ -4,10 +4,10 @@
     "mark": "Polo",
     "model": "pendiente",
     "price": "12312",
-    "outlet": 0,
+    "outlet": 1,
     "size": "100",
     "gender": "unisex",
-    "image": "perfume-1615090540902.jpg"
+    "image": "perfume-1616474240344.jpg"
   },
   {
     "id": "7",
@@ -50,11 +50,11 @@
     "image": "perfume-1615057050402.jpg"
   },
   {
-    "id": 13,
+    "id": "13",
     "mark": "Dior",
     "model": "pendiente",
     "price": "1231231",
-    "outlet": 0,
+    "outlet": 1,
     "size": "50",
     "gender": "hombre",
     "image": "perfume-1615073605308.jpg"
@@ -68,5 +68,15 @@
     "size": "50",
     "gender": "unisex",
     "image": "perfume-1615171981816.jpg"
+  },
+  {
+    "id": "141",
+    "mark": "CH",
+    "model": "pendiente",
+    "price": "00222",
+    "outlet": 1,
+    "size": "30",
+    "gender": "mujer",
+    "image": "perfume-1616471624117.jpg"
   }
 ]
