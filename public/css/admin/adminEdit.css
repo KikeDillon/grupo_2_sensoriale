@@ -25,41 +25,60 @@
     flex-direction: column;
     width: 100%;
     height: 600px;
-}
-.container{
-    display: flex;
-    width: 100%;
-    height: 50%;
-    justify-content: center;
     align-items: center;
 }
-.form{
-    width: 70%;
-    max-width: 330px;
+.main-section form{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+/* ======= CONTENEDORES PADRES - SON 3 ======== */
+
+.container-mark{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 80%;
+    max-width: 300px;
+    height: 40%;
+    justify-content: center;
+    margin: auto;
 }
 .imginput{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 50%;
+    height: 45%;
 }
+.btns{
+    display: flex;
+    flex-direction: column;
+    height: 15%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* ======= FIN - CONTENEDORES PADRES - SON 3 ======== */
+
 .imginput img{
     display: flex;
-    height: 80%;
+    width: 30%;
 }
 .imginput input{
     display: flex;
     width: 80%;
-}
-.table{
-    height: 100%;
-    width: 100%;
+
 }
 
 .mark{
     display: flex;
-    justify-content: center;
     width: 100%;
     height: 35px;
     margin: 7px 0px;
@@ -67,8 +86,8 @@
     border: solid 1px #008891;
     border-radius: 0.5rem;
     align-items: center;
+    justify-content: center;
     padding-left: 10px;
-
 }
 
 .input{
@@ -84,25 +103,25 @@
     width: 50%;
 }
 
-.btns{
-    display: flex;
-    flex-wrap: wrap;
-    /* align-self: flex-end; */
-    justify-content: flex-end;
-    margin-bottom: 20px;
-}
-
 .a-btn{
-    width: 30vw;
+    display: flex;    
+    width: 100%;
     height: 35px;
     margin: 7px;
     border: solid 1px #008891;
     border-radius: 0.5rem;
     background-color: #008891;
-    display: flex;
+    font-weight: bolder;
     justify-content: center;
     align-items: center;
     max-width: 330px;
+    margin: auto;
+}
+.a-btn button{
+    background-color: #008891;
+    color: white;
+    font-weight: bolder;
+    border: none;
 }
 .a-btn a{
     text-decoration: none;
@@ -114,6 +133,13 @@
     cursor: pointer;
     background-color: #00587a;
 }
+.a-btn:hover button{
+    background-color: #00587a;
+
+}
+.a-btn button:hover{
+    cursor: pointer;
+}
 
 @media (min-width: 361px){
     .imginput input{
@@ -122,17 +148,37 @@
 }
 
 @media (min-width: 768px){
+
     .main-section{
-        flex-direction: row;
-        height: 400px;
-        align-items: center;
+        height: 500px;
     }
-    .container{
+    .main-section form{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* ======= CONTENEDORES PADRES - SON 3 ======== */
+    .container-mark{
         width: 50%;
-        height: 100%;
+        height: 80%;
+        justify-content: center;
+        margin: auto;
     }
     .imginput{
+        justify-content: center;
         width: 50%;
-        height: 100%;
+        height: 80%;
     }
+    .btns{
+        flex-direction: row;
+        height: 20%;
+        width: 80%;
+    }
+    /* ======= FIN - CONTENEDORES PADRES - SON 3 ======== */
+    
+    .imginput img{
+        width: 50%;
+    }
+
 }

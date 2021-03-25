@@ -19,7 +19,11 @@
 .product{
     display: flex;
     justify-content: center;
+    width: 50%;
     flex-direction: column;
+}
+p{
+    font-size:10px ;
 }
 
 img{
@@ -45,7 +49,7 @@ img{
 
 
 .btn-destroy, .a{
-    width: 20vw;
+    width: 40vw;
     height: 30px;
     margin: 7px;
     border: solid 1px #008891;
@@ -63,4 +67,9 @@ button{
     border-radius: 0.5rem;
     background-color: #008891;
     color: #e7e7de;
+}
+@media (min-width: 500px){
+    .btn-destroy, .a{
+        width: 20vw;
+    }
 }

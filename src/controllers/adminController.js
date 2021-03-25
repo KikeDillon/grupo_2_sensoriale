@@ -47,6 +47,7 @@ const adminController = {
         res.redirect('/administrar');
     },
     edit: function (req,res){
+        console.log ("hola estoy en EDIT");
         let perfumeM = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/mark.json')));
         let products = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
         let unProducto = null;
@@ -58,9 +59,10 @@ const adminController = {
         res.render (path.resolve(__dirname, '../views/web/admin/adminEdit.ejs'), {styles: cssAdminEdit, unProducto, perfumeM})
     },
     update: function (req, res){
+        console.log("hola entré en update");
         let products = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
         perfumeId = req.params.id;
-        let newArrayPerfume = products.map(function (i){
+        let newArrayPerfume = products.map(function (i){    
             if (i.id == perfumeId){
                 oldImage = i.image;
                 let newPerfume = {
@@ -76,7 +78,7 @@ const adminController = {
                 return newPerfume;         
             }
             return i;
-        })
+        });
         let newPerfumeSave = JSON.stringify(newArrayPerfume,null,2);
         fs.writeFileSync(path.resolve(__dirname,'../database/products.json'), newPerfumeSave);
         res.redirect('/administrar');
