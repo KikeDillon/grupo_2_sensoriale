@@ -11,10 +11,16 @@
             <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
         </div>
         <div class="header-login">
-            <a href="/ingresar"><i class="fas fa-sign-in-alt"></i></a>
+            <% if (locals.userLogged) { %>
+                <a href="/ingresar"><i class="fas fa-user"></i></a>
+            <% } else { %>
+                <a href="/perfil"><i class="fas fa-sign-in-alt"></i></a>
+            <% } %>
         </div>
         <div class="header-login">
-            <a href="/administrar"><i class="fas fa-users-cog"></i></a>
+            <% if (locals.userType == 1) { %>
+                <a href="/administrar"><i class="fas fa-users-cog"></i></a>
+            <% } %>
         </div>        
     </div>
     <nav class="nav-bar">

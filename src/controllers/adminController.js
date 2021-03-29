@@ -25,7 +25,7 @@ const adminController = {
     },
     create: function (req, res){
         let perfumeM = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/mark.json')));
-        res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, perfumeM});
+        return res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, perfumeM});
     },
     save: function (req, res){
         let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
@@ -44,7 +44,7 @@ const adminController = {
         products.push(newPerfume);
         let newPerfumeSave = JSON.stringify(products,null,2);
         fs.writeFileSync(path.resolve(__dirname,'../database/products.json'), newPerfumeSave);
-        res.redirect('/administrar');
+        return res.redirect('/administrar');
     },
     edit: function (req,res){
         console.log ("hola estoy en EDIT");
@@ -56,7 +56,7 @@ const adminController = {
                 unProducto = i;
             }
         });
-        res.render (path.resolve(__dirname, '../views/web/admin/adminEdit.ejs'), {styles: cssAdminEdit, unProducto, perfumeM})
+        return res.render (path.resolve(__dirname, '../views/web/admin/adminEdit.ejs'), {styles: cssAdminEdit, unProducto, perfumeM})
     },
     update: function (req, res){
         console.log("hola entré en update");
@@ -81,7 +81,7 @@ const adminController = {
         });
         let newPerfumeSave = JSON.stringify(newArrayPerfume,null,2);
         fs.writeFileSync(path.resolve(__dirname,'../database/products.json'), newPerfumeSave);
-        res.redirect('/administrar');
+        return res.redirect('/administrar');
     },
     delete: function (req,res){
         let products = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
@@ -91,7 +91,7 @@ const adminController = {
                 unProducto = i;
             }
         });
-        res.render (path.resolve(__dirname, '../views/web/admin/adminDelete.ejs'), {styles: cssAdminDelete, unProducto})
+        return res.render (path.resolve(__dirname, '../views/web/admin/adminDelete.ejs'), {styles: cssAdminDelete, unProducto})
     },
     destroy: function (req,res){
         console.log('en destroy');
@@ -103,7 +103,7 @@ const adminController = {
         });
         let perfumeSave = JSON.stringify(perfumeNewFile,null,2)
         fs.writeFileSync(path.resolve(__dirname, '../database/products.json'),perfumeSave);
-        res.redirect('/administrar');
+        return res.redirect('/administrar');
     }
 }
 

@@ -11,7 +11,7 @@
 
 .main{
     width: 100%;
-    height: 800px;
+    height: 700px;
 }
 .main-header-space{     /*=== espacio generado porque el header es fixed === */
     width: 100%;
@@ -21,7 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 300px;
+    height: 500px;
 }
 .main-register p{
     display: flex;
@@ -47,7 +47,7 @@
     width: 100%;
 
 }
-.main-register .section-register form div{
+.input-container{
     display: flex;
     justify-content: center;
     width: 100%;
@@ -64,7 +64,7 @@
     padding-left: 10px;
 }
 .text-alert{
-    height: 10px;
+    height: 20px;
 
 }
 .text-alert p{
@@ -119,7 +119,9 @@
     .main-register p{
         font-size: 4vw;
     }
-   
+    .text-alert p{
+        font-size: 2vw;
+    }
 }
 
 @media (min-width: 769px){
@@ -129,8 +131,9 @@
     /*=======================================*/
 
     .main-register p{
-        font-size: 2vw;
+        font-size: 3vw;
     }
-
-
+    .text-alert p{
+        font-size: 1vw;
+    }
 }

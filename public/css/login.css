@@ -11,7 +11,7 @@
 
 .main{
     width: 100%;
-    height: 400px;
+    height: 500px;
 }
 .main-header-space{     /*=== espacio generado porque el header es fixed === */
     width: 100%;
@@ -20,7 +20,7 @@
 .main-login{
     display: flex;
     width: 100%;
-    height: 300px;
+    height: 400px;
     flex-wrap: wrap;
 }
 .main-login p{
@@ -31,27 +31,42 @@
     font-size: 8vw;
     font-weight: bolder;
     color: #00587a;
+    height: 20%;
 }
 .main-login .section-login{
     display: flex;
+    height: 80%;
     flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+
 }
 .main-login .section-login form{
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 70%;
 }
-.main-login .section-login form div{
+.text-alert{
+    height: 20px;
+
+}
+.text-alert p{
+    font-size: 3vw;
+    color: tomato;
+    height: 100%;
+}
+
+.input-container{
     display: flex;
     justify-content: center;
     width: 100%;
     height: 35px;
     margin: 7px 0px;
     margin-top: 3px;
+
 }
+
 .main-login .section-login form div input{
     width: 70%;
     max-width: 500px;
@@ -136,12 +151,31 @@
     .main{
         height: 430px;
     }
+    .main-login{
+        height: 330px;
+    }
     .main-login p{
         font-size: 4vw;
-        margin-top: 10px;
+        height: 55px;
     }
     .section-login{
-        margin-top: 15px;
+        height: 275px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .main-login .section-login form{
+    height: 70%;
+    }
+    .text-alert{
+        height: 20px;
+    }
+    .text-alert p{
+        font-size: 2vw;
+        height: 100%;
+    }
+    #forgot-password{
+        margin-bottom: 0px;
     }
 }
 
@@ -154,6 +188,12 @@
     .main-login p{
         font-size: 2vw;
     }
-
+    .text-alert p{
+        font-size: 1vw;
+    }
+    .create-acount{
+        margin-bottom: 0px;
+        margin-top: 15px;
+    }
 
 }

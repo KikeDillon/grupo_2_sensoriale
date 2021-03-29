@@ -2,6 +2,8 @@ const express = require ('express');
 const app = express ();
 const path = require ('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 //app.use(express.static(path.resolve(__dirname, '..', 'public')));
@@ -16,7 +18,8 @@ app.use (express.static(publicpath));
 app.set ('view engine', 'ejs'); //EJS necesario
 app.use(express.urlencoded({ extended: false })); //MULTER necesario . Para capturar la info req.body que viaja en un formulario
 app.use(methodOverride('_method')); //METODO GET y POST en HTML necesario
-
+app.use(session({secret:"Uso de sesión", resave:false, saveUninitialized:true}));
+app.use(userLoggedMiddleware);
 
 //RUTAS
 const webRouter = require ('./routers/webRouter');

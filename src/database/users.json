@@ -4,34 +4,39 @@
     "firstname": "raúl",
     "lastname": "fuentes",
     "username": "rf",
-    "password": "123456"
+    "password": "123456",
+    "usertype": 0
   },
   {
     "id": 2,
     "firstname": "Cristian",
     "lastname": "Smail",
     "username": "cristian.ls@outlook.com",
-    "password": "12321321321321"
+    "password": "123123",
+    "usertype": 1
   },
   {
     "id": 3,
     "firstname": "pepino",
     "lastname": "Pepinillo",
     "username": "pepi@gmail.com",
-    "password": "123123121223"
+    "password": "123123",
+    "usertype": 0
   },
   {
     "id": 4,
     "firstname": "dd",
     "lastname": "ee",
     "username": "213@sksk.com",
-    "password": "12312321"
+    "password": "12312321",
+    "usertype": 0
   },
   {
     "id": 5,
     "firstname": "sjsjsjsj",
     "lastname": "sdasd",
     "username": "ks@kss.com",
-    "password": "ljdaslkdjslkaj"
+    "password": "ljdaslkdjslkaj",
+    "usertype": 0
   }
 ]

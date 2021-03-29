@@ -7,7 +7,7 @@
         <p>crear cuenta</p>
         <section class="section-register">
             <form action="/registrarse" method="POST" class="form-register">
-                <div class="name">
+                <div class="input-container">
                     <input name="firstname" class="form-control is-invalid" type="text" placeholder="nombre" value="<%= locals.olduser && olduser.firstname ? olduser.firstname : ''%>">
                 </div>
                 <div class="text-alert">
@@ -15,7 +15,7 @@
                       <p> <%= errors.firstname.msg %> </p> 
                     <% } %>   
                 </div>                
-                <div class="lastname">
+                <div class="input-container">
                     <input name="lastname" class="input" type="text" placeholder="apellido" value="<%= locals.olduser && olduser.lastname ? olduser.lastname : ''%>">
                 </div>
                 <div class="text-alert">
@@ -23,7 +23,7 @@
                         <p> <%= errors.lastname.msg %> </p> 
                     <% } %>   
                 </div>                
-                <div class="username">
+                <div class="input-container">
                     <input name="username" class="input" type="text" placeholder="correo electrónico" value="<%= locals.olduser && olduser.username ? olduser.username : '' %>">
                 </div>
                 <div class="text-alert">
@@ -32,7 +32,7 @@
                     <% } %>   
                 </div>   
                 </div>                                
-                <div class="password">
+                <div class="input-container">
                     <input name="password" class="input" type="password" placeholder="contraseña">
                 </div>
                 <div class="text-alert">
@@ -40,7 +40,7 @@
                         <p> <%= errors.password.msg %> </p> 
                     <% } %>   
                 </div>                                
-                <div class="confirmpassword">
+                <div class="input-container">
                     <input name="confirmpassword" class="input" type="password" placeholder="repetir contraseña">
                 </div>
                 <div class="text-alert">
@@ -48,10 +48,10 @@
                         <p> <%= errors.confirmpassword.msg %> </p> 
                     <% } %>   
                 </div>                
-                <div class="btn-erase">
+                <div class="input-container">
                     <button id="btn-erase" type="reset"> borrar datos </button>
                 </div>                              
-                <div class="btn-get-in">
+                <div class="input-container">
                     <button id="btn-enter" type="submit"> crear </button>
                 </div>            
             </form>

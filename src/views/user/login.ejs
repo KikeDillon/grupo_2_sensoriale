@@ -6,14 +6,30 @@
         <section class="main-login">
         <p>ingresá a tu cuenta</p>
         <section class="section-login">
-            <form action="/get-in" method="POST" class="form-login">
-                <div class="user-name">
-                    <input class="input" type="email" placeholder="correo electrónico">
+            <form action="/ingresar" method="POST" class="form-login">
+                <div class="input-container">
+                    <input class="input" placeholder="correo electrónico" value="<%= (locals.errors || locals.erroremail || locals.errorpassword) && userEmailOld ? userEmailOld : ''%>" name="useremail" >
                 </div>
-                <div class="password">
-                    <input class="input" type="password" placeholder="contraseña">
+                <div class="text-alert">    
+                    <% if ((locals.errors && errors.useremail)) { %>
+                        <p> <%= errors.useremail.msg %> </p> 
+                    <% } %>
+                    <% if ((locals.erroremail)) { %>
+                        <p> <%= erroremail.msg %> </p> 
+                    <% } %>  
                 </div>
-                <div class="btn-get-in">
+                <div class="input-container">
+                    <input class="input" type="password" placeholder="contraseña" name="password">
+                </div>
+                <div class="text-alert">    
+                    <% if ((locals.errors && errors.password)) { %>
+                        <p> <%= errors.password.msg %> </p> 
+                    <% } %>
+                    <% if ((locals.errorpassword)) { %>
+                        <p> <%= errorpassword.msg %> </p> 
+                    <% } %>
+                </div>   
+                <div class="input-container">
                     <button id="btn-enter" type="submit"> ingresar </button>
                 </div>
                 <div id="checkbox-rememberme">

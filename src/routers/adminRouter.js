@@ -1,8 +1,10 @@
 const express = require ('express');
-const adminController = require ('../controllers/adminController');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
+
+const adminController = require ('../controllers/adminController');
+const admMiddleware = require ('../middlewares/admMiddleware');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -15,13 +17,13 @@ var storage = multer.diskStorage({
    
 const upload = multer({ storage })
 
-router.get ('/administrar', adminController.admin);
-router.get ('/administrar/crear', adminController.create);
+router.get ('/administrar', admMiddleware, adminController.admin);
+router.get ('/administrar/crear', admMiddleware, adminController.create);
 router.post ('/administrar/crear', upload.single('image'), adminController.save);
-router.get ('/administrar/visualizar/:id', adminController.view);
-router.get ('/administrar/editar/:id', adminController.edit);
+router.get ('/administrar/visualizar/:id', admMiddleware, adminController.view);
+router.get ('/administrar/editar/:id', admMiddleware, adminController.edit);
 router.put ('/administrar/actualizar/:id', upload.single('newImage'), adminController.update);
-router.get ('/administrar/eliminar/:id', adminController.delete);
-router.get ('/administrar/eliminado/:id', adminController.destroy);
+router.get ('/administrar/eliminar/:id', admMiddleware, adminController.delete);
+router.get ('/administrar/eliminado/:id', admMiddleware, adminController.destroy);
 
 module.exports = router;

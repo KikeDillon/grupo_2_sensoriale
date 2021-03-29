@@ -1,0 +1,27 @@
+<%- include ('../partials/head') %>
+<body class="body">
+    <%- include ('../partials/header') %>
+    <main class="main">
+        <div class="main-header-space"></div>
+        <section class="main-loged">
+           <p>Hola, ya estás logueado!</p>
+            <section class="section-loged">
+                <form action="/cerrarsesion" method="GET" class="form-login">
+                    <div class="usuario">
+                        <%= loggedUser.firstname %>    
+                    </div>
+                    <div class="usuario">
+                        <%= loggedUser.lastname %>    
+                    </div>
+                    <div class="usuario">
+                        <%= loggedUser.username %>    
+                    </div>
+                    <div class="input-container">
+                        <button id="logout" type="submit"> ¿ cerrar sesión ?</button>
+                    </div>
+                </form>
+            </section>
+       </section>
+    </main>    
+    <%- include ('../partials/footer') %></body>
+</html>

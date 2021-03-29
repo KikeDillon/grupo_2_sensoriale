@@ -4,7 +4,7 @@
     "mark": "Polo",
     "model": "pendiente",
     "price": "12312",
-    "outlet": 1,
+    "outlet": 0,
     "size": "100",
     "gender": "unisex",
     "image": "perfume-1616474240344.jpg"
@@ -30,11 +30,11 @@
     "image": "perfume-1615090514435.jpg"
   },
   {
-    "id": 10,
+    "id": "10",
     "mark": "CH",
     "model": "pendiente",
     "price": "1232",
-    "outlet": "1",
+    "outlet": 1,
     "size": "50",
     "gender": "hombre",
     "image": "perfume-1615057045505.jpg"
@@ -74,8 +74,8 @@
     "mark": "CH",
     "model": "pendiente",
     "price": "00222",
-    "outlet": 1,
-    "size": "30",
+    "outlet": 0,
+    "size": "100",
     "gender": "mujer",
     "image": "perfume-1616471624117.jpg"
   }
