@@ -24,6 +24,7 @@
 .product{
     display: flex;
     justify-content: center;
+    width: 50%;
     flex-direction: column;
 }
 
@@ -54,4 +55,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+img{
+    width: 90%;
+}
+a{
+    text-decoration: none;
+    color: #e7e7de;
 }

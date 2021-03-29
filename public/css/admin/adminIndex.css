@@ -26,6 +26,10 @@
     align-items: center;
 }
 
+.none{
+    display: none;
+}
+
 .table{
     border: solid #008891 1px;
     border-radius: 0.5rem;
@@ -33,9 +37,11 @@
     margin-left: 5vw
 }
 
+
 .articles-selection{
     width: 100%;
     display: flex;
+    margin-bottom: 2vh;
 }
 
 tbody{
@@ -54,10 +60,38 @@ thead{
     margin-bottom: 5vh;
 }
 
+
 .a {
     text-decoration: none;
-    margin-bottom: 3vh;
     color: #00587a;
     margin-right: 3vw;
-    font-size: large;
+
+}
+
+.a:hover{
+    color: #0f3057;
+}
+
+#plus{
+    margin-left: 1px;
+    font-size: 15px;
+    color: #008891;
+}
+
+#plus:hover{
+    color: #0f3057;
+}
+
+th, td{
+    font-size: 10px;
+}
+
+
+@media (min-width: 515px){
+    .none{
+        display: initial;
+    }
+    th, td{
+        font-size: initial;
+    }
 }

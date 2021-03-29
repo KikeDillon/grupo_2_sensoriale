@@ -6,6 +6,9 @@
         <div class="h4">
             <h4>Productos</h4>
         </div>
+        <section class="btns-ck">
+            <a class="a" href="/administrar/crear">crear<i id='plus' class="fas fa-plus-circle"></i></a>
+        </section>
         <section class="articles-selection">
         <table class = "table">
             <thead>
@@ -13,7 +16,7 @@
                     <th scope="col">id</th>
                     <th scope="col">marca</th>
                     <th scope="col">modelo</th>
-                    <th scope="col">género</th>
+                    <th class="none" scope="col">género</th>
                     <th scope="col">ver</th>
                     <th scope="col">editar</th>
                     <th scope="col">eliminar</th>
@@ -25,7 +28,7 @@
                         <td> <%= perfume.id %> </td>
                         <td> <%= perfume.mark %> </td>
                         <td> <%= perfume.model %> </td>
-                        <td> <%= perfume.gender %> </td>
+                        <td class="none"> <%= perfume.gender %> </td>
                         <td><a href="/administrar/visualizar/<%= perfume.id %>"><i class="fas fa-eye"></i></a></td>
                         <td><a href="/administrar/editar/<%= perfume.id %>"><i class="fas fa-edit"></i></a></td>
                         <td><a href="/administrar/eliminar/<%= perfume.id %>"><i class="fas fa-trash"></i></a></td>
@@ -33,9 +36,6 @@
                 <% }); %> 
             </tbody>
         </table>
-        </section>
-        <section class="btns-ck">
-            <h4>botón de crear <a class="a" href="/administrar/crear">crear</a></h4>
         </section>
     </main>    
     <%- include ('../../partials/footer') %>
