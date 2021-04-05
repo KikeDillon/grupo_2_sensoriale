@@ -29,6 +29,9 @@
                 <div class="text-alert">
                     <% if (locals.errors && errors.username) { %>
                         <p> <%= errors.username.msg %> </p> 
+                    <% } %>
+                    <% if ((locals.errorUserExist)) { %>
+                        <p> <%= errorUserExist.msg %> </p> 
                     <% } %>   
                 </div>   
                 </div>                                

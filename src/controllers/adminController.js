@@ -47,7 +47,6 @@ const adminController = {
         return res.redirect('/administrar');
     },
     edit: function (req,res){
-        console.log ("hola estoy en EDIT");
         let perfumeM = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/mark.json')));
         let products = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
         let unProducto = null;
@@ -59,7 +58,6 @@ const adminController = {
         return res.render (path.resolve(__dirname, '../views/web/admin/adminEdit.ejs'), {styles: cssAdminEdit, unProducto, perfumeM})
     },
     update: function (req, res){
-        console.log("hola entré en update");
         let products = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
         perfumeId = req.params.id;
         let newArrayPerfume = products.map(function (i){    
@@ -94,10 +92,8 @@ const adminController = {
         return res.render (path.resolve(__dirname, '../views/web/admin/adminDelete.ejs'), {styles: cssAdminDelete, unProducto})
     },
     destroy: function (req,res){
-        console.log('en destroy');
         let products = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/products.json')));
         let perfumeDeleteId = req.params.id;
-        console.log(perfumeDeleteId);
         let perfumeNewFile = products.filter(function(i){
             return (i.id != perfumeDeleteId);
         });

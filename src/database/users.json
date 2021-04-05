@@ -19,7 +19,7 @@
     "id": 3,
     "firstname": "pepino",
     "lastname": "Pepinillo",
-    "username": "pepi@gmail.com",
+    "username": "pepi@gmail.co",
     "password": "123123",
     "usertype": 0
   },
@@ -38,5 +38,21 @@
     "username": "ks@kss.com",
     "password": "ljdaslkdjslkaj",
     "usertype": 0
+  },
+  {
+    "id": 6,
+    "firstname": "Cristian",
+    "lastname": "Smail",
+    "username": "cristian.ls@digital.com",
+    "password": "$2a$10$CG2HsSwr6G6SQGp6NN7i/egDcG/FHThJU8E.p6x6CDPpcsCviHUf6",
+    "usertype": 0
+  },
+  {
+    "id": 7,
+    "firstname": "Juan",
+    "lastname": "Pepinillo",
+    "username": "juan@pepi.com",
+    "password": "$2a$10$Z5tSnebv0827vl9XTp0zNO7RZ6ClIsJOFMFBPHiAdz/O72oKoq7ha",
+    "usertype": 1
   }
 ]
