@@ -24,6 +24,9 @@ const userController = {
                 if(req.body.password == user.password){            // la contraseña ingresada en el body es igual a la contraseña del mismo usuario en el array ?
                     // SESSION
                     req.session.usuarioLogueado = user;            // el usuario logueado será el email que se guardo en user
+                    if(req.body.remember != 'undefined') {
+                        res.cookie('remember', user.useremail, {maxAge: 100000})
+                    }
                     res.redirect ('/');    
                 }else{
                     let userEmailOld = req.body.useremail;         // si la contraseña no es correcta, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs

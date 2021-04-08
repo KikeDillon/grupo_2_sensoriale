@@ -4,6 +4,7 @@ const path = require ('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const cookieParser = require('cookie-parser');
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 //app.use(express.static(path.resolve(__dirname, '..', 'public')));
@@ -32,6 +33,7 @@ app.use (productsRouter);
 app.use (userRouter);
 app.use (saleRouter);
 app.use (adminRouter);
+app.use (cookieParser());
 
 //LEVANTO EL SERVIDOR
 app.set ('puerto', process.env.PORT || 3000);
