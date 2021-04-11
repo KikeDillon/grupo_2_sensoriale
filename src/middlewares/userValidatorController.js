@@ -15,12 +15,11 @@ const userValidatorController = {
             .isEmail().withMessage('debe ingresar una dirección de correo eletrónica válida'),
         body('password')
             .notEmpty().withMessage('ingrese una contraseña')
-            .isLength ({min: 6}).withMessage('la contraseña debe tener un mínimo de 6 caracteres')
-            .equals('confirmpassword').withMessage('la contraseña y su confirmación no coinciden'),
+            .isLength ({min: 6}).withMessage('la contraseña debe tener un mínimo de 6 caracteres'),
         body('confirmpassword')
             .notEmpty().withMessage('reingrese la contraseña')
-            .isLength ({min: 6}).withMessage('la contraseña debe tener un mínimo de 6 caracteres')
-            .equals('password').withMessage('la contraseña y su confirmación no coinciden')
+            .isLength ({min: 6}).withMessage('la contraseña debe tener un mínimo de 6 caracteres'),
+//            .equals('password').withMessage('la contraseña y su confirmación no coinciden')
     ],
     login: [
         body('useremail')

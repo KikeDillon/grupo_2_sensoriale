@@ -1,8 +1,8 @@
 const { readFileSync } = require('fs');
 const path = require('path');
 const fs = require ('fs');
+const bcrypt = require ('bcryptjs');
 const { validationResult } = require ('express-validator');
-
 
 const csslogin = ['footer', 'header', 'tablet', 'login'];
 const cssforgotpassword = ['footer', 'header', 'tablet', 'forgot-password'];
@@ -14,19 +14,25 @@ const userController = {
         return res.render (path.resolve(__dirname, '../views/user/login.ejs'), {styles: csslogin});
     },
     processLogin: function (req, res){
-        let errorsValidation = validationResult(req);   //guardamos en errorsValidation el contenido de validationResult(req). esto es fijo del bloque de módulo requerido de validation express
+        let errorsValidation = validationResult(req);              // guardamos en errorsValidation el contenido de validationResult(req). esto es fijo del bloque de módulo requerido de validation express
         if (errorsValidation.isEmpty()){
             let users = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/users.json'))); // array de datos sacado del json de usuarios
             let user = users.find (function(i){                    // usamos el find para encontrar el usuario ingresado por req.body.useremail
                 return req.body.useremail == i.username;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
             });
             if (user){                                             // si user tiene contenido es porque se encontró un usuario con el find
-                if(req.body.password == user.password){            // la contraseña ingresada en el body es igual a la contraseña del mismo usuario en el array ?
+                if(bcrypt.compareSync(req.body.password, user.password)){            // la contraseña ingresada en el body es igual a la contraseña del mismo usuario en el array ?
                     // SESSION
                     req.session.usuarioLogueado = user;            // el usuario logueado será el email que se guardo en user
-                    if(req.body.remember != 'undefined') {
+                    /*if(req.body.remember != 'undefined') {
                         res.cookie('remember', user.useremail, {maxAge: 100000})
-                    }
+                    }*/
+                    if(req.body.remember){
+                        console.log("entró pq remember está tildado");
+                        res.cookie('rememberCookie','hola soy la cookie',{ maxAge: 60000 });
+                        console.log (req.cookies);
+                    }   
+
                     res.redirect ('/');    
                 }else{
                     let userEmailOld = req.body.useremail;         // si la contraseña no es correcta, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
@@ -37,7 +43,7 @@ const userController = {
                 return res.render (path.resolve(__dirname, '../views/user/login.ejs'), {styles: csslogin, erroremail: {msg:'usuario inexistente'}, userEmailOld: userEmailOld })    // regreso la vista y envío, el css, el mensaje de error, el usuario ingresado
             }
         }else{
-            let userEmailOld = req.body.useremail;                 // // si hay errores en la validación, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
+            let userEmailOld = req.body.useremail;                 // si hay errores en la validación, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
             res.render (path.resolve(__dirname, '../views/user/login.ejs'), {styles: csslogin, errors: errorsValidation.mapped(), userEmailOld: userEmailOld })   // errorsValidation.mapped() sirve para ordenar los mensajes del array de mensajes y luego poder usarlos en la vista, tipo errors.email.msg
         }
     },    
@@ -58,13 +64,25 @@ const userController = {
                 firstname : req.body.firstname,
                 lastname : req.body.lastname,
                 username : req.body.username,
-                password : req.body.password,
+                password : (bcrypt.hashSync(req.body.password, 10)),
                 usertype : 0
             }
-            users.push (newuser);
-            let newUserSTR = JSON.stringify(users,null,2);
-            fs.writeFileSync(path.resolve(__dirname,'../database/users.json'), newUserSTR);
-            res.redirect ('/');
+            let user = users.find (function(i){                    // usamos el find para encontrar el usuario ingresado por req.body.useremail
+                return req.body.username == i.username;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
+            });
+            if (!user){         
+                users.push (newuser);
+                let newUserSTR = JSON.stringify(users,null,2);
+                fs.writeFileSync(path.resolve(__dirname,'../database/users.json'), newUserSTR);
+                res.redirect ('/');
+            }else{
+                let olduser = {
+                    firstname : req.body.firstname,
+                    lastname : req.body.lastname,
+                    username : req.body.username
+                }
+                return res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister, errorUserExist: {msg:'el email ya se encuentra registrado'}, olduser: olduser })  // regreso la vista y envío, el css, el mensaje de error, el usuario ingresado
+            }
         } else {
             let olduser = {
                 firstname : req.body.firstname,
@@ -83,8 +101,10 @@ const userController = {
         return res.render (path.resolve(__dirname, '../views/user/userProfile.ejs'), {styles: cssUserProfile, loggedUser: loggedUser })
     },
     logout: function(req, res){
-        console.log('hola paso por logout');
         req.session.destroy();
+        if (req.cookies.rememberCookies){
+            res.cookie('rememberCookies',null,{maxAge: -1});
+        }
         return res.redirect ('/');
     }
 }
