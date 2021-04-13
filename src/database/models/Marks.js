@@ -31,7 +31,7 @@ module.exports = function (sequelize, dataTypes) {
             as: 'models',
             foreignKey: 'models_id'
         },
-        Marks.hasMany(models.Measure), {
+        Marks.hasMany(models.Measures), {
             as: 'measure',
             foreignKey: 'measure_id'
         }

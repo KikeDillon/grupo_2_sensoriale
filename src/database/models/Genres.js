@@ -25,7 +25,7 @@ module.exports = function (sequelize, dataTypes) {
     let Genre = sequelize.define(alias, cols, config)
 
     Genre.associate = function(models) {
-        Genres.hasMany(models.Models), {
+        Genre.hasMany(models.Models), {
             as: 'models',
             foreignKey: 'models_id'
         }

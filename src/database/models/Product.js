@@ -37,7 +37,7 @@ module.exports = function (sequelize, dataTypes) {
             as: 'models',
             foreignKey: 'models_id'
         },
-        Product.hasMany(models.Measure), {
+        Product.hasMany(models.Measures), {
             as: 'measure',
             foreignKey: 'measure_id'
         },

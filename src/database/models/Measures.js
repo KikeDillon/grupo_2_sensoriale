@@ -24,8 +24,8 @@ module.exports = function (sequelize, dataTypes) {
         Measures.belongsTo(models.Marks), {
             as: 'marks',
             foreignKey: 'measure_id'
-        },
-        Measures.belongsTo(models.Products), {
+        }
+        Measures.belongsTo(models.Product), {
             as: 'products',
             foreignKey: 'measure_id'
         }

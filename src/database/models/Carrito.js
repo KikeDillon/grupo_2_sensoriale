@@ -1,40 +1,37 @@
-module.exports = function (sequelize, dataTypes) {
-    let alias = 'Carrito';
-
+module.exports = (sequelize, dataTypes) =>{
+    let alias = "Carrito";
     let cols = {
-        id :{
+        id : {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement : true
-        } ,
-        quantity :{
-            type: dataTypes.INTEGER
+            autoIncrement: true
         },
-        estado : {
-            type: dataTypes.INTEGER
+        quantity: {
+            type: dataTypes.INTEGER,
         },
-        user_id : {
-            type: dataTypes.INTEGER
-        } ,
-        product_id : {
-            type: dataTypes.INTEGER
+        state:{
+            type: dataTypes.INTEGER,
+        },
+        user_id:{
+            type: dataTypes.INTEGER,
+        },
+        product_id:{
+            type: dataTypes.INTEGER,
         }
-
-        
     }
     let config = {
-        tableName: 'carrito',
+        tableName: "carrito",
         timestamps: false
     }
 
-    let Carrito = sequelize.define(alias, cols, config)
+    const Carrito = sequelize.define (alias, cols, config);
 
-    Carrito.associate = function(models) {
-        Carrito.hasMany(models.Products), {
-            as: 'products',
-            foreignKey: 'product_id'
-        }
+    Carrito.associate = (models) =>{
+        Carrito.belongsTo (models.User, {
+            as: "users",
+            foreignkey: "user_id"
+        });
     }
 
-    return Carrito
+    return Carrito;
 }

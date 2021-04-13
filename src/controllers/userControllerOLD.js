@@ -1,12 +1,8 @@
-
-
 const { readFileSync } = require('fs');
 const path = require('path');
 const fs = require ('fs');
 const bcrypt = require ('bcryptjs');
 const { validationResult } = require ('express-validator');
-
-const db = require ('../database/models/index.js');
 
 const csslogin = ['footer', 'header', 'tablet', 'login'];
 const cssforgotpassword = ['footer', 'header', 'tablet', 'forgot-password'];
@@ -28,9 +24,6 @@ const userController = {
                 if(bcrypt.compareSync(req.body.password, user.password)){            // la contraseña ingresada en el body es igual a la contraseña del mismo usuario en el array ?
                     // SESSION
                     req.session.usuarioLogueado = user;            // el usuario logueado será el email que se guardo en user
-                    /*if(req.body.remember != 'undefined') {
-                        res.cookie('remember', user.useremail, {maxAge: 100000})
-                    }*/
                     if(req.body.remember){
                         res.cookie('rememberCookie',user.email,{ maxAge: 600000 });
                     }   
@@ -55,13 +48,43 @@ const userController = {
         return res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister});
     },
     store: function (req, res){
-
-        db.User.findAll()
-            .then (function(user){
-                console.log('pasamos por acá');
-                return res.send (user);
+        let errorsValidation = validationResult(req);
+        if (errorsValidation.isEmpty()){
+            let users = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../data/users.json')));
+            let lastuser = users.pop ();
+            users.push (lastuser);
+            let newuser = {
+                id : lastuser.id + 1,
+                firstname : req.body.firstname,
+                lastname : req.body.lastname,
+                email : req.body.email,
+                password : (bcrypt.hashSync(req.body.password, 10)),
+                usertype : 0
+            }
+            let user = users.find (function(i){                    // usamos el find para encontrar el usuario ingresado por req.body.useremail
+                return req.body.email == i.email;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
             });
-
+            if (!user){         
+                users.push (newuser);
+                let newUserSTR = JSON.stringify(users,null,2);
+                fs.writeFileSync(path.resolve(__dirname,'../data/users.json'), newUserSTR);
+                res.redirect ('/');
+            }else{
+                let olduser = {
+                    firstname : req.body.firstname,
+                    lastname : req.body.lastname,
+                    email : req.body.email
+                }
+                return res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister, errorUserExist: {msg:'el email ya se encuentra registrado'}, olduser: olduser })  // regreso la vista y envío, el css, el mensaje de error, el usuario ingresado
+            }
+        } else {
+            let olduser = {
+                firstname : req.body.firstname,
+                lastname : req.body.lastname,
+                email : req.body.email
+            }
+            res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister, errors: errorsValidation.mapped(), olduser: olduser })
+        }
     },
     userProfile: function(req,res){
         let loggedUser = {
