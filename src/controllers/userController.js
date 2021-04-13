@@ -16,9 +16,9 @@ const userController = {
     processLogin: function (req, res){
         let errorsValidation = validationResult(req);              // guardamos en errorsValidation el contenido de validationResult(req). esto es fijo del bloque de módulo requerido de validation express
         if (errorsValidation.isEmpty()){
-            let users = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/users.json'))); // array de datos sacado del json de usuarios
+            let users = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../data/users.json'))); // array de datos sacado del json de usuarios
             let user = users.find (function(i){                    // usamos el find para encontrar el usuario ingresado por req.body.useremail
-                return req.body.useremail == i.username;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
+                return req.body.useremail == i.email;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
             });
             if (user){                                             // si user tiene contenido es porque se encontró un usuario con el find
                 if(bcrypt.compareSync(req.body.password, user.password)){            // la contraseña ingresada en el body es igual a la contraseña del mismo usuario en el array ?
@@ -28,11 +28,8 @@ const userController = {
                         res.cookie('remember', user.useremail, {maxAge: 100000})
                     }*/
                     if(req.body.remember){
-                        console.log("entró pq remember está tildado");
-                        res.cookie('rememberCookie','hola soy la cookie',{ maxAge: 60000 });
-                        console.log (req.cookies);
+                        res.cookie('rememberCookie',user.email,{ maxAge: 600000 });
                     }   
-
                     res.redirect ('/');    
                 }else{
                     let userEmailOld = req.body.useremail;         // si la contraseña no es correcta, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
@@ -56,30 +53,30 @@ const userController = {
     store: function (req, res){
         let errorsValidation = validationResult(req);
         if (errorsValidation.isEmpty()){
-            let users = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+            let users = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../data/users.json')));
             let lastuser = users.pop ();
             users.push (lastuser);
             let newuser = {
                 id : lastuser.id + 1,
                 firstname : req.body.firstname,
                 lastname : req.body.lastname,
-                username : req.body.username,
+                email : req.body.email,
                 password : (bcrypt.hashSync(req.body.password, 10)),
                 usertype : 0
             }
             let user = users.find (function(i){                    // usamos el find para encontrar el usuario ingresado por req.body.useremail
-                return req.body.username == i.username;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
+                return req.body.email == i.email;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
             });
             if (!user){         
                 users.push (newuser);
                 let newUserSTR = JSON.stringify(users,null,2);
-                fs.writeFileSync(path.resolve(__dirname,'../database/users.json'), newUserSTR);
+                fs.writeFileSync(path.resolve(__dirname,'../data/users.json'), newUserSTR);
                 res.redirect ('/');
             }else{
                 let olduser = {
                     firstname : req.body.firstname,
                     lastname : req.body.lastname,
-                    username : req.body.username
+                    email : req.body.email
                 }
                 return res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister, errorUserExist: {msg:'el email ya se encuentra registrado'}, olduser: olduser })  // regreso la vista y envío, el css, el mensaje de error, el usuario ingresado
             }
@@ -87,7 +84,7 @@ const userController = {
             let olduser = {
                 firstname : req.body.firstname,
                 lastname : req.body.lastname,
-                username : req.body.username
+                email : req.body.email
             }
             res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister, errors: errorsValidation.mapped(), olduser: olduser })
         }
@@ -96,14 +93,14 @@ const userController = {
         let loggedUser = {
             firstname : req.session.usuarioLogueado.firstname,
             lastname : req.session.usuarioLogueado.lastname,
-            username : req.session.usuarioLogueado.username,
+            email : req.session.usuarioLogueado.email,
         }
         return res.render (path.resolve(__dirname, '../views/user/userProfile.ejs'), {styles: cssUserProfile, loggedUser: loggedUser })
     },
     logout: function(req, res){
         req.session.destroy();
-        if (req.cookies.rememberCookies){
-            res.cookie('rememberCookies',null,{maxAge: -1});
+        if (req.cookies.rememberCookie){
+            res.cookie('rememberCookie',null,{maxAge: -1});
         }
         return res.redirect ('/');
     }

@@ -6,6 +6,8 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const cookieParser = require('cookie-parser');
+const cookieMiddleware = require ('./middlewares/cookieMiddleware');
+
 
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
@@ -18,12 +20,14 @@ const cookieParser = require('cookie-parser');
 const publicpath = path.resolve (__dirname, '../public');
 app.use (express.static(publicpath));
 
+
 app.set ('view engine', 'ejs'); //EJS necesario
 app.use(express.urlencoded({ extended: false })); //MULTER necesario . Para capturar la info req.body que viaja en un formulario
 app.use(methodOverride('_method')); //METODO GET y POST en HTML necesario
-app.use(cookies());
 app.use(session({secret:"Uso de sesión", resave:false, saveUninitialized:true}));
 app.use(userLoggedMiddleware);
+app.use(cookies());
+app.use(cookieMiddleware);
 
 //RUTAS
 const webRouter = require ('./routers/webRouter');
@@ -40,10 +44,12 @@ app.use (adminRouter);
 app.use (cookieParser());
 
 
+
 app.use (function(req, res, next){
     res.status(404).render(path.resolve(__dirname, './views/middlewares/404-page.ejs'));
     next();
 });
+
 
 //LEVANTO EL SERVIDOR
 app.set ('puerto', process.env.PORT || 3000);

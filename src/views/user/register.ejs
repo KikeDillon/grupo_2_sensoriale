@@ -24,11 +24,11 @@
                     <% } %>   
                 </div>                
                 <div class="input-container">
-                    <input name="username" class="input" type="text" placeholder="correo electrónico" value="<%= locals.olduser && olduser.username ? olduser.username : '' %>">
+                    <input name="email" class="input" type="text" placeholder="correo electrónico" value="<%= locals.olduser && olduser.email ? olduser.email : '' %>">
                 </div>
                 <div class="text-alert">
-                    <% if (locals.errors && errors.username) { %>
-                        <p> <%= errors.username.msg %> </p> 
+                    <% if (locals.errors && errors.email) { %>
+                        <p> <%= errors.email.msg %> </p> 
                     <% } %>
                     <% if ((locals.errorUserExist)) { %>
                         <p> <%= errorUserExist.msg %> </p> 
