@@ -1,12 +1,14 @@
 module.exports = (sequelize, dataTypes) =>{
+    
     let alias = "User";
+
     let cols = {
         id : {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        firs_name: {
+        first_name: {
             type: dataTypes.STRING,
         },
         last_name:{
@@ -25,7 +27,15 @@ module.exports = (sequelize, dataTypes) =>{
     let config = {
         tableName: "users",
         timestamps: false
-    }   
+    }
     const User = sequelize.define (alias, cols, config);
+
+    User.associate = (models) =>{
+        User.hasMany (models.Carrito,{
+            as: "carritos",
+            foreignkey: "user_id"
+        });
+    }
+
     return User;
 }
