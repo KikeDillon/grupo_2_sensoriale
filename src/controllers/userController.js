@@ -20,18 +20,16 @@ const userController = {
         if (errorsValidation.isEmpty()){
             db.User.findAll()
                 .then (function(users){                             // tomo la base de ususarios a un array
-                    console.log("users: " + users);
                     let user = users.find (function(i){             // usamos el find para encontrar el usuario ingresado por req.body.useremail
                         return req.body.useremail == i.email;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
                     });
                     if (user){                                      // si user tiene contenido es porque se encontró un usuario con el find
                         if(bcrypt.compareSync(req.body.password, user.password)){            // la contraseña ingresada en el body es igual a la contraseña del mismo usuario en el array ?
                             // SESSION
-                            console.log('registro usuario logueado: ' + user);
                             //return res.send(user);
                             req.session.usuarioLogueado = user;            // el usuario logueado será el email que se guardo en user
                             if(req.body.remember){
-                                res.cookie('rememberCookie',user.email,{ maxAge: 600000 });
+                                res.cookie('rememberCookie',user.email,{ maxAge: 0 });
                             }
                             res.redirect ('/');    
                         }else{
@@ -69,18 +67,11 @@ const userController = {
                             last_name : req.body.lastname,
                             email : req.body.email,
                             password : (bcrypt.hashSync(req.body.password, 10)),
-                            usertype : 0
+                            user_type : 0
                         })
                         .then (function(){
                             return res.redirect ('/');
                         });
-                    }else{                                          // si el usuario del req existe en la base, tiro el error y mando las variables con lo completado al formulario del ejs
-                        let olduser = {
-                            firstname : req.body.firstname,
-                            lastname : req.body.lastname,
-                            email : req.body.email
-                        }
-                        return res.render (path.resolve(__dirname, '../views/user/register.ejs'), {styles: cssregister, errorUserExist: {msg:'el email ya se encuentra registrado'}, olduser: olduser })  // regreso la vista y envío, el css, el mensaje de error, el usuario ingresado
                     }
                 });  
         }else{                                                      // si hay errores de validación, mando las variables al formulario de la vista.
