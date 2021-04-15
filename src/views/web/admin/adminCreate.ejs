@@ -9,8 +9,9 @@
                 <div class="form">
                     <select class="form-in" name="mark" id="marca">
                         <option value="#" disabled selected>marca</option>
-                        <% perfumeM.forEach(i => { %>
-                            <option value="<%= i.mark %>" required><%= i.mark %></option>
+                        <% allMarks.forEach(i => { %>
+        marks :{
+                            <option value="<%= i.id %>" required><%= i.marks %></option>
                         <% }) %>
                     </select>
                 </div>            

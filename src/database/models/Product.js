@@ -26,8 +26,10 @@ module.exports = function (sequelize, dataTypes) {
         
     }
     let config = {
-        tableName: 'products',
-        timestamps: false
+        timestamps: false,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false
     }
 
     let Product = sequelize.define(alias, cols, config)
@@ -40,11 +42,11 @@ module.exports = function (sequelize, dataTypes) {
         Product.hasMany(models.Measures), {
             as: 'measure',
             foreignKey: 'measure_id'
-        },
+        }/*,
         Product.belongsTo(models.Carrito), {
             as: 'carrito',
             foreignKey: 'product_id'
-        }
+        }*/
     }
 
     return Product

@@ -7,21 +7,26 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true
             //autoIncrement : true
         } ,
-        marks :{
-            type: dataTypes.STRING
+        mark :{
+            type: dataTypes.STRING(50),
+            allowNull: false
         },
         models_id : {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         } ,
-        measure_id : {
-            type: dataTypes.INTEGER
+        measures_id : {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
 
         
     }
     let config = {
-        tableName: 'marks',
-        timestamps: false
+        timestamps: false,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: false
     }
 
     let Marks = sequelize.define(alias, cols, config)

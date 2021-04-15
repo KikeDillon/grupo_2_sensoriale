@@ -8,7 +8,7 @@ module.exports = function (sequelize, dataTypes) {
            // autoIncrement : true
         } ,
         genre :{
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         models_id : {
             type: dataTypes.INTEGER,

@@ -1,8 +1,11 @@
 const { readFileSync } = require('fs');
-const path = require('path');
+//const path = require('path');
 const fs = require ('fs');
 
-let db = require('../database/models');
+const path = require('path');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 const cssAdminIndex = ['footer', 'header', 'tablet', 'admin/adminIndex'];
 const cssAdminView = ['footer', 'header', 'tablet', 'admin/adminView'];
@@ -12,36 +15,44 @@ const cssAdminEdit = ['footer', 'header', 'tablet', 'admin/adminEdit'];
 
 const adminController = {
     admin: function(req, res) {
-        db.Products.findAll()
-        .then(Products => {
-            res.render('adminIndex.ejs', {products})
+        db.Product.findAll()
+        .then(products => {
+            res.render (path.resolve(__dirname, '../views/web/admin/adminIndex.ejs'), {styles: cssAdminIndex, products})
         })
     },
-    view: (req, res) => {
-        db.Products.findByPk(req.params.id)
-            .then(products => {
-                res.render('adminView.ejs', {products});
-            });
+    create: function (req, res){
+        db.Marks.findAll()
+        .then(allMarks => {
+            res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMarks})
+        })
+        //let mark = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../data/mark.json')));
+        //return res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, mark});
     },
     save: function(req, res) {
-        db.Products.create({
+        db.Product.create({
             id: req.body.id,
             models_id: req.body.mark,
             measure_id: req.body.size,
             price: req.body.price,
-            outlet: req.body.outlet == 1? 1 : 0,
+            outlet: req.body.outlet,
             //stock: req.body.stock
         })
         return res.redirect('/administrar');
     }, 
+    view: (req, res) => {
+        db.Product.findByPk(req.params.id)
+            .then(products => {
+                res.render (path.resolve(__dirname, '../views/web/admin/adminView.ejs'), {styles: cssAdminView, products})
+            });
+    },
     edit:  (req, res) => {
-        db.Products.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id)
             .then(products => {
                 res.render('adminEdit.ejs', {products});
             });
     },
     update: (req, res) => {
-        db.Products.update({
+        db.Product.update({
             id: req.body.id,
             models_id: req.body.mark,
             measure_id: req.body.size,
@@ -54,13 +65,13 @@ const adminController = {
         res.redirect('/administrar')
     },
     delete:  (req, res) => {
-        db.Products.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id)
             .then(products => {
                 res.render('adminDelete.ejs', {products});
             });
     },
-    detroy:  (req, res) => {
-        db.Products.detroy({
+    destroy:  (req, res) => {
+        db.Product.detroy({
             where: { id: req.params.id}
            }
         )

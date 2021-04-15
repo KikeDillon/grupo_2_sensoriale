@@ -9,16 +9,16 @@ module.exports = (sequelize, dataTypes) =>{
             autoIncrement: true
         },
         first_name: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         last_name:{
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         email:{
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         password:{
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
         },
         user_type:{
             type: dataTypes.INTEGER,

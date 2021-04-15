@@ -36,15 +36,15 @@ const userController = {
                     }   
                     res.redirect ('/');    
                 }else{
-                    let userEmailOld = req.body.useremail;         // si la contraseña no es correcta, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
+                    let userEmailOld = req.body.email;         // si la contraseña no es correcta, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
                     return res.render (path.resolve(__dirname, '../views/user/login.ejs'), {styles: csslogin, errorpassword: {msg:'contraseña inválida'}, userEmailOld: userEmailOld })  // regreso la vista y envío, el css, el mensaje de error, el usuario ingresado
                 }
             }else{
-                let userEmailOld = req.body.useremail;             // si no se encontró el usuario,  guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
+                let userEmailOld = req.body.email;             // si no se encontró el usuario,  guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
                 return res.render (path.resolve(__dirname, '../views/user/login.ejs'), {styles: csslogin, erroremail: {msg:'usuario inexistente'}, userEmailOld: userEmailOld })    // regreso la vista y envío, el css, el mensaje de error, el usuario ingresado
             }
         }else{
-            let userEmailOld = req.body.useremail;                 // si hay errores en la validación, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
+            let userEmailOld = req.body.email;                 // si hay errores en la validación, guardo el usuario ingresado en el body en una variable para no perder ese dato y ponerlo en el value de la vista login.ejs
             res.render (path.resolve(__dirname, '../views/user/login.ejs'), {styles: csslogin, errors: errorsValidation.mapped(), userEmailOld: userEmailOld })   // errorsValidation.mapped() sirve para ordenar los mensajes del array de mensajes y luego poder usarlos en la vista, tipo errors.email.msg
         }
     },    
