@@ -4,19 +4,18 @@ module.exports = function (sequelize, dataTypes) {
     let cols = {
         id :{
             type: dataTypes.INTEGER,
-            primaryKey: true
-           // autoIncrement : true
+            primaryKey: true,
+            autoIncrement : true
         } ,
         genre :{
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(20),
         },
         models_id : {
-            type: dataTypes.INTEGER,
-            autoIncrement: true
-        } 
+            type: dataTypes.INTEGER
 
         
     }
+}
     let config = {
         tableName: 'genres',
         timestamps: false

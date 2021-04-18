@@ -10,7 +10,7 @@ const userValidatorController = {
         body('lastname')
             .notEmpty().withMessage('debe completar su apellido')
             .isAlpha().withMessage('debe ingresar caracteres válidos'),
-        body('username')
+        body('email')
             .notEmpty().withMessage('debe completar su correo electrónico')
             .isEmail().withMessage('debe ingresar una dirección de correo eletrónica válida'),
         body('password')

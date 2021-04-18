@@ -10,8 +10,7 @@
                     <select class="form-in" name="mark" id="marca">
                         <option value="#" disabled selected>marca</option>
                         <% allMarks.forEach(i => { %>
-        marks :{
-                            <option value="<%= i.id %>" required><%= i.marks %></option>
+                            <option value="<%= i.id %>" required><%= i.mark %></option>
                         <% }) %>
                     </select>
                 </div>            
@@ -26,18 +25,22 @@
                 </div>
                 <div class="form">
                     <select class="form-in" name="gender" id="gender">
-                        <option value="#" disabled selected>género</option>
+                        <!--<option value="#" disabled selected>género</option>
                         <option value="hombre">hombre</option>
                         <option value="mujer">mujer</option>
-                        <option value="unisex">unisex</option>
+                        <option value="unisex">unisex</option>-->
+                        
                     </select>
                 </div>
                 <div class="form">
                     <select class="form-in" name="size" id="size">
-                        <option value="#" disabled selected>tamaño</option>
-                        <option value=30>30 ml</option>
-                        <option value=50>50 ml</option>
-                        <option value=100>100 ml</option>
+                        <!--<option value="#" disabled selected>tamaño</option>
+                        <option value='30'>30 ml</option>
+                        <option value='50'>50 ml</option>
+                        <option value='100'>100 ml </option>
+                        <%# allMeasures.forEach(i => { %>
+                            <option value="<%#= i.id %>" required><%#= i.measure %></option>
+                        <%# }) %>-->
                     </select>
                 </div>
                 <div class="outlet">

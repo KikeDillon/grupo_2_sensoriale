@@ -41,7 +41,7 @@ module.exports = function (sequelize, dataTypes) {
         },
         Product.hasMany(models.Measures), {
             as: 'measure',
-            foreignKey: 'measure_id'
+            foreignKey: 'measures_id'
         }/*,
         Product.belongsTo(models.Carrito), {
             as: 'carrito',

@@ -23,14 +23,24 @@ const adminController = {
     create: function (req, res){
         db.Marks.findAll()
         .then(allMarks => {
+            //return allMarks;
+            //return res.send(allMarks)
             res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMarks})
-        })
+        })/*,
+        db.Measures.findAll()
+        .then(allMeasures => {
+            //return allMeasures;
+            res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMeasures});
+        })*/
+        
+        
+    
         //let mark = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../data/mark.json')));
-        //return res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, mark});
+        //res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMarks, allMeasures});
     },
     save: function(req, res) {
+        //return res.send(req.body)
         db.Product.create({
-            id: req.body.id,
             models_id: req.body.mark,
             measure_id: req.body.size,
             price: req.body.price,

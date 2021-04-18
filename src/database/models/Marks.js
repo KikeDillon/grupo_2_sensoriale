@@ -4,20 +4,18 @@ module.exports = function (sequelize, dataTypes) {
     let cols = {
         id :{
             type: dataTypes.INTEGER,
-            primaryKey: true
-            //autoIncrement : true
+            primaryKey: true,
+            autoIncrement : true
         } ,
         mark :{
             type: dataTypes.STRING(50),
             allowNull: false
         },
         models_id : {
-            type: dataTypes.INTEGER,
-            allowNull: false
+            type: dataTypes.INTEGER
         } ,
         measures_id : {
-            type: dataTypes.INTEGER,
-            allowNull: false
+            type: dataTypes.INTEGER
         }
 
         
@@ -38,7 +36,7 @@ module.exports = function (sequelize, dataTypes) {
         },
         Marks.hasMany(models.Measures), {
             as: 'measure',
-            foreignKey: 'measure_id'
+            foreignKey: 'measures_id'
         }
     }
 

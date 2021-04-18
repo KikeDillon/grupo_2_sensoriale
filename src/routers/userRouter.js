@@ -12,6 +12,6 @@ router.post('/ingresar', userValidatorController.login, userController.processLo
 router.get ('/registrarse', guestMiddleware, userController.register);
 router.post ('/registrarse', userValidatorController.store, userController.store);
 router.get ('/perfil', authMiddleware, userController.userProfile);
-//router.get ('/cerrarsesion', userController.logout);
+router.get ('/cerrarsesion', userController.logout);
 
 module.exports = router;

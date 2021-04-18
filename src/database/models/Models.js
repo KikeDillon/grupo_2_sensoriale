@@ -4,20 +4,13 @@ module.exports = function (sequelize, dataTypes) {
     let cols = {
         id :{
             type: dataTypes.INTEGER,
-            primaryKey: true
-            //autoIncrement : true
+            primaryKey: true,
+            autoIncrement : true
         } ,
         model :{
             type: dataTypes.STRING(100),
-        },
-        mark_id : {
-            type: dataTypes.INTEGER
-            } ,
-        genre_id : {
-            type: dataTypes.INTEGER
-            }
-
-        
+            allowNull: false
+        } 
     }
     let config = {
         tableName: 'models',

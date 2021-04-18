@@ -4,12 +4,14 @@ module.exports = function (sequelize, dataTypes) {
     let cols = {
         id :{
             type: dataTypes.INTEGER,
-            primaryKey: true
-            //autoIncrement : true
+            primaryKey: true,
+            autoIncrement : true
         } ,
-        marks :{
-            type: dataTypes.INTEGER
+        measure :{
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
+
 
         
     }
@@ -23,11 +25,11 @@ module.exports = function (sequelize, dataTypes) {
     Measures.associate = function(models) {
         Measures.belongsTo(models.Marks), {
             as: 'marks',
-            foreignKey: 'measure_id'
+            foreignKey: 'measures_id'
         }
         Measures.belongsTo(models.Product), {
             as: 'products',
-            foreignKey: 'measure_id'
+            foreignKey: 'measures_id'
         }
     }
 
