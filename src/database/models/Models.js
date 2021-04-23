@@ -20,13 +20,13 @@ module.exports = function (sequelize, dataTypes) {
     let Models = sequelize.define(alias, cols, config)
 
     Models.associate = function(models) {
-        Models.belongsTo(models.Product), {
-            as: 'products',
+        Models.hasMany(models.Product), {
+            as: 'product',
             foreignKey: 'models_id'
         },
         Models.belongsTo(models.Genre), {
             as: 'genres',
-            foreignKey: 'genre_id'
+            foreignKey: 'models_id'
         },
         Models.belongsTo(models.Marks), {
             as: 'marks',

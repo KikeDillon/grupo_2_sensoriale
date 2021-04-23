@@ -11,10 +11,10 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        models_id : {
+        modelsId : {
             type: dataTypes.INTEGER
         } ,
-        measures_id : {
+        measuresId : {
             type: dataTypes.INTEGER
         }
 
@@ -31,13 +31,13 @@ module.exports = function (sequelize, dataTypes) {
 
     Marks.associate = function(models) {
         Marks.hasMany(models.Models), {
-            as: 'models',
+            as: 'model',
             foreignKey: 'models_id'
-        },
+        }/*,
         Marks.hasMany(models.Measures), {
             as: 'measure',
             foreignKey: 'measures_id'
-        }
+        }*/
     }
 
     return Marks

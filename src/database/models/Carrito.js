@@ -12,10 +12,10 @@ module.exports = (sequelize, dataTypes) =>{
         state:{
             type: dataTypes.INTEGER,
         },
-        user_id:{
+        userId:{
             type: dataTypes.INTEGER,
         },
-        product_id:{
+        productId:{
             type: dataTypes.INTEGER,
         }
     }

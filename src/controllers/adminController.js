@@ -23,15 +23,15 @@ const adminController = {
     create: function (req, res){
         db.Marks.findAll()
         .then(allMarks => {
-            //return allMarks;
+            return allMarks;
             //return res.send(allMarks)
-            res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMarks})
-        })/*,
+            //res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMarks})
+        }),
         db.Measures.findAll()
         .then(allMeasures => {
             //return allMeasures;
             res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMeasures});
-        })*/
+        })
         
         
     
@@ -50,7 +50,7 @@ const adminController = {
         return res.redirect('/administrar');
     }, 
     view: (req, res) => {
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id)  
             .then(products => {
                 res.render (path.resolve(__dirname, '../views/web/admin/adminView.ejs'), {styles: cssAdminView, products})
             });

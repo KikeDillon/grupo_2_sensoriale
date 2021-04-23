@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         genre :{
             type: dataTypes.STRING(20),
         },
-        models_id : {
+        modelsId : {
             type: dataTypes.INTEGER
 
         
@@ -25,7 +25,7 @@ module.exports = function (sequelize, dataTypes) {
 
     Genre.associate = function(models) {
         Genre.hasMany(models.Models), {
-            as: 'models',
+            as: 'model',
             foreignKey: 'models_id'
         }
     }

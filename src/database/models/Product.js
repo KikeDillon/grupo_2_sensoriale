@@ -7,10 +7,10 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true
             //autoIncrement : true
         } ,
-        models_id : {
+        modelId : {
             type: dataTypes.INTEGER
         } ,
-        measure_id : {
+        measureId : {
             type: dataTypes.INTEGER
         } ,
         price :{
@@ -35,12 +35,12 @@ module.exports = function (sequelize, dataTypes) {
     let Product = sequelize.define(alias, cols, config)
 
     Product.associate = function(models) {
-        Product.hasMany(models.Models), {
+        Product.belongsTo(models.Models), {
             as: 'models',
             foreignKey: 'models_id'
         },
-        Product.hasMany(models.Measures), {
-            as: 'measure',
+        Product.belongsTo(models.Measures), {
+            as: 'measures',
             foreignKey: 'measures_id'
         }/*,
         Product.belongsTo(models.Carrito), {
