@@ -56,8 +56,6 @@
     width: 35%;
     min-width: 250px;
     height: 35px;
-    margin: 7px 0px;
-    margin-top: 3px;
     position: relative;
 }
 .main-register .section-register form div input{
@@ -92,6 +90,17 @@
     cursor: pointer;
 
 }
+.input-container-btn{
+    display: flex;
+    justify-content: center;
+    width: 35%;
+    min-width: 250px;
+    height: 35px;
+    position: relative;
+    margin: 7px 0px;
+    margin-top: 3px;
+    height: 35px;
+}
 #btn-enter{
     background-color: #008891;
     color: #e7e7de;    
@@ -114,6 +123,36 @@
     
 }
 
+
+    /*=======================================*/
+        /* ESTADOS PARA CONTROLES JS */   /*      border: solid 1px #008891;
+    /*=======================================*/
+
+    .borderNormal {
+        border: solid 1px #008891;
+    }
+    .borderError {
+        border: solid 3px rgb(255, 99,71);
+    }
+    .borderOk {
+        border: solid 3px rgb(42, 219, 42);
+    }
+    .iconoErrorOrOkNone{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        opacity: 0;
+    }
+    #formRegister p {
+        font-size: 3vw;
+        color: rgb(255, 99,71);
+        height: 10px;
+        margin: 0;
+        padding:0;
+        margin-top: 5px;
+        opacity: 0;
+    }
+
 @media (min-width: 515px){
     
     /*=======================================*/
@@ -124,6 +163,9 @@
         font-size: 4vw;
     }
     .text-alert p{
+        font-size: 2vw;
+    }
+    #formRegister p {
         font-size: 2vw;
     }
 }
@@ -140,38 +182,10 @@
     .text-alert p{
         font-size: 1vw;
     }
+    #formRegister p {
+        font-size: 1vw;
+    }
 }
 
-    /*=======================================*/
-        /* ESTADOS PARA CONTROLES JS */   /*      border: solid 1px #008891;
-    /*=======================================*/
 
-    .borderNormal {
-        border: solid 1px #008891;
-    }
-    .borderError {
-        border: solid 3px rgb(255, 99,71);
-    }
-    .borderOk {
-        border: solid 3px rgb(42, 219, 42);
-    }
-    .iconoError{
-        color: tomato;
-    }
-    .iconoErrorOrOkNone{
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        opacity: 0;
-    }
-    .iconoErrorOrOkBlock{
-        position: absolute;
-        right: 10px;
-        top: 9px;
-        opacity: 1;
-    }
-
-    .iconoDisplayNone{
-        opacity:0;
-    }
 

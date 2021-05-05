@@ -6,7 +6,7 @@ window.addEventListener ("load", function(){
 	const expresiones = {
 		usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 		nombreyapellido: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos. 3 a 40 dígitos.
-		password: /^.{6,12}$/, // 6 a 12 digitos.
+		password: /^.{6,18}$/, // 6 a 12 digitos.
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 	}
@@ -29,6 +29,14 @@ window.addEventListener ("load", function(){
 
 	let inputsFormulario = [inputFirstname, inputLastname, inputEmail, inputPassword, inputPasswordConfirm];
 
+	const firstnameP = document.getElementById ('firstnameP');
+	const lastnameP = document.getElementById ('lastnameP');
+	const emailP = document.getElementById ('emailP');
+	const passwordP = document.getElementById ('passwordP');
+	const confirmpasswordP = document.getElementById ('confirmpasswordP');
+
+	// SE LE DA ESTILO A TODOS LOS BORDES DE LOS INPUTS DEL FORMULARIO
+
 	bordes.forEach (function(borde) {
 		return borde.classList.add ('borderNormal');
 	})
@@ -36,20 +44,20 @@ window.addEventListener ("load", function(){
 	const validarFormulario = (e) => {
 		switch (e.target.name) {
 			case "firstname":
-				validacionInputs(e.target.value, inputFirstname, (expresiones.nombreyapellido.test(e.target.value)), errorIconFN);
+				validacionInputs(e.target.value, inputFirstname, (expresiones.nombreyapellido.test(e.target.value)), errorIconFN, firstnameP);
 			break;
 			case "lastname":
-				validacionInputs(e.target.value, inputLastname, (expresiones.nombreyapellido.test(e.target.value)), errorIconLN);
+				validacionInputs(e.target.value, inputLastname, (expresiones.nombreyapellido.test(e.target.value)), errorIconLN, lastnameP);
 			break;
 			case "email":
-				validacionInputs(e.target.value, inputEmail, (expresiones.correo.test(e.target.value)), errorIconE);
+				validacionInputs(e.target.value, inputEmail, (expresiones.correo.test(e.target.value)), errorIconE, emailP);
 			break;
 			case "password":
-				validacionInputs(e.target.value, inputPassword, (expresiones.password.test(e.target.value)), errorIconP);
+				validacionInputs(e.target.value, inputPassword, (expresiones.password.test(e.target.value)), errorIconP, passwordP);
 				passwordCompare();
 			break;
 			case "confirmpassword":
-				validacionInputs(e.target.value, inputPasswordConfirm, (expresiones.password.test(e.target.value)), errorIconPC);
+//				validacionInputs(e.target.value, inputPasswordConfirm, (expresiones.password.test(e.target.value)), errorIconPC);
 				passwordCompare();
 			break;
 		}	
@@ -86,12 +94,13 @@ window.addEventListener ("load", function(){
 
 	// FUNCION QUE VALIDA LOS CAMPOS //
 
-	let validacionInputs = function (target, inputClass, expresionTest, errorIcon){
+	let validacionInputs = function (target, inputClass, expresionTest, errorIcon, p){
 		if ((target) == ""){
 			inputClass.classList.remove('borderOk');
 			inputClass.classList.remove('borderError');
 			inputClass.classList.add('borderNormal');
 			errorIcon.style.opacity = "0";
+			p.style.opacity = "0";
 		}else if (expresionTest){
 			inputClass.classList.remove('borderNormal');
 			inputClass.classList.remove('borderError');
@@ -100,6 +109,7 @@ window.addEventListener ("load", function(){
 			errorIcon.style.color = "rgb(42, 219, 42)";
 			errorIcon.classList.remove('fa-times-circle');
 			errorIcon.classList.add('fa-check-circle');
+			p.style.opacity = "0";
 		}else{
 			inputClass.classList.remove('borderOk');
 			inputClass.classList.remove('borderNormal');
@@ -108,6 +118,7 @@ window.addEventListener ("load", function(){
 			errorIcon.style.color = "rgb(255, 99,71)";
 			errorIcon.classList.remove('fa-check-circle');
 			errorIcon.classList.add('fa-times-circle');
+			p.style.opacity = "1";
 		}	
 	}
 
@@ -123,6 +134,7 @@ window.addEventListener ("load", function(){
 				errorIconPC.style.color = "rgb(255, 99,71)";
 				errorIconPC.classList.remove('fa-check-circle');
 				errorIconPC.classList.add('fa-times-circle');
+				confirmpasswordP.style.opacity = "1";
 			}else { 
 				inputPasswordConfirm.classList.remove('borderNormal');
 				inputPasswordConfirm.classList.remove('borderError');
@@ -131,7 +143,14 @@ window.addEventListener ("load", function(){
 				errorIconPC.style.color = "rgb(42, 219, 42)";
 				errorIconPC.classList.remove('fa-times-circle');
 				errorIconPC.classList.add('fa-check-circle');
+				confirmpasswordP.style.opacity = "0";
 			} 
+		} else {
+			inputPasswordConfirm.classList.remove('borderOk');
+			inputPasswordConfirm.classList.remove('borderError');
+			inputPasswordConfirm.classList.add('borderNormal');
+			errorIconPC.style.opacity = "0";
+			confirmpasswordP.style.opacity = "0";
 		}
 	}
 
