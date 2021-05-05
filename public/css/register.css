@@ -40,28 +40,32 @@
     height: 100%;
     justify-content: center;
     align-items: center;
+    position: relative;
+
 }
 .main-register .section-register form{
     display: flex;
     flex-direction: column;
     width: 100%;
-
+    align-items: center;
+    justify-content: center;
 }
 .input-container{
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 35%;
+    min-width: 250px;
     height: 35px;
     margin: 7px 0px;
     margin-top: 3px;
-
+    position: relative;
 }
 .main-register .section-register form div input{
-    width: 70%;
+    width: 100%;
     max-width: 500px;
-    border: solid 1px #008891;
     border-radius: 0.5rem;
     padding-left: 10px;
+    outline: none;
 }
 .text-alert{
     height: 20px;
@@ -73,7 +77,7 @@
     height: 100%;
 }
 #btn-enter, #btn-erase{
-    width: 70%;
+    width: 100%;
     max-width: 500px;
     border: solid 1px #008891;
     border-radius: 0.5rem;
@@ -137,3 +141,37 @@
         font-size: 1vw;
     }
 }
+
+    /*=======================================*/
+        /* ESTADOS PARA CONTROLES JS */   /*      border: solid 1px #008891;
+    /*=======================================*/
+
+    .borderNormal {
+        border: solid 1px #008891;
+    }
+    .borderError {
+        border: solid 3px rgb(255, 99,71);
+    }
+    .borderOk {
+        border: solid 3px rgb(42, 219, 42);
+    }
+    .iconoError{
+        color: tomato;
+    }
+    .iconoErrorOrOkNone{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        opacity: 0;
+    }
+    .iconoErrorOrOkBlock{
+        position: absolute;
+        right: 10px;
+        top: 9px;
+        opacity: 1;
+    }
+
+    .iconoDisplayNone{
+        opacity:0;
+    }
+

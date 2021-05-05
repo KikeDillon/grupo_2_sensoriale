@@ -6,9 +6,10 @@
         <section class="main-register">
         <p>crear cuenta</p>
         <section class="section-register">
-            <form action="/registrarse" method="POST" class="form-register">
-                <div class="input-container">
-                    <input name="firstname" class="form-control is-invalid" type="text" placeholder="nombre" value="<%= locals.olduser && olduser.firstname ? olduser.firstname : ''%>">
+            <form action="/registrarse" method="POST" class="form-register" id="formRegister">
+                <div class="input-container"> 
+                    <input  class="inputForm" id="inputFirstname" name="firstname" class="form-control is-invalid" type="text" placeholder="nombre" value="<%= locals.olduser && olduser.firstname ? olduser.firstname : ''%>">
+                    <i id="errorIconFN" class="iconoErrorOrOkNone fas fa-times-circle"></i>
                 </div>
                 <div class="text-alert">
                     <% if (locals.errors && errors.firstname) { %> 
@@ -16,7 +17,8 @@
                     <% } %>   
                 </div>                
                 <div class="input-container">
-                    <input name="lastname" class="input" type="text" placeholder="apellido" value="<%= locals.olduser && olduser.lastname ? olduser.lastname : ''%>">
+                    <input class="inputForm" id="inputLastname" name="lastname" class="input" type="text" placeholder="apellido" value="<%= locals.olduser && olduser.lastname ? olduser.lastname : ''%>">
+                    <i id="errorIconLN" class="iconoErrorOrOkNone fas fa-times-circle"></i>
                 </div>
                 <div class="text-alert">
                     <% if (locals.errors && errors.lastname) { %>
@@ -24,7 +26,8 @@
                     <% } %>   
                 </div>                
                 <div class="input-container">
-                    <input name="email" class="input" type="text" placeholder="correo electrónico" value="<%= locals.olduser && olduser.email ? olduser.email : '' %>">
+                    <input class="inputForm" id="inputEmail" name="email" class="input" type="text" placeholder="correo electrónico" value="<%= locals.olduser && olduser.email ? olduser.email : '' %>">
+                    <i id="errorIconE" class="iconoErrorOrOkNone fas fa-times-circle"></i>
                 </div>
                 <div class="text-alert">
                     <% if (locals.errors && errors.email) { %>
@@ -33,7 +36,8 @@
                 </div>   
                 </div>                                
                 <div class="input-container">
-                    <input name="password" class="input" type="password" placeholder="contraseña">
+                    <input class="inputForm" id="inputPassword" name="password" class="input" type="password" placeholder="contraseña">
+                    <i id="errorIconP" class="iconoErrorOrOkNone fas fa-times-circle"></i>
                 </div>
                 <div class="text-alert">
                     <% if (locals.errors && errors.password) { %>
@@ -41,7 +45,8 @@
                     <% } %>   
                 </div>                                
                 <div class="input-container">
-                    <input name="confirmpassword" class="input" type="password" placeholder="repetir contraseña">
+                    <input class="inputForm" id="inputPasswordConfirm" name="confirmpassword" class="input" type="password" placeholder="repetir contraseña">
+                    <i id="errorIconPC" class="iconoErrorOrOkNone fas fa-times-circle"></i>
                 </div>
                 <div class="text-alert">
                     <% if (locals.errors && errors.confirmpassword) { %>
@@ -58,7 +63,11 @@
             <div class="to-login"><a href="/ingresar">¿tenés cuenta? iniciá sesión</a></div>
         </section>
     </section>
-    </main>    
+    </main>
+    
     <%- include ('../partials/footer') %>
+
+    <script src="/javascripts/register.js"></script>
+
 </body>
 </html>
