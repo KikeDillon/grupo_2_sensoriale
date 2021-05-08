@@ -35,25 +35,37 @@ window.addEventListener ("load", function(){
 	const passwordP = document.getElementById ('passwordP');
 	const confirmpasswordP = document.getElementById ('confirmpasswordP');
 
+	const camposAvalidar = {
+		campoFirstname: false,
+		campoLastname: false,
+		campoEmail: false,
+		campoPassword: false,
+		campoConfirmPassword: false
+	}
+
+	const toLogin = document.querySelector ('#to-login a');
+
 	// SE LE DA ESTILO A TODOS LOS BORDES DE LOS INPUTS DEL FORMULARIO
 
 	bordes.forEach (function(borde) {
 		return borde.classList.add ('borderNormal');
 	})
 
+	// FUNCIÓN QUE LLAMA LAS VALIDACIONES SEGÚN QUE EVENTO DEL FORMULARIO SE LLAMA
+
 	const validarFormulario = (e) => {
 		switch (e.target.name) {
 			case "firstname":
-				validacionInputs(e.target.value, inputFirstname, (expresiones.nombreyapellido.test(e.target.value)), errorIconFN, firstnameP);
+				validacionInputs(e.target.value, inputFirstname, (expresiones.nombreyapellido.test(e.target.value)), errorIconFN, firstnameP, 'campoFirstname');
 			break;
 			case "lastname":
-				validacionInputs(e.target.value, inputLastname, (expresiones.nombreyapellido.test(e.target.value)), errorIconLN, lastnameP);
+				validacionInputs(e.target.value, inputLastname, (expresiones.nombreyapellido.test(e.target.value)), errorIconLN, lastnameP, 'campoLastname');
 			break;
 			case "email":
-				validacionInputs(e.target.value, inputEmail, (expresiones.correo.test(e.target.value)), errorIconE, emailP);
+				validacionInputs(e.target.value, inputEmail, (expresiones.correo.test(e.target.value)), errorIconE, emailP, 'campoEmail');
 			break;
 			case "password":
-				validacionInputs(e.target.value, inputPassword, (expresiones.password.test(e.target.value)), errorIconP, passwordP);
+				validacionInputs(e.target.value, inputPassword, (expresiones.password.test(e.target.value)), errorIconP, passwordP, 'campoPassword');
 				passwordCompare();
 			break;
 			case "confirmpassword":
@@ -85,22 +97,16 @@ window.addEventListener ("load", function(){
 		})
 	})
 
-	// CAPTURO EL EVENTO SUBMIT Y LO EVITO 
-
-	formRegister.addEventListener ('submit', function (e){
-		e.preventDefault();
-
-	})
-
 	// FUNCION QUE VALIDA LOS CAMPOS //
 
-	let validacionInputs = function (target, inputClass, expresionTest, errorIcon, p){
+	let validacionInputs = function (target, inputClass, expresionTest, errorIcon, p, campo){
 		if ((target) == ""){
 			inputClass.classList.remove('borderOk');
 			inputClass.classList.remove('borderError');
 			inputClass.classList.add('borderNormal');
 			errorIcon.style.opacity = "0";
 			p.style.opacity = "0";
+			camposAvalidar[campo] = false;
 		}else if (expresionTest){
 			inputClass.classList.remove('borderNormal');
 			inputClass.classList.remove('borderError');
@@ -110,6 +116,7 @@ window.addEventListener ("load", function(){
 			errorIcon.classList.remove('fa-times-circle');
 			errorIcon.classList.add('fa-check-circle');
 			p.style.opacity = "0";
+			camposAvalidar[campo] = true;
 		}else{
 			inputClass.classList.remove('borderOk');
 			inputClass.classList.remove('borderNormal');
@@ -119,6 +126,7 @@ window.addEventListener ("load", function(){
 			errorIcon.classList.remove('fa-check-circle');
 			errorIcon.classList.add('fa-times-circle');
 			p.style.opacity = "1";
+			camposAvalidar[campo] = false;
 		}	
 	}
 
@@ -135,6 +143,7 @@ window.addEventListener ("load", function(){
 				errorIconPC.classList.remove('fa-check-circle');
 				errorIconPC.classList.add('fa-times-circle');
 				confirmpasswordP.style.opacity = "1";
+				camposAvalidar.campoConfirmPassword = false;
 			}else { 
 				inputPasswordConfirm.classList.remove('borderNormal');
 				inputPasswordConfirm.classList.remove('borderError');
@@ -144,6 +153,7 @@ window.addEventListener ("load", function(){
 				errorIconPC.classList.remove('fa-times-circle');
 				errorIconPC.classList.add('fa-check-circle');
 				confirmpasswordP.style.opacity = "0";
+				camposAvalidar.campoConfirmPassword = true;
 			} 
 		} else {
 			inputPasswordConfirm.classList.remove('borderOk');
@@ -151,9 +161,34 @@ window.addEventListener ("load", function(){
 			inputPasswordConfirm.classList.add('borderNormal');
 			errorIconPC.style.opacity = "0";
 			confirmpasswordP.style.opacity = "0";
+			camposAvalidar.campoConfirmPassword = false;
 		}
 	}
 
+	// CAPTURO EL EVENTO SUBMIT Y LO EVITO 
+
+	formRegister.addEventListener ('submit', function (e){
+		e.preventDefault();
+		if(camposAvalidar.campoFirstname && camposAvalidar.campoLastname && camposAvalidar.campoEmail && camposAvalidar.campoPassword && camposAvalidar.campoConfirmPassword ){
+			formRegister.reset();
+			toLogin.innerHTML = `Registro realizado con éxito`;
+			toLogin.classList.add ('loginOk');
+			setTimeout(() => {
+				toLogin.classList.remove('loginOk');
+				toLogin.innerHTML = `¿tenés cuenta? iniciá sesión`;
+			}, 3000);
+
+		// acá pasa algo que tengo que resolver
+
+		}else{
+			toLogin.innerHTML = `Hay errores en el registro`;
+			toLogin.classList.add ('loginError');
+			setTimeout(() => {
+				toLogin.classList.remove ('loginError');
+				toLogin.innerHTML = `¿tenés cuenta? iniciá sesión`;
+			}, 5000);
+		}
+	})
 })
 
 

@@ -21,7 +21,6 @@ const userValidatorController = {
                     }
                   })
                 .then (function(users){                             // tomo la base de ususarios a un array
-                    console.log (users);
                     if (users.length > 0) {
                         return Promise.reject('el email ya se encuentra registrado');
                     }else{
