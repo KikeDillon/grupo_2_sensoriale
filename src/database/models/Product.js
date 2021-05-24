@@ -1,27 +1,47 @@
 module.exports = function (sequelize, dataTypes) {
-    let alias = 'Product';
+    let alias = 'Products';
 
     let cols = {
         id :{
             type: dataTypes.INTEGER,
-            primaryKey: true
-            //autoIncrement : true
-        } ,
-        modelId : {
-            type: dataTypes.INTEGER
-        } ,
-        measureId : {
-            type: dataTypes.INTEGER
-        } ,
+            primaryKey: true,
+            autoIncrement : true
+        },
         price :{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         outlet : {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         stock : {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        markId : {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },        
+        modelId : {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        genreId : {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        measureId : {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        destacado : {
             type: dataTypes.INTEGER
+        },
+        image : {
+            type: dataTypes.STRING(255)
         }
+       
 
         
     }
@@ -32,22 +52,32 @@ module.exports = function (sequelize, dataTypes) {
         deletedAt: false
     }
 
-    let Product = sequelize.define(alias, cols, config)
+    let Products = sequelize.define(alias, cols, config)
 
-    Product.associate = function(models) {
-        Product.belongsTo(models.Models), {
-            as: 'models',
-            foreignKey: 'models_id'
-        },
-        Product.belongsTo(models.Measures), {
-            as: 'measures',
-            foreignKey: 'measures_id'
-        }/*,
-        Product.belongsTo(models.Carrito), {
-            as: 'carrito',
-            foreignKey: 'product_id'
-        }*/
+    /*Dish.hasMany(models.Item, {
+        as: "items",
+        foreignKey: "productId",
+    });*/
+
+    Products.associate = function(models) {
+        Products.belongsTo(models.Marks, {
+            as: 'mark',
+            foreignKey: 'markId'
+        }),
+        Products.belongsTo(models.Genres, {
+            as: 'genre',
+            foreignKey: 'genreId'
+        }),
+        Products.belongsTo(models.Models, {
+            as: 'model',
+            foreignKey: 'modelId'
+        }),
+        Products.belongsTo(models.Measures, {
+            as: 'measure',
+            foreignKey: 'measureId'
+        })
+
     }
 
-    return Product
+    return Products
 }

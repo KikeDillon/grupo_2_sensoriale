@@ -4,49 +4,70 @@
     <main class="main">
         <div class="main-header-space"></div>
         <section class = "main-section">
-            <form class="form" action="/administrar/actualizar/<%= unProducto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <section class="container-mark">                    
+            <form class="form" action="/administrar/actualizar/<%=products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <section class="container-mark">   
                     <div class="mark">
-                        <select name="mark" id="marca"  class="input">
-                            <option value="<%= unProducto.mark %>" selected> <%= unProducto.mark %> </option>
-                            <% perfumeM.forEach(i => { %>
-                                <option value="<%= i.mark %>" required><%= i.mark %></option>
+                        <select name="markId" id="marca"  class="input">
+                            <option value="<%= products.id %>" selected> <%= products.mark.mark %> </option>
+                            <% mark.forEach(i => { %>
+                                <option value="<%= i.id %>" required><%= i.mark %></option>
                             <% }) %>
                         </select>
-                    </div>               
+                    </div>     
                     <div class="mark">
-                        <input  name="price" class="input" type="number" value ="<%= unProducto.price %>" required>
-                    </div>
+                        <select name="size" id="size"  class="input">
+                            <option value="<%= products.id %>" selected><%= products.model.model %></option>
+                            <% model.forEach(model => { %>
+                                <option value="<%= model.id %>" required><%= model.model %></option>
+                            <% }) %>
+                        </select>
+                    </div>          
                     <div class="mark">
-                        <select name="gender" id="gender"  class="input">
-                            <option value="<%= unProducto.gender %>" selected><%= unProducto.gender %></option>
-                            <option value="hombre">hombre</option>
-                            <option value="mujer">mujer</option>
-                            <option value="unisex">unisex</option>
+                        <select name="genreId" id="gender"  class="input">
+                            <option value="<%= products.genreId %>" selected><%= products.genre.genre %></option>
+                            <% genre.forEach(genre => { %>
+                                <option value="<%= genre.id %>" required><%= genre.genre %></option>
+                            <% }) %>
                         </select>
                     </div>
                     <div class="mark">
                         <select name="size" id="size"  class="input">
-                            <option value="<%= unProducto.size %>" selected><%= unProducto.size %> ml</option>
-                            <option value=30>30 ml</option>
-                            <option value=50>50 ml</option>
-                            <option value=100>100 ml</option>
+                            <option value="<%= products.id %>" selected><%= products.measure.measure %> ml</option>
+                            <% measure.forEach(measure => { %>
+                                <option value="<%= measure.id %>" required><%= measure.measure %></option>
+                            <% }) %>
                         </select>
                     </div>
                     <div class="mark">
                         <label for="outlet">outlet</label>
-                        <% if (unProducto.outlet == 1){ %>
+                        <% if (products.outlet == 1){ %>
                             <input style=margin:5px type="checkbox" name="outlet" value=1 checked>
                         <% }; %>
-                        <% if (unProducto.outlet == 0){ %>
+                        <% if (products.outlet == 0){ %>
                             <input style=margin:5px type="checkbox" name="outlet" value=1>
                         <% }; %>
                     </div>
+                    <div class="mark">
+                        <label for="outlet">destacado</label>
+                        <% if (products.destacado == 1){ %>
+                            <input style=margin:5px type="checkbox" name="destacado" value=1 checked>
+                        <% }; %>
+                        <% if (products.destacado == 0){ %>
+                            <input style=margin:5px type="checkbox" name="destacado" value=1>
+                        <% }; %>
+                    </div> 
+                    <div class="mark">
+                        <input  name="price" class="input" type="number" value ="<%= products.price %>" required>
+                    </div>    
+                    <div class='mark' >
+                        <input class="form-in" type="number" name="stock" placeholder="stock" id="" required> 
+                    </div>
                 </section>
-                <section class="imginput">
-                        <img src="/images/imgPerfume/<%= unProducto.image %>"  alt="imagen perfume">
-                        <input  type="file" name="newImage" placeholder="imagen perfume" value="<%= unProducto.image %>">
-                    </section>
+               
+                <!--<section class="imginput">
+                        <img src="/images/imgPerfume/<%#= products.image %>"  alt="imagen perfume">
+                        <input  type="file" name="newImage" placeholder="imagen perfume" value="<%#= products.image %>">
+                    </section>-->
                     <section class="btns">
                         <div class="a-btn">
                             <button type="submit" id="btn-enter"> guardar </button> 

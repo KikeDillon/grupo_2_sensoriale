@@ -1,11 +1,12 @@
 const { readFileSync } = require('fs');
 //const path = require('path');
-const fs = require ('fs');
+//sconst fs = require ('fs');
 
 const path = require('path');
-const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const {Products, Marks, Genres, Models, Measures} = require('../database/models');
+//const sequelize = sequelize;
+//const { Op } = require("sequelize");
+//const { values } = require('sequelize/types/lib/operators');
 
 const cssAdminIndex = ['footer', 'header', 'tablet', 'admin/adminIndex'];
 const cssAdminView = ['footer', 'header', 'tablet', 'admin/adminView'];
@@ -14,78 +15,128 @@ const cssAdminCreate = ['footer', 'header', 'tablet', 'admin/adminCreate'];
 const cssAdminEdit = ['footer', 'header', 'tablet', 'admin/adminEdit'];
 
 const adminController = {
+    /*.findAll({
+        where: {categoryId : req.query.categoria},
+        include: [{association: 'category'}]
+    })
+    .findByPk(req.params.id, {
+            include: ['category']
+        })
+    */
+
     admin: function(req, res) {
-        db.Product.findAll()
+        Products.findAll({
+            include:['mark', 'model', 'genre']
+        })
+         //return res.send(products.mark+'-------------------------------------------------------------')
+        //const mark = Marks.findAll();
+        //Promise.all([ products])
         .then(products => {
-            res.render (path.resolve(__dirname, '../views/web/admin/adminIndex.ejs'), {styles: cssAdminIndex, products})
+            //return res.send(products)
+            return res.render (path.resolve(__dirname, '../views/web/admin/adminIndex.ejs'), {styles: cssAdminIndex, products})
+        }).catch (resultado => {
+            console.log(resultado)
         })
     },
     create: function (req, res){
-        db.Marks.findAll()
-        .then(allMarks => {
-            return allMarks;
-            //return res.send(allMarks)
-            //res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMarks})
-        }),
-        db.Measures.findAll()
-        .then(allMeasures => {
-            //return allMeasures;
-            res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMeasures});
-        })
-        
-        
-    
-        //let mark = JSON.parse (fs.readFileSync(path.resolve(__dirname, '../data/mark.json')));
-        //res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, allMarks, allMeasures});
+            /*const platos = Dish.findAll();
+            const categorias = Category.findAll();
+            Promise.all([platos,categorias])
+            .then(([platos,categorias]) =>{
+                //return res.send(platos)
+                res.render(path.resolve(__dirname , '..','views','productos','productos') , {platos,categorias});
+            })           
+            .catch(error => res.send(error))
+        },*/
+        const mark = Marks.findAll();
+        const genre = Genres.findAll();
+        const measure = Measures.findAll();
+        const model = Models.findAll()
+        Promise.all([mark, genre, measure, model]) 
+        .then(([mark, genre, measure, model]) => {
+            //return res.send();
+            return res.render (path.resolve(__dirname, '../views/web/admin/adminCreate.ejs'), {styles: cssAdminCreate, mark, genre, measure, model});
+          }) .catch (error => res.send(error));
     },
     save: function(req, res) {
         //return res.send(req.body)
-        db.Product.create({
-            models_id: req.body.mark,
-            measure_id: req.body.size,
+        Products.create(
+            {
             price: req.body.price,
-            outlet: req.body.outlet,
-            //stock: req.body.stock
+            outlet: req.body.outlet == 1? 1 : 0,        
+            stock: req.body.stock,
+            modelId: req.body.modelId,
+            markId: req.body.markId,
+            genreId: req.body.genreId,
+            measureId: req.body.measureId,
+            destacado: req.body.destacado,
+            //image: req.file.image
+        }
+        )
+        .then(()=>{
+            return res.redirect('/administrar');
         })
-        return res.redirect('/administrar');
+        .catch(error => res.send(error)) 
+        
     }, 
     view: (req, res) => {
-        db.Product.findByPk(req.params.id)  
+        Products.findByPk(req.params.id, {
+            include:['mark', 'model', 'genre', 'measure']
+        })  
             .then(products => {
                 res.render (path.resolve(__dirname, '../views/web/admin/adminView.ejs'), {styles: cssAdminView, products})
             });
     },
     edit:  (req, res) => {
-        db.Product.findByPk(req.params.id)
-            .then(products => {
-                res.render('adminEdit.ejs', {products});
-            });
+        const products = Products.findByPk(req.params.id, {
+            include:['mark', 'model', 'genre', 'measure']
+        })
+        const mark = Marks.findAll();
+        const genre = Genres.findAll();
+        const measure = Measures.findAll();
+        const model = Models.findAll();
+        Promise.all([mark, genre, products, measure, model]) 
+        .then(([mark, genre, products, measure, model]) => {
+            //return res.send();
+            return res.render (path.resolve(__dirname, '../views/web/admin/adminEdit.ejs'), {styles: cssAdminEdit, model, products, mark, genre, measure});
+          }) .catch (error => res.send(error));
     },
     update: (req, res) => {
-        db.Product.update({
-            id: req.body.id,
-            models_id: req.body.mark,
-            measure_id: req.body.size,
+        //return res.send(req.params.id)
+        Products.update({
             price: req.body.price,
-            outlet: req.body.outlet == 1? 1 : 0,
-            //stock: req.body.stock
+            outlet: req.body.outlet == 1? 1 : 0,        
+            stock: req.body.stock,
+            modelId: req.body.modelId,
+            markId: req.body.markId,
+            genreId: req.body.genreId,
+            measureId: req.body.measureId,
+            destacado: req.body.destacado,
         },
         {where: {id: req.params.id}}
         ) 
-        res.redirect('/administrar')
+        .then(()=>{
+            return res.redirect('/administrar');
+        })
+        .catch(error => res.send(error))
     },
     delete:  (req, res) => {
-        db.Product.findByPk(req.params.id)
+        Products.findByPk(req.params.id, {
+            include:['mark', 'model', 'genre', 'measure']
+        })
             .then(products => {
-                res.render('adminDelete.ejs', {products});
+                res.render(path.resolve(__dirname, '../views/web/admin/adminDelete.ejs'), {styles: cssAdminDelete, products});
             });
     },
-    destroy:  (req, res) => {
-        db.Product.detroy({
+    destroy:  function (req, res)  {
+        Products.destroy({
             where: { id: req.params.id}
            }
         )
-        res.redirect('/administrar')
+        .then(()=>{
+            return res.redirect('/administrar');
+        })
+        .catch(error => res.send(error))
     }
 }
 

@@ -1,6 +1,6 @@
 function admMiddleware (req, res, next){
     if(req.session && req.session.usuarioLogueado){
-        if ( req.session.usuarioLogueado.user_type === 1){
+        if ( req.session.usuarioLogueado.userType === 1){
             next();
         }else{
             return res.redirect('/')

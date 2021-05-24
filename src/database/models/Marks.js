@@ -10,15 +10,8 @@ module.exports = function (sequelize, dataTypes) {
         mark :{
             type: dataTypes.STRING(50),
             allowNull: false
-        },
-        modelsId : {
-            type: dataTypes.INTEGER
-        } ,
-        measuresId : {
-            type: dataTypes.INTEGER
         }
 
-        
     }
     let config = {
         timestamps: false,
@@ -30,14 +23,10 @@ module.exports = function (sequelize, dataTypes) {
     let Marks = sequelize.define(alias, cols, config)
 
     Marks.associate = function(models) {
-        Marks.hasMany(models.Models), {
-            as: 'model',
-            foreignKey: 'models_id'
-        }/*,
-        Marks.hasMany(models.Measures), {
-            as: 'measure',
-            foreignKey: 'measures_id'
-        }*/
+        Marks.hasMany(models.Products, {
+            as: 'products',
+            foreignKey: 'markId'
+        })
     }
 
     return Marks

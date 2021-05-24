@@ -7,19 +7,66 @@
         <section class = "container">
             <form action="/administrar/crear" method="POST" enctype="multipart/form-data">
                 <div class="form">
-                    <select class="form-in" name="mark" id="marca">
+                    <select class="form-in" name="markId" id="marca">
                         <option value="#" disabled selected>marca</option>
-                        <% allMarks.forEach(i => { %>
-                            <option value="<%= i.id %>" required><%= i.mark %></option>
+                        <% mark.forEach(mark => { %>
+                            <option value="<%= mark.id %>" required><%= mark.mark %></option>
                         <% }) %>
                     </select>
+                </div>
+                <div class="form">
+                    <select class="form-in" name="modelId" id="model">
+                        <option value="#" disabled selected>modelo</option>
+                        <% model.forEach(model => { %>
+                            <option value="<%= model.id %>" required><%= model.model %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form">
+                    <select class="form-in" name="genreId" id="genre">
+                        <option value="#" disabled selected>género</option>
+                        <% genre.forEach(genre => { %>
+                            <option value="<%= genre.id %>" required><%= genre.genre %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div>
+                    <select class="form-in" name="measureId" id="measure">
+                        <option value="#" disabled selected>Tamaño</option>
+                        <% measure.forEach(measure => { %>
+                            <option value="<%= measure.id %>" required><%= measure.measure %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class='form' >
+                    <input class="form-in" type="number" name="price" placeholder="precio" id="" required>
+                </div>
+                <div class='form' >
+                    <input class="form-in" type="number" name="stock" placeholder="stock" id="" required> 
+                </div>
+                <div class="outlet">
+                    <label class="form-out" for="outlet">outlet</label>
+                    <input class="form-out" type="checkbox" name="outlet" value=1>
+                </div>
+                <div class="outlet">
+                    <label class="form-out" for="outlet">destacados</label>
+                    <input class="form-out" type="checkbox" name="destacado" value=1>
+                </div>
+        </section>
+                    
+                    <!--<select class="form-in" name="mark" id="marca">
+                        <option value="#" disabled selected>marca</option>
+                        <%# mark.forEach(i => { %>
+                            <option value="<%#= i.id %>" required><%#= i.mark %></option>
+                        <%# }) %>
+                    </select>
                 </div>            
-         <!--       <div>
+                <div>
                     <select name="model" id="model">
                        <option value="#" disabled selected>modelo</option>
                     </select>   
                 </div> -->
-                </div>                
+                <!--</div>                
                 <div class="form">
                     <input class="form-in" name="price" type="number" placeholder="precio" required>
                 </div>
@@ -28,34 +75,40 @@
                         <option value="#" disabled selected>género</option>
                         <option value="hombre">hombre</option>
                         <option value="mujer">mujer</option>
-                        <option value="unisex">unisex</option>
+                        <option value="unisex">unisex</option>-->
+                        <!--<%# genre.forEach(i => { %>
+                            <option value="<%#= i.id %>" required><%#= i.genre %></option>
+                        <%# }) %>
                     </select>
                 </div>
                 <div class="form">
-                    <select class="form-in" name="size" id="size">
-                        <!--<option value="#" disabled selected>tamaño</option>
+                    <select class="form-in" name="measure" id="size">
+                        <option value="#" disabled selected>tamaño</option>
                         <option value='30'>30 ml</option>
                         <option value='50'>50 ml</option>
                         <option value='100'>100 ml </option>-->
-                        <% allMeasures.forEach(i => { %>
-                            <option value="<%= i.id %>" required><%= i.measure %></option>
-                        <% }) %>
+                        <!--<%# measure.forEach(i => { %>
+                            <option value="<%#= i.id %>" required><%#= i.measure %></option>
+                        <%# }) %>
                     </select>
                 </div>
                 <div class="outlet">
                     <label class="form-out" for="outlet">outlet</label>
                     <input class="form-out" type="checkbox" name="outlet" value=1>
                 </div>
+                <div class="form">
+                    <input class="form-in" name="stock" type="number" placeholder="stock" required>
+                </div>
                 <div class="file-imagen">
                     <input class="file-img" type="file" name="image" >
-                </div>
-                </section>
+                </div>-->
+                
                 <section class="btn-container">
                 <div class="btn-erase">
                     <button id="btn-erase" type="reset"> borrar datos </button>
                 </div>                
                 <div class="btn-get-in">
-                    <button id="btn-enter" type="submit"> guardar </button>
+                    <button id="btn-enter" type="submit"> Agregar </button>
                 </div>
             </section>
             </form>

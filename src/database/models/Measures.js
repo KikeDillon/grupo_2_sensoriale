@@ -11,8 +11,6 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER,
             allowNull: false
         }
-
-
         
     }
     let config = {
@@ -25,13 +23,9 @@ module.exports = function (sequelize, dataTypes) {
     let Measures = sequelize.define(alias, cols, config)
     
     Measures.associate = function(models) {
-        /*Measures.belongsTo(models.Marks), {
-            as: 'marks',
-            foreignKey: 'measures_id'
-        },*/
-        Measures.hasMany(models.Product), {
-            as: 'product',
-            foreignKey: 'measures_id'
+        Measures.hasMany(models.Products), {
+            as: 'products',
+            foreignKey: 'measureId'
         }
     }
 

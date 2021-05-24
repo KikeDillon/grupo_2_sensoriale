@@ -67,7 +67,7 @@ const userController = {
                             last_name : req.body.lastname,
                             email : req.body.email,
                             password : (bcrypt.hashSync(req.body.password, 10)),
-                            user_type : 0
+                            userType : 0
                         })
                         .then (function(){
                             return res.redirect ('/');

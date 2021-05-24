@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         model :{
             type: dataTypes.STRING(100),
             allowNull: false
-        } 
+        }
     }
     let config = {
         tableName: 'models',
@@ -20,17 +20,9 @@ module.exports = function (sequelize, dataTypes) {
     let Models = sequelize.define(alias, cols, config)
 
     Models.associate = function(models) {
-        Models.hasMany(models.Product), {
-            as: 'product',
-            foreignKey: 'models_id'
-        },
-        Models.belongsTo(models.Genre), {
-            as: 'genres',
-            foreignKey: 'models_id'
-        },
-        Models.belongsTo(models.Marks), {
-            as: 'marks',
-            foreignKey: 'models_id'
+        Models.hasMany(models.Products), {
+            as: 'products',
+            foreignKey: 'modelId'
         }
     }
 
