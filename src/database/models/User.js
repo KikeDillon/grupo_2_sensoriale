@@ -9,10 +9,10 @@ module.exports = (sequelize, dataTypes) =>{
             autoIncrement: true
         },
         firstName: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING,
         },
         lastName:{
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING,
         },
         email:{
             type: dataTypes.STRING(100),
@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) =>{
 
     User.associate = (models) =>{
         User.hasMany (models.Carrito,{
-            as: "carrito",
+            as: "carritos",
             foreignkey: "userId"
         });
     }

@@ -30,7 +30,7 @@
                         <% }) %>
                     </select>
                 </div>
-                <div>
+                <div class="form">
                     <select class="form-in" name="measureId" id="measure">
                         <option value="#" disabled selected>Tamaño</option>
                         <% measure.forEach(measure => { %>
@@ -52,57 +52,10 @@
                     <label class="form-out" for="outlet">destacados</label>
                     <input class="form-out" type="checkbox" name="destacado" value=1>
                 </div>
-        </section>
-                    
-                    <!--<select class="form-in" name="mark" id="marca">
-                        <option value="#" disabled selected>marca</option>
-                        <%# mark.forEach(i => { %>
-                            <option value="<%#= i.id %>" required><%#= i.mark %></option>
-                        <%# }) %>
-                    </select>
-                </div>            
-                <div>
-                    <select name="model" id="model">
-                       <option value="#" disabled selected>modelo</option>
-                    </select>   
-                </div> -->
-                <!--</div>                
-                <div class="form">
-                    <input class="form-in" name="price" type="number" placeholder="precio" required>
-                </div>
-                <div class="form">
-                    <select class="form-in" name="gender" id="gender">
-                        <option value="#" disabled selected>género</option>
-                        <option value="hombre">hombre</option>
-                        <option value="mujer">mujer</option>
-                        <option value="unisex">unisex</option>-->
-                        <!--<%# genre.forEach(i => { %>
-                            <option value="<%#= i.id %>" required><%#= i.genre %></option>
-                        <%# }) %>
-                    </select>
-                </div>
-                <div class="form">
-                    <select class="form-in" name="measure" id="size">
-                        <option value="#" disabled selected>tamaño</option>
-                        <option value='30'>30 ml</option>
-                        <option value='50'>50 ml</option>
-                        <option value='100'>100 ml </option>-->
-                        <!--<%# measure.forEach(i => { %>
-                            <option value="<%#= i.id %>" required><%#= i.measure %></option>
-                        <%# }) %>
-                    </select>
-                </div>
-                <div class="outlet">
-                    <label class="form-out" for="outlet">outlet</label>
-                    <input class="form-out" type="checkbox" name="outlet" value=1>
-                </div>
-                <div class="form">
-                    <input class="form-in" name="stock" type="number" placeholder="stock" required>
-                </div>
                 <div class="file-imagen">
-                    <input class="file-img" type="file" name="image" >
-                </div>-->
-                
+                    <input class="file-img" type="file" name="image" id="fileImg">
+                </div>
+                </section>
                 <section class="btn-container">
                 <div class="btn-erase">
                     <button id="btn-erase" type="reset"> borrar datos </button>
@@ -117,5 +70,6 @@
         </section>
     </main>    
     <%- include ('../../partials/footer') %>
+    <script src="/javascripts/models.js"></script>
 </body>
 </html>

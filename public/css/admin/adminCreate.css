@@ -31,12 +31,33 @@
     flex-direction: column;
 }
 
+.container form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .form{
     justify-content: center;
     width: 100%;    
     margin: 7px 0px;
     margin-top: 3px;
+    outline: none;
+
+}
+
+.form-out-input{
+    margin-left: 10px;
+}
+
+.textLabel{
+    width: 70%;
+}
+
+.textInput{
+    width: 30%;
 }
 
 .form-in, select{
@@ -46,27 +67,22 @@
     border-radius: 0.5rem;
     padding-left: 10px;
     height: 35px;
+    outline: none;
 }
 
 .outlet{
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 35px;
-    margin-top: 7px;
-    width: 70%;
-    border: solid 1px #008891;
-    border-radius: 0.5rem;
+    margin: 7px;
+    margin-left: 4vw;
+    width: 100%;
 }
 
-.form-out{
-    border-radius: 0.5rem;
-    padding-left: 10px;
-}
+
 
 .file-imagen{
     display: flex;
-    justify-content: center;
 }
 
 .file-img{
@@ -74,7 +90,10 @@
     max-width: 500px;
     border: solid 1px #008891;
 }
+#fileImg{
+    outline: none;
 
+}
 .btn-container{
     width: 100%;
     display: flex;
@@ -86,22 +105,24 @@
     width: 20vw;
     height: 30px;
     margin: 7px;
-    border: solid 1px #008891;
     border-radius: 0.5rem;
-    background-color: #008891;
     display: flex;
     justify-content: center;
 }
 
 button{
-    width: 70%;
+    width: 100%;
     max-width: 500px;
     border: solid 1px #008891;
     border-radius: 0.5rem;
     background-color: #008891;
     color: #e7e7de;
 }
-
+button:hover {
+    background-color: #00587a;
+    font-weight: bolder;
+    cursor: pointer;
+}
 .btn-volver{
     text-decoration: none;
     margin-bottom: 3vh;

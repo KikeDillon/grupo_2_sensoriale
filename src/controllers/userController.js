@@ -21,7 +21,7 @@ const userController = {
             db.User.findAll()
                 .then (function(users){                             // tomo la base de ususarios a un array
                     let user = users.find (function(i){             // usamos el find para encontrar el usuario ingresado por req.body.useremail
-                        return req.body.useremail == i.email;           // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
+                        return req.body.useremail == i.email;        // devuelvo el resultado a user si encuentro el usuario ingresado. se busca en el array users
                     });
                     if (user){                                      // si user tiene contenido es porque se encontró un usuario con el find
                         if(req.body.password, user.password){            // la contraseña ingresada en el body es igual a la contraseña del mismo usuario en el array ?(bcrypt.compareSync(req.body.password, user.password))
@@ -63,8 +63,8 @@ const userController = {
                     });
                     if (!user){                                     // si el usuario del req no existe en la base, se puede crear
                         db.User.create({
-                            first_name : req.body.firstname,
-                            last_name : req.body.lastname,
+                            firstName : req.body.firstname,
+                            lastName : req.body.lastname,
                             email : req.body.email,
                             password : (bcrypt.hashSync(req.body.password, 10)),
                             userType : 0
@@ -85,8 +85,8 @@ const userController = {
     },
     userProfile: function(req,res){
         let loggedUser = {
-            firstname : req.session.usuarioLogueado.first_name,
-            lastname : req.session.usuarioLogueado.last_name,
+            firstname : req.session.usuarioLogueado.firstName,
+            lastname : req.session.usuarioLogueado.lastName,
             email : req.session.usuarioLogueado.email,
         }
         return res.render (path.resolve(__dirname, '../views/user/userProfile.ejs'), {styles: cssUserProfile, loggedUser: loggedUser })

@@ -39,25 +39,19 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER
         },
         image : {
-            type: dataTypes.STRING(255)
+            type: dataTypes.STRING
         }
        
 
         
     }
+    
     let config = {
-        timestamps: false,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: false
+        tableName: "products",
+        timestamps: false
     }
 
     let Products = sequelize.define(alias, cols, config)
-
-    /*Dish.hasMany(models.Item, {
-        as: "items",
-        foreignKey: "productId",
-    });*/
 
     Products.associate = function(models) {
         Products.belongsTo(models.Marks, {

@@ -4,7 +4,7 @@
     <main class="main">
         <div class="main-header-space"></div>
         <section class = "main-section">
-            <form class="form" action="/administrar/actualizar/<%=products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="form" id="formEdit" action="/administrar/actualizar/<%=products.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <section class="container-mark">   
                     <div class="mark">
                         <select name="markId" id="marca"  class="input">
@@ -15,8 +15,8 @@
                         </select>
                     </div>     
                     <div class="mark">
-                        <select name="size" id="size"  class="input">
-                            <option value="<%= products.id %>" selected><%= products.model.model %></option>
+                        <select id="modelo" name="size" id="size"  class="input">
+                            <option  value="<%= products.id %>" selected><%= products.model.model %> </option>
                             <% model.forEach(model => { %>
                                 <option value="<%= model.id %>" required><%= model.model %></option>
                             <% }) %>
@@ -60,14 +60,13 @@
                         <input  name="price" class="input" type="number" value ="<%= products.price %>" required>
                     </div>    
                     <div class='mark' >
-                        <input class="form-in" type="number" name="stock" placeholder="stock" id="" required> 
+                        <input class="input" type="number" name="stock" value ="<%= products.stock %>" id="" required> 
                     </div>
                 </section>
-               
-                <!--<section class="imginput">
-                        <img src="/images/imgPerfume/<%#= products.image %>"  alt="imagen perfume">
-                        <input  type="file" name="newImage" placeholder="imagen perfume" value="<%#= products.image %>">
-                    </section>-->
+                <section class="imginput">
+                        <img src="/images/imgPerfume/<%= products.image %>"  alt="imagen perfume">
+                        <input  type="file" id="newImage" name="newImage">
+                    </section>
                     <section class="btns">
                         <div class="a-btn">
                             <button type="submit" id="btn-enter"> guardar </button> 
@@ -80,5 +79,7 @@
         </section>     
     </main>    
     <%- include ('../../partials/footer') %>
+    <script src="/javascripts/adminEdit.js"></script>
+
 </body>
 </html>

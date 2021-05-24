@@ -30,11 +30,7 @@ module.exports = (sequelize, dataTypes) =>{
         Carrito.belongsTo(models.User, {
             as: "users",
             foreignkey: "userId"
-        });
-        Carrito.belongsTo(models.Products, {
-            as: "product",
-            foreignkey: "productId"
-        });
+        })
     }
 
     return Carrito;

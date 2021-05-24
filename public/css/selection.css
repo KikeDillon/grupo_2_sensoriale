@@ -68,6 +68,11 @@
     border: solid 1px #008891;
     border-radius: 0.5rem;
     padding-left: 10px;
+    outline: none;
+}
+
+#gender{
+    display: block;
 }
 #btn-erase{
     background-color: #008891;
@@ -275,6 +280,9 @@ p{
         margin: 0.5vh 0;
         border: solid 2px #008891;
         border-radius: 0.5rem;
+    }
+    #gender{
+        display: none;
     }    
 
 }
