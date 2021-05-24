@@ -12,10 +12,10 @@ module.exports = (sequelize, dataTypes) =>{
         state:{
             type: dataTypes.INTEGER,
         },
-        user_id:{
+        userId:{
             type: dataTypes.INTEGER,
         },
-        product_id:{
+        productId:{
             type: dataTypes.INTEGER,
         }
     }
@@ -29,8 +29,8 @@ module.exports = (sequelize, dataTypes) =>{
     Carrito.associate = (models) =>{
         Carrito.belongsTo (models.User,{
             as: "users",
-            foreignkey: "user_id"
-        });
+            foreignkey: "userId"
+        })
     }
 
     return Carrito;

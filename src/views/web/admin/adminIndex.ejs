@@ -23,17 +23,18 @@
                 </tr>
             </thead>
             <tbody>
-                <% products.forEach(function (perfume) { %>
+                <%# for( let i = 0; i < products.length; i++ ) { %>
+                <% products.forEach(function (products) { %>
                     <tr>
-                        <td> <%= perfume.id %> </td>
-                        <td> <%= perfume.mark %> </td>
-                        <td> <%= perfume.model %> </td>
-                        <td class="none"> <%= perfume.gender %> </td>
-                        <td><a href="/administrar/visualizar/<%= perfume.id %>"><i class="fas fa-eye"></i></a></td>
-                        <td><a href="/administrar/editar/<%= perfume.id %>"><i class="fas fa-edit"></i></a></td>
-                        <td><a href="/administrar/eliminar/<%= perfume.id %>"><i class="fas fa-trash"></i></a></td>
+                        <td> <%= products.id %> </td>
+                        <td> <%= products.mark.mark %> </td>
+                        <td> <%= products.model.model %> </td>
+                        <td class="none"> <%= products.genre.genre %> </td>
+                        <td><a href="/administrar/visualizar/<%= products.id %>"><i class="fas fa-eye"></i></a></td>
+                        <td><a href="/administrar/editar/<%= products.id %>"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="/administrar/eliminar/<%= products.id %>"><i class="fas fa-trash"></i></a></td>
                     </tr>
-                <% }); %> 
+                    <% }); %>
             </tbody>
         </table>
         </section>

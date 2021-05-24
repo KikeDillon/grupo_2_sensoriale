@@ -207,21 +207,27 @@
         justify-content: space-evenly;
         align-items: center;
         background-color: #008891;
+        list-style-type: none;
     }
-    .nav-menu ul li{            /*=== lista del menú del nav-bar "li"  ===*/
+    .nav-menu ul a{            /*=== lista del menú del nav-bar "li"  ===*/
         display: flex;
         width: 120px;
         justify-content: center;
         border-radius: 3px;
-    }
-    .nav-menu ul li a{          /*=== lista del menú del nav-bar "link a" ===*/
         text-decoration: none;
+
+    }
+    .nav-menu ul a li{          /*=== lista del menú del nav-bar "link a" ===*/
         font-weight: bolder;
         padding: 3px 8px;
         color: #e7e7de;
+        width: 100%;
+        height: 100%;
+        text-align: center;    
     }
-    .nav-menu ul li:hover{ 
+    .nav-menu ul a li:hover{ 
         background-color: #0f3057;
+        border-radius: 3px;
     }
 }
     @media (min-width: 769px){

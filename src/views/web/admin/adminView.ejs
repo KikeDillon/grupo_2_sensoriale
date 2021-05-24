@@ -6,39 +6,44 @@
         <section class = "container">
             <section class="detail-img">
                 <div>
-                    <img src="/images/imgPerfume/<%= unProducto.image %>" alt="imagen perfume">
-                </div>
+                    <img src="/images/imgPerfume/<%=products.image%>" alt="imagen perfume">
+                </div> 
             </section>
         <section class = "product">
             <div class="detail-product">
-               <p>id: <%= unProducto.id %></p>
+               <p>id: <%= products.id %></p>
             </div>
             <div class="detail-product">
-                <p>mark: <%= unProducto.mark %></p>
+                <p>mark: <%= products.mark.mark %></p>
             </div>
             <div class="detail-product">
-                <p>model: <%= unProducto.model %></p>
+                <p>model: <%= products.model.model %></p>
             </div>
             <div class="detail-product">
-                <p>gender:  <%= unProducto.gender %></p>
+                <p>gender:  <%= products.genre.genre %></p>
             </div>
             <div class="detail-product">
-                <p>size: <%= unProducto.size %></p>
+                <p>measure: <%= products.measure.measure %></p>
             </div>
             <div class="detail-product">
-                <p>price: <%= unProducto.price %></p>
+                <p>price: <%= products.price %></p>
             </div>
             <div class="outlet">
-                <% if (unProducto.outlet == 1){ %>
-                    <p> outlet sí</p>
+                <% if (products.outlet == 1){ %>
+                    <p> outlet: sí</p>
                 <% }; %>
-                <% if (unProducto.outlet == 0){ %>
-                    <p> outlet no</p>
+                <% if (products.outlet == 0){ %>
+                    <p> outlet: no</p>
                 <% }; %>
             </div>
-        
-            
-        
+            <div class="outlet">
+                <% if (products.destacado == 1){ %>
+                    <p> destacados: sí</p>
+                <% }; %>
+                <% if (products.destacado == 0){ %>
+                    <p> destacados: no</p>
+                <% }; %>
+            </div>
     </section>
     </section>
         <section class="btns">
@@ -46,7 +51,7 @@
             <h4><a href="/administrar">volver</a></h4>
         </div>
         <div class="a">
-            <h4><a href="/administrar/editar/<%= unProducto.id %>">editar</a></h4>
+            <h4><a href="/administrar/editar/<%= products.id %>">editar</a></h4>
         </div>
         </section>
     </main>    

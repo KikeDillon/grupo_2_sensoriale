@@ -33,14 +33,14 @@ const userRouter = require ('./routers/userRouter');
 const productsRouter = require ('./routers/productsRouter');
 const saleRouter = require ('./routers/saleRouter');
 const adminRouter = require ('./routers/adminRouter');
+const apiModelsRouter = require ('./routers/api/apiModelsRouter');
 
 app.use (webRouter);
 app.use (productsRouter);
 app.use (userRouter);
 app.use (saleRouter);
 app.use (adminRouter);
-
-
+app.use (apiModelsRouter);
 
 app.use (function(req, res, next){
     res.status(404).render(path.resolve(__dirname, './views/middlewares/404-page.ejs'));

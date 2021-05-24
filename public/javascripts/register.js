@@ -35,6 +35,9 @@ window.addEventListener ("load", function(){
 	const passwordP = document.getElementById ('passwordP');
 	const confirmpasswordP = document.getElementById ('confirmpasswordP');
 
+	let inputsP = [firstnameP, lastnameP, emailP, passwordP, confirmpasswordP];
+
+
 	const camposAvalidar = {
 		campoFirstname: false,
 		campoLastname: false,
@@ -87,27 +90,31 @@ window.addEventListener ("load", function(){
 
 	formRegister.addEventListener ('reset', function(){
 
-		inputsFormulario.forEach (function(inputFormulario) {
+		inputsFormulario.forEach (function(inputFormulario) {	// que se borren los bordes
 			inputFormulario.classList.remove('borderOk');
 			inputFormulario.classList.remove('borderError');
 			inputFormulario.classList.add('borderNormal');
 		})
-		errorIconos.forEach (function(errorIcono){
+		errorIconos.forEach (function(errorIcono){				// que no se vean los íconos
 			errorIcono.style.opacity = "0";
 		})
+		inputsP.forEach (function(inputP){                  	// que no se vean los textos
+			inputP.style.opacity = "0";
+		})
+
 	})
 
 	// FUNCION QUE VALIDA LOS CAMPOS //
 
 	let validacionInputs = function (target, inputClass, expresionTest, errorIcon, p, campo){
-		if ((target) == ""){
+		if ((target) == ""){										//campo vacío
 			inputClass.classList.remove('borderOk');
 			inputClass.classList.remove('borderError');
 			inputClass.classList.add('borderNormal');
 			errorIcon.style.opacity = "0";
 			p.style.opacity = "0";
 			camposAvalidar[campo] = false;
-		}else if (expresionTest){
+		}else if (expresionTest){									//del resultado de comparar expresiones con el valor del campo. cumple la expresión. 
 			inputClass.classList.remove('borderNormal');
 			inputClass.classList.remove('borderError');
 			inputClass.classList.add('borderOk');
@@ -117,7 +124,7 @@ window.addEventListener ("load", function(){
 			errorIcon.classList.add('fa-check-circle');
 			p.style.opacity = "0";
 			camposAvalidar[campo] = true;
-		}else{
+		}else{														//no está vacío, el resultado de comparación con expresiones es falso
 			inputClass.classList.remove('borderOk');
 			inputClass.classList.remove('borderNormal');
 			inputClass.classList.add('borderError');
@@ -168,9 +175,7 @@ window.addEventListener ("load", function(){
 	// CAPTURO EL EVENTO SUBMIT Y LO EVITO 
 
 	formRegister.addEventListener ('submit', function (e){
-		e.preventDefault();
 		if(camposAvalidar.campoFirstname && camposAvalidar.campoLastname && camposAvalidar.campoEmail && camposAvalidar.campoPassword && camposAvalidar.campoConfirmPassword ){
-			formRegister.reset();
 			toLogin.innerHTML = `Registro realizado con éxito`;
 			toLogin.classList.add ('loginOk');
 			setTimeout(() => {
@@ -181,6 +186,7 @@ window.addEventListener ("load", function(){
 		// acá pasa algo que tengo que resolver
 
 		}else{
+			e.preventDefault();
 			toLogin.innerHTML = `Hay errores en el registro`;
 			toLogin.classList.add ('loginError');
 			setTimeout(() => {
