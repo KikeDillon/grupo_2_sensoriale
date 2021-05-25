@@ -11,7 +11,7 @@ const productsController = {
             include: [{association: 'mark'}, {association: 'model'}, {association: 'measure'}]
         })
         .then (perfume => {
-            return res.json (perfume);
+           // return res.json (perfume)
             return res.render (path.resolve(__dirname, '../views/products/detail.ejs'), {styles: cssdetail, perfume: perfume});
         })
         .catch(error => res.send(error))

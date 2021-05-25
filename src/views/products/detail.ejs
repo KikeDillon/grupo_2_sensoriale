@@ -7,32 +7,43 @@
             <section class="article-pic-detail">
                 <article class="article-pic">
                     <div class="container-img">
-                        <figure><img src="/images/CH-2.jpg" alt=""></figure>
+                        <figure><img src="/images/imgPerfume/<%= perfume.image %>"  alt="imagen perfume" ></figure>
                     </div>
                 </article>
             </section>
             <section class="btns-detail">
                 <div class="form-select-ml">
-                    <label for="ml"><%= perfume.measureId %></label>
+                    <label for="ml">medida</label>
+                    <select name="ml" id="ml">
+                        <option value="ml1" id="<%= perfume.measure.measure %>"><%= perfume.measure.measure %> ml</option>
+                        <option value="ml2" id="100">100 ml</option>
+                        <option value="ml3" id="120">120 ml</option>
+                    </select>
                 </div>
                 <div class="price">
                     <h4>precio</h4>                    
                     <div id="btn-price">
-                        <h4>$$$</h4>
+                        <h4>AR$</h4>
+                        <input id="precioOculto" value="<%=perfume.price%>">
+                        <h4><%= perfume.price %></h4>
                     </div>
                 </div>    
                 <div class="quantity">
                     <label for="qtt">cantidad</label>
                     <select name="quantity" id="qtt">
-                        <option value="qtt1" id="qtt1">1 (uno)</option>
-                        <option value="qtt2" id="qtt2">2 (dos)</option>
-                        <option value="qtt3" id="qtt3">3 (tres)</option>
+                        <option value="1" id="1">1 (uno)</option>
+                        <option value="2" id="2">2 (dos)</option>
+                        <option value="3" id="3">3 (tres)</option>
+                        <option value="4" id="4">4 (cuatro)</option>
+                        <option value="5" id="5">5 (cinco)</option>
                     </select>
                 </div>   
                 <div class="price">
                     <h4>precio total</h4>                    
                     <div id="btn-totalprice">
-                        <h4>$$$</h4>
+                        <h4>AR$</h4>
+                        <h4 id="precioTotal"></h4>
+                        <input type="number" id="totalOculto">
                     </div>
                 </div>                   
                 <div class="btn-checkout">
@@ -45,5 +56,6 @@
         </section>
     </main>    
     <%- include ('../partials/footer') %>
+    <script src="/javascripts/detail.js"></script>
 </body>
 </html>
