@@ -75,7 +75,8 @@ const adminController = {
     },
     update: (req, res) => {
         //return res.send(req.params.id)
-        db.Product.findByPk(req.params.id) .then (i => {
+        db.Product.findByPk(req.params.id) 
+        .then (i => {
             let oldImage = i.image
             db.Product.update({
                 price: req.body.price,

@@ -11,48 +11,21 @@
         </div>
         <h3>productos destacados</h3>
         <section class="articules-section">
-            <article class="articule">
-                <img class="img" src="/images/hugo boss-1.jpg" alt="">
-            <section class="precios-descripcion">
-                <h4 class="precios">$6.770</h4>
-                <p class="descripcion"><strong>Hugo Boss</strong></p>
+            <section class="articules-section">
+                <% perfumes.forEach(function (perfume) { %>
+                <a class="section-a" href="/detalle/<%=perfume.id%>">
+                    <article class="article-a">
+                        <section class="image">
+                            <figure>
+                                <img class="img" src="/images/imgPerfume/<%= perfume.image %>" alt="">
+                            </figure>
+                        </section>
+                        <div  class="descripcion"><p><%= perfume.mark.mark %> <%= perfume.model.model %></p></div>
+                        <p class="precios">AR$  <%= perfume.price %></p>
+                    </article>
+                </a>
+                <% }); %>
             </section>
-            </article>
-            <article class="articule">
-                <img class="img" src="/images/hugo-boss-2.jpg" alt="">
-            <section class="precios-descripcion">
-                <h4 class="precios">$6.770</h4>
-                <p class="descripcion"><strong>Hugo Boss</strong></p>
-            </section>
-            </article>
-            <article class="articule">
-                <img class="img" src="/images/hugo-boss-3.jpg" alt="">
-            <section class="precios-descripcion">
-                <h4 class="precios">$6.770</h4>
-                <p class="descripcion"><strong>Hugo Boss</strong></p>
-            </section>
-            </article>
-            <article class="articule">
-                <img class="img" src="/images/CH-1.jpg" alt="">
-            <section class="precios-descripcion">
-                <h4 class="precios">$6.770</h4>
-                <p class="descripcion"><strong>Hugo Boss</strong></p>
-            </section>
-            </article>
-            <article class="articule">
-                <img class="img" src="/images/CH-2.jpg" alt="">
-            <section class="precios-descripcion">
-                <h4 class="precios">$6.770</h4>
-                <p class="descripcion"><strong>Hugo Boss</strong></p>
-            </section>
-            </article>
-            <article class="articule">
-                <img class="img" src="/images/CH-3.jpg" alt="">
-            <section class="precios-descripcion">
-                <h4 class="precios">$6.770</h4>
-                <p class="descripcion"><strong>Hugo Boss</strong></p>
-            </section>
-            </article>
         </section>
     </main>    
     <%- include ('../partials/footer') %>
