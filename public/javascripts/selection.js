@@ -3,6 +3,7 @@ window.addEventListener ("load", function(){
     let button = document.getElementById ('button');
     let marca = document.getElementById ('marca');
 
+    //elementos navbar
     let mujeresNB = document.getElementById ('mujeresNB');
     let hombresNB = document.getElementById ('hombresNB');
     let unisexNB = document.getElementById ('unisexNB');
@@ -14,35 +15,31 @@ window.addEventListener ("load", function(){
     let unisexB = document.getElementById ('unisexB');
     let outletB = document.getElementById ('outletB');
 
+    //elemento del logo    
     let logoSRL = document.getElementById ('logoSRL');
 
-    let selectGenre = document.getElementById ('genre');
 
-    let optionsGenre = selectGenre.options;
+//    let selectGenre = document.getElementById ('genre');
+//    let optionsGenre = selectGenre.options;
 
-    marca.addEventListener('change', function(){
-        button.click()
-    })
+//    marca.addEventListener('change', function(){
+//        button.click()
+//    })
 
     logoSRL.addEventListener ('click', () => {
         localStorage.setItem('genero','none');
-        let genero = localStorage.getItem ('genero');  
     });
     mujeresNB.addEventListener ('click', () => {
         localStorage.setItem('genero','woman');
-        let genero = localStorage.getItem ('genero');  
     });
     hombresNB.addEventListener ('click', () => {
         localStorage.setItem('genero','man');
-        let genero = localStorage.getItem ('genero');  
     })
     unisexNB.addEventListener ('click', () => {
         localStorage.setItem('genero','unisex');
-        let genero = localStorage.getItem ('genero');  
     })
     outletNB.addEventListener ('click', () => {
         localStorage.setItem('genero','outlet');
-        let genero = localStorage.getItem ('genero');  
     })
     switch (localStorage.getItem ('genero')){
         case "woman":
