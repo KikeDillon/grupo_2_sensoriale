@@ -1,67 +1,45 @@
 const path = require('path');
-const {Products, Marks} = require('../../database/models');
+const {User} = require('../../database/models');
 //const sequelize = db.sequelize;
 //const { Op } = require("sequelize");
 //const moment = require('moment');
-//const modelJs = require('../../../public/javascripts/models')
 
-const productsAPIController = {
+const userAPIController = {
     index: (req, res) => {
-        Marks.findAll()
-        .then(products => {
+        User.findAll()
+        .then(user => {
             let respuesta = {
                 meta: {
                     status : 200,
-                    total: products.length,
-                    url: 'api/products'
+                    total: user.length,
+                    url: 'api/user'
                 },
-                data: products
+                data: user
             }
                 res.json(respuesta);
             })
     },
     'detail': (req, res) => {
-        Products.findByPk(req.params.id)
-            .then(products => {
+        User.findByPk(req.params.id)
+            .then(User => {
                 let respuesta = {
                     meta: {
                         status: 200,
-                        total: products.length,
-                        url: '/api/products/:id'
+                        total: User.length,
+                        url: '/api/user/:id'
                     },
-                    data: products
-                }
-                res.json(respuesta);
-            });
-    },
-    'productsModels': (req, res) => {
-        Products.findByPk(req.params.id,{
-            include: ['models']
-        })
-            .then(products => {
-                let respuesta = {
-                    meta: {
-                        status: 200,
-                        total: products.length,
-                        url: '/api/products/:id'
-                    },
-                    data: products
+                    data: User
                 }
                 res.json(respuesta);
             });
     },
     create: (req,res) => {
-        Products.create(
-            {
-            price: req.body.price,
-            outlet: req.body.outlet == 1? 1 : 0,        
-            stock: req.body.stock,
-            modelId: req.body.modelId,
-            markId: req.body.markId,
-            genreId: req.body.genreId,
-            measureId: req.body.measureId,
-            destacado: req.body.destacado == 1? 1 : 0,
-            image: req.file.filename
+        User.create({
+            firstName : req.body.firstname,
+            lastName : req.body.lastname,
+            email : req.body.email,
+            password : (bcrypt.hashSync(req.body.password, 10)),
+            userType : 0
         }
         )
         .then(confirm => {
@@ -71,7 +49,7 @@ const productsAPIController = {
                     meta: {
                         status: 200,
                         total: confirm.length,
-                        url: 'api/products/create'
+                        url: 'api/user/create'
                     },
                     data:confirm
                 }
@@ -80,7 +58,7 @@ const productsAPIController = {
                     meta: {
                         status: 200,
                         total: confirm.length,
-                        url: 'api/products/create'
+                        url: 'api/user/create'
                     },
                     data:confirm
                 }
@@ -90,21 +68,17 @@ const productsAPIController = {
         .catch(error => res.send(error))
     },
     update: (req,res) => {
-        let productId = req.params.id;
+        let userId = req.params.id;
         Products.update(
             {
-            price: req.body.price,
-            outlet: req.body.outlet == 1? 1 : 0,        
-            stock: req.body.stock,
-            modelId: req.body.modelId,
-            markId: req.body.markId,
-            genreId: req.body.genreId,
-            measureId: req.body.measureId,
-            destacado: req.body.destacado == 1? 1 : 0,
-            image: req.file.filename
+            firstName : req.body.firstname,
+            lastName : req.body.lastname,
+            email : req.body.email,
+            password : (bcrypt.hashSync(req.body.password, 10)),
+            userType : 0
         },
             {
-                where: {id: productId}
+                where: {id: userId}
         })
         .then(confirm => {
             let respuesta;
@@ -113,7 +87,7 @@ const productsAPIController = {
                     meta: {
                         status: 200,
                         total: confirm.length,
-                        url: 'api/products/update/:id'
+                        url: 'api/user/update/:id'
                     },
                     data:confirm
                 }
@@ -122,7 +96,7 @@ const productsAPIController = {
                     meta: {
                         status: 204,
                         total: confirm.length,
-                        url: 'api/products/update/:id'
+                        url: 'api/user/update/:id'
                     },
                     data:confirm
                 }
@@ -132,8 +106,8 @@ const productsAPIController = {
         .catch(error => res.send(error))
     },
     destroy: (req,res) => {
-        let productId = req.params.id;
-        Products.destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        let userId = req.params.id;
+        User.destroy({where: {id: userId}, force: true}) // force: true es para asegurar que se ejecute la acción
         .then(confirm => {
             let respuesta;
             if(confirm){
@@ -141,7 +115,7 @@ const productsAPIController = {
                     meta: {
                         status: 200,
                         total: confirm.length,
-                        url: 'api/products/delete/:id'
+                        url: 'api/user/delete/:id'
                     },
                     data:confirm
                 }
@@ -150,7 +124,7 @@ const productsAPIController = {
                     meta: {
                         status: 204,
                         total: confirm.length,
-                        url: 'api/products/delete/:id'
+                        url: 'api/user/delete/:id'
                     },
                     data:confirm
                 }
@@ -161,4 +135,4 @@ const productsAPIController = {
     }
 }
 
-module.exports = productsAPIController;
+module.exports = userAPIController;

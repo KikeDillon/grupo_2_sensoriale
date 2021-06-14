@@ -1,11 +1,10 @@
 const { readFileSync } = require('fs');
-//const path = require('path');
-//sconst fs = require ('fs');
+const fs = require ('fs');
 
 const path = require('path');
 const {Products, Marks, Genres, Models, Measures} = require('../database/models');
 //const sequelize = sequelize;
-//const { Op } = require("sequelize");
+const { Op } = require("sequelize");
 //const { values } = require('sequelize/types/lib/operators');
 
 const db = require ('../database/models/index.js');

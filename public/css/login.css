@@ -142,6 +142,50 @@
     margin-bottom: 10px;
 }
 
+.loginOk { 
+    color: white;
+    background-color: rgb(42, 219, 42);
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 5px;
+}
+.loginError { 
+    color: black;
+    background-color: tomato;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/*=======================================*/
+        /* ESTADOS PARA CONTROLES JS */   /*      border: solid 1px #008891;
+    /*=======================================*/
+
+    .borderNormal {
+        border: solid 1px #008891;
+    }
+    .borderError {
+        border: solid 3px rgb(255, 99,71);
+    }
+    .borderOk {
+        border: solid 3px rgb(42, 219, 42);
+    }
+    .iconoErrorOrOkNone{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        opacity: 0;
+    }
+    #formLogin p {
+        font-size: 1vw;
+        color: rgb(255, 99,71);
+        height: 10px;
+        margin: 0;
+        padding:0;
+        margin-top: 5px;
+        opacity: 0;
+    }
+
 @media (min-width: 515px){
     
     /*=======================================*/

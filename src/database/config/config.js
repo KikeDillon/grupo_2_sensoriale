@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "sensoriale_db1",
+    "database": "sensoriale_db3",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

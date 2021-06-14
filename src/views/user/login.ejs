@@ -6,10 +6,12 @@
         <section class="main-login">
         <p>ingresá a tu cuenta</p>
         <section class="section-login">
-            <form action="/ingresar" method="POST" class="form-login">
+            <form action="/ingresar" method="POST" class="form-login" id="formLogin">
                 <div class="input-container">
-                    <input class="input" placeholder="correo electrónico" value="<%= (locals.errors || locals.erroremail || locals.errorpassword) && userEmailOld ? userEmailOld : ''%>" name="useremail" >
+                    <input class="input" id="inputEmail" placeholder="correo electrónico" value="<%= (locals.errors || locals.erroremail || locals.errorpassword) && userEmailOld ? userEmailOld : ''%>" name="email" >
+                    <i id="errorIconE" class="iconoErrorOrOkNone fas fa-times-circle"></i>
                 </div>
+                <p id="emailP">*solo el formato email será válido</p>
                 <div class="text-alert">    
                     <% if ((locals.errors && errors.useremail)) { %>
                         <p> <%= errors.useremail.msg %> </p> 
@@ -19,8 +21,10 @@
                     <% } %>  
                 </div>
                 <div class="input-container">
-                    <input class="input" type="password" placeholder="contraseña" name="password">
+                    <input class="input" id="inputPassword" type="password" placeholder="contraseña" name="password">
+                    <i id="errorIconP" class="iconoErrorOrOkNone fas fa-times-circle"></i>
                 </div>
+                <p id="passwordP">*mínimo 6 caracteres, máximo 18 caracteres</p>
                 <div class="text-alert">    
                     <% if ((locals.errors && errors.password)) { %>
                         <p> <%= errors.password.msg %> </p> 
@@ -29,7 +33,7 @@
                         <p> <%= errorpassword.msg %> </p> 
                     <% } %>
                 </div>   
-                <div class="input-container">
+                <div class="input-container" id="to-login">
                     <button id="btn-enter" type="submit"> ingresar </button>
                 </div>
                 <div id="checkbox-rememberme">
@@ -49,4 +53,5 @@
     </section>
     </main>    
     <%- include ('../partials/footer') %></body>
+
 </html>

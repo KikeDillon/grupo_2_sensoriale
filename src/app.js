@@ -36,6 +36,10 @@ const productsRouter = require ('./routers/productsRouter');
 const saleRouter = require ('./routers/saleRouter');
 const adminRouter = require ('./routers/adminRouter');
 const apiModelsRouter = require ('./routers/api/apiModelsRouter');
+const apiProductsRouter = require ('./routers/api/apiProductRouter');
+const apiUserRouter = require ('./routers/api/apiUserRouter');
+
+
 
 app.use (webRouter);
 app.use (productsRouter);
@@ -44,6 +48,10 @@ app.use (saleRouter);
 app.use (adminRouter);
 app.use (cookieParser());
 app.use (apiModelsRouter);
+app.use (apiProductsRouter);
+app.use (apiUserRouter);
+
+
 
 app.use (function(req, res, next){
     res.status(404).render(path.resolve(__dirname, './views/middlewares/404-page.ejs'));
@@ -52,8 +60,8 @@ app.use (function(req, res, next){
 
 
 //LEVANTO EL SERVIDOR
-app.set ('puerto', process.env.PORT || 3000);
+app.set ('puerto', process.env.PORT || 3001);
 
 app.listen (app.get ('puerto'), function(){
-    console.log ("LEVANTÓ EL SERVIDOR EN EL PUERTO 3000");
+    console.log ("LEVANTÓ EL SERVIDOR EN EL PUERTO 3001");
 });
