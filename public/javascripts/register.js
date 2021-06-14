@@ -78,7 +78,7 @@ window.addEventListener ("load", function(){
 		}	
 	}
 
-	// CAPTURO LOS ENVENTOS DE KEYIP Y BLUR DENTRO DE LOS INPUTS -> 
+	// CAPTURO LOS ENVENTOS DE KEYUP Y BLUR DENTRO DE LOS INPUTS -> 
 	// POR CADA CLICK VOY A LA FUNCIÓN VALIDAR FORMULARIO 
 
 	inputs.forEach(input => {

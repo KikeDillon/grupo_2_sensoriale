@@ -17,7 +17,7 @@ window.addEventListener ("load", function(){
     })
 
     function cargarModelos(Marca){
-        fetch('http://localhost:3000/api/models')
+        fetch('http://localhost:3001/api/models')
         .then(function(respuesta){
             return respuesta.json()
         })
@@ -28,7 +28,7 @@ window.addEventListener ("load", function(){
                     console.log (i.model)
             //        selectModelos.innerHTML += `<option value = ${i.id}> ${i.model} </option>`                    
                     let opcionModelo = document.createElement('option')
-                    opcionModelo.setAttribute('value', i.markId)
+                    opcionModelo.setAttribute('value', i.id)
                     opcionModelo.innerHTML = i.model
                     selectModelos.append(opcionModelo)
                 }              

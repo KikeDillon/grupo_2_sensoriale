@@ -84,8 +84,14 @@ const adminController = {
           }) .catch (error => res.send(error));
     },
     update: (req, res) => {
+<<<<<<< HEAD
 
         Products.findByPk(req.params.id) .then (i => {
+=======
+        //return res.send(req.params.id)
+        db.Product.findByPk(req.params.id) 
+        .then (i => {
+>>>>>>> 2a0a4fffb42904754edb8a6e0ea54d9a96bebb7f
             let oldImage = i.image
             Products.update({
             price: req.body.price,

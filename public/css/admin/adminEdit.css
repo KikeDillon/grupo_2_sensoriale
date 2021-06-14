@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 600px;
+    height: 900px;
     align-items: center;
 }
 .main-section form{
@@ -54,6 +54,9 @@
     width: 100%;
     height: 45%;
 }
+.imginput div{
+    height: 80%;
+}
 .btns{
     display: flex;
     flex-direction: column;
@@ -67,9 +70,9 @@
 }
 /* ======= FIN - CONTENEDORES PADRES - SON 3 ======== */
 
-.imginput img{
+.imginput div img{
     display: flex;
-    width: 30%;
+    height: 100%;
 }
 .imginput input{
     display: flex;
@@ -88,6 +91,12 @@
     align-items: center;
     justify-content: center;
     padding-left: 10px;
+}
+
+select{
+width: 100%;
+outline: none;
+border: none;
 }
 
 .input{
@@ -122,23 +131,34 @@
     color: white;
     font-weight: bolder;
     border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
 }
 .a-btn a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: white;
     font-size: bolder;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+.a-btn a div{
+    height: 100%;
 }
 
-.a-btn:hover{
+.a-btn a:hover{
     cursor: pointer;
     background-color: #00587a;
 }
-.a-btn:hover button{
-    background-color: #00587a;
 
-}
 .a-btn button:hover{
     cursor: pointer;
+    background-color: #00587a;
 }
 
 @media (min-width: 361px){
@@ -177,8 +197,5 @@
     }
     /* ======= FIN - CONTENEDORES PADRES - SON 3 ======== */
     
-    .imginput img{
-        width: 50%;
-    }
 
 }

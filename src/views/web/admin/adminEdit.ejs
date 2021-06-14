@@ -8,20 +8,17 @@
                 <section class="container-mark">   
                     <div class="mark">
                         <select name="markId" id="marca"  class="input">
-                            <option value="<%= products.id %>" selected> <%= products.mark.mark %> </option>
+                            <option value="<%= products.mark.id %>" selected> <%= products.mark.mark %> </option>
                             <% mark.forEach(i => { %>
                                 <option value="<%= i.id %>" required><%= i.mark %></option>
                             <% }) %>
                         </select>
                     </div>     
-                    <div class="mark">
-                        <select id="modelo" name="size" id="size"  class="input">
-                            <option  value="<%= products.id %>" selected><%= products.model.model %> </option>
-                            <% model.forEach(model => { %>
-                                <option value="<%= model.id %>" required><%= model.model %></option>
-                            <% }) %>
+                    <div class="form mark">
+                        <select class=input" name="modelId" id="modelo">
+                            <option id="optionModelo" value="<%= products.modelId %>" selected><%= products.model.model %></option>
                         </select>
-                    </div>          
+                    </div>            
                     <div class="mark">
                         <select name="genreId" id="gender"  class="input">
                             <option value="<%= products.genreId %>" selected><%= products.genre.genre %></option>
@@ -64,15 +61,17 @@
                     </div>
                 </section>
                 <section class="imginput">
-                        <img src="/images/imgPerfume/<%= products.image %>"  alt="imagen perfume">
-                        <input  type="file" id="newImage" name="newImage">
+                    <div id="previewSection">
+                        <img src="/images/imgPerfume/<%= products.image %>"  alt="imagen perfume" >
+                    </div>
+                        <input  type="file" id="newImage" name="newImage" accept=".jpg, .png, .jpeg">
                     </section>
                     <section class="btns">
                         <div class="a-btn">
                             <button type="submit" id="btn-enter"> guardar </button> 
                         </div>
                         <div class="a-btn">
-                            <a href="/administrar"><div id="btn-back"> omitir </div></a>
+                            <a href="/administrar"> omitir </a>
                         </div> 
                     </section>
             </form>

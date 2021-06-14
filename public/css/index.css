@@ -28,6 +28,7 @@ h3{
     align-items: center;
     width: 100%;
     margin-bottom: 1vh;
+    margin-top: 2vh;
     font-weight: bolder;
     color: #00587a;
 }
@@ -37,7 +38,7 @@ h3{
     flex-wrap: wrap;
     width: 100%;
     background-color: white;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-content: space-evenly;
     padding: 2vh 0px;
     margin-bottom: 20px;
@@ -60,6 +61,14 @@ h3{
     border-radius: 0.5rem;
 }
 
+.section-a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+}
 .img{
     height: 30vh;
 }
@@ -96,6 +105,9 @@ h3{
         align-items: center;
         margin: 0.5vh 0;
     }
+    .section-a{
+        width: 50%;
+    }
 
     .img{
         width: 150px;
@@ -106,6 +118,9 @@ h3{
     .img {
         width: initial;
         }
+        .section-a{
+            width: 33%;
+        }
     }
 
 @media (min-width: 769px){
@@ -113,7 +128,9 @@ h3{
         width: 32%;
         height: 48%;
     }
-
+    .section-a{
+        width: 25%;
+    }
     .img {
         width: initial;
     }
